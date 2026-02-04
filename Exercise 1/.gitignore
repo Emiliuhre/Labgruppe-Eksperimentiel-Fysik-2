@@ -101,4 +101,4 @@ desktop.ini
 ############################
 
 # Uncomment if you do not want PDFs in Git
-# *.pdf
+*.pdf
