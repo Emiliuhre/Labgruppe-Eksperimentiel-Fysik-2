@@ -1,0 +1,104 @@
+############################
+# LaTeX core build files
+############################
+
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.xdv
+
+# LuaLaTeX / LuaTeX
+*.luac
+*.luaaux
+*.lua
+
+############################
+# Bibliography / Biber
+############################
+
+*.bbl
+*.blg
+*.bcf
+*.run.xml
+
+############################
+# Index / Glossaries
+############################
+
+*.idx
+*.ilg
+*.ind
+*.glg
+*.glo
+*.gls
+*.ist
+*.acn
+*.acr
+*.alg
+
+############################
+# TikZ / externalization
+############################
+
+*.dpth
+*.md5
+*.auxlock
+tikzexternal/
+
+############################
+# Beamer
+############################
+
+*.nav
+*.snm
+*.vrb
+
+############################
+# Build directories
+############################
+
+_auto/
+_build/
+build/
+out/
+dist/
+
+############################
+# Editors / IDEs
+############################
+
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+############################
+# OS junk
+############################
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+############################
+# Backup / temp
+############################
+
+*.bak
+*.backup
+*.tmp
+
+############################
+# PDF output (optional)
+############################
+
+# Uncomment if you do not want PDFs in Git
+# *.pdf
