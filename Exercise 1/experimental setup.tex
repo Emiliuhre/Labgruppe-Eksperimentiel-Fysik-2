@@ -45,7 +45,7 @@ We repeat this experiment twice, once when the light first hits the circular sid
 
     To find the combined standard uncertainty $\sigma_n$, we apply the functional approach for propagation of error:
     \[
-        \sigma_n = \sqrt{ \left( \frac{\partial n}{\partial \theta_i} \right)^2 \sigma_{\theta_i}^2 + \left( \frac{\partial n}{\partial \theta_t} \right)^2 \sigma_{\theta_t}^2 }
+        \sigma_n = \sqrt{ \left( \pdv{n}{\theta_i} \right)^2 \sigma_{\theta_i}^2 + \left( \pdv{n}{\theta_t} \right)^2 \sigma_{\theta_t}^2 }
     \]
 
     \subsection*{Partial Derivatives}
@@ -53,12 +53,12 @@ We repeat this experiment twice, once when the light first hits the circular sid
     \begin{itemize}
         \item \textbf{With respect to $\theta_i$:}
         \[
-            \frac{\partial n}{\partial \theta_i} = \frac{\cos \theta_i}{\sin \theta_t}
+            \pdv{n}{\theta_i} = \frac{\cos \theta_i}{\sin \theta_t}
         \]
         
         \item \textbf{With respect to $\theta_r$:}
         \[
-            \frac{\partial n}{\partial \theta_t} = -\frac{\sin \theta_i \cos \theta_t}{\sin^2 \theta_r}
+            \pdv{n}{\theta_t} = -\frac{\sin \theta_i \cos \theta_t}{\sin^2 \theta_r}
         \]
     \end{itemize}
 
