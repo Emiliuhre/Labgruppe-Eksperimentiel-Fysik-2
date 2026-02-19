@@ -1,31 +1,50 @@
 \chapter{Introduction}
 This report will discuss the reflection and refraction of a beam of light at the surface of a transparent dielectric. 
 This will be achived by using the laws of reflection and refraction also known as Snell's law and the four Fresnel Relations.
-
-\subsection*{$s$- and $p$-polarization}
-
-    To understand the Fresnel relations it is usefull to understand two linear polarization-components that behave different.\\
-    The $s$ and $p$ direction is defined from the Plane of Incidence (POI) that is spanned by the incomming and reflected/transmitted lightbeam.
-    \begin{itemize}
-        \item $s$-polarized light is perpenducular to the POI, $s$ stands for senkrecht(German)
-        \item $p$-polarized light is parallel to POI
-    \end{itemize}
-
-\subsection*{Refractive index $n$}
-    To find the refractive index of the semicircle glass we use Snell's law
-    \begin{align*}
-        n_1 \sin(\theta_1) &= n_2 \sin(\theta_2) \tag{Snell's law}
-        \intertext{If we choose $n_1$ to be the index of the glass and $n_2 \approx 1$ for air then,}
-        \frac{n_1}{n_2} &= \frac{\sin(\theta_2)}{\theta_1}\\
-        n_1 &= \frac{\sin(\theta_1+\theta_d)}{\theta_1}\\
-    \end{align*}
-
+    \section{Snell's law}
+        Snell's law descripe the relation between angels of incidence and refraction for light passing through different isotripic media. The law is given by
+        \begin{align*}
+            n_1 \sin(\theta_1) &= n_2 \sin(\theta_2) \tag{Snell's law}
+        \end{align*}
+        With refractive index $n_{\textup{1}}$ for the first media and angle of incidence $\theta_{\textup{1}}$. And for the refracted light in the second media $n_{\textup{2}}$ and $\theta_{\textup{2}}$
+    \section{Refractive index $n$}
+        To find the refractive index of the semicircle glass we use Snell's law
+        If we choose $n_1$ to be the index of the glass and $n_2 \approx 1$ for air then;
+        \begin{align*}
+            \frac{n_1}{n_2} &= \frac{\sin(\theta_2)}{\theta_1}\\
+            n_1 &= \frac{\sin(\theta_1+\theta_d)}{\theta_1}\\
+        \end{align*}
+    \section{$s$- and $p$-polarization}
+        To understand the Fresnel relations it is usefull to understand two linear polarization-components that behave different.\\
+        The $s$ and $p$ direction is defined from the Plane of Incidence (POI) that is spanned by the incomming and reflected/transmitted lightbeam.
+        \begin{itemize}
+            \item $s$-polarized light is perpenducular to the POI, $s$ stands for senkrecht(German)
+            \item $p$-polarized light is parallel to POI
+        \end{itemize}
     
-    
-    \[
-        r_s = \frac{n_1 \cos\theta_i - n_2 \cos\theta_t}{n_1 \cos\theta_i + n_2 \cos\theta_t}
-    \]
-        
-    \[
+    \section{The Fresnel Relations}
+        The Fresnel Relations describe the reflection and transmission of light on a plane of incidence of two different media. 
+        There are two sets of Fresnel coefficients for two different linear polarization components.\\
+        For s-polarized light 
+        \[
+            r_s = \frac{n_1 \cos\theta_i - n_2 \cos\theta_t}{n_1 \cos\theta_i + n_2 \cos\theta_t}
+        \]
+        \[
+            t_s = \frac{2n_1 \cos\theta_i}{n_1 \cos\theta_i + n_2 \cos\theta_t}
+        \]
+        For p-polarized light
+        \[
             r_p = \frac{n_2 \cos\theta_i - n_1 \cos\theta_t}{n_2 \cos\theta_i + n_1 \cos\theta_t}
-    \]
+        \]
+        \[
+            t_s = \frac{2n_1 \cos\theta_i}{n_2 \cos\theta_i + n_1 \cos\theta_t}
+        \]
+        From these relations we can derive the intensities of the reflected and refracted light in which we can messure.
+        \begin{align*}
+            R_{\textup{p}} &= \frac{\tan^{2}(\theta_{\textup{1} - \theta_{\textup{2}}})}{\tan^{2}(\theta_{\textup{1} + \theta_{\textup{2}}})}\tag{1}\\
+            R_{\textup{s}} &= \frac{\sin^{2}(\theta_{\textup{1} - \theta_{\textup{2}}})}{\sin^{2}(\theta_{\textup{1} + \theta_{\textup{2}}})}\tag{2}\\
+            T_{\textup{p}} &= \frac{\sin{2\theta_{\textup{1}}}\sin{2\theta_{\textup{2}}}}{\sin^{2}(\theta_{\textup{1}} + \theta_{\textup{2}})\cos^{2}(\theta_{\textup{1}} - \theta_{\textup{2}})}\tag{3}\\
+            T_{\textup{s}} &= \frac{\sin{2\theta_{\textup{1}}}\sin{2\theta_{\textup{2}}}}{\sin^{2}(\theta_{\textup{1}} + \theta_{\textup{2}})}\tag{4}
+            \intertext{Where}
+            R+T &= 1 \tag{5}
+        \end{align*}
