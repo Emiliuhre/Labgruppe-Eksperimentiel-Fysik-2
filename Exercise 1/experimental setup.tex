@@ -39,3 +39,33 @@ Then the glass is placed, such that the laser travels through its center, and we
 We then wary the angle of incidence, starting at 0 degrees, and moving in 5 degree increments up to 90 degrees. For each angle, we measure both the refracted and reflected beam, for both s and p polarized light.
 We repeat this experiment twice, once when the light first hits the circular side, and once where it hits the flat side.
 
+\section*{Propagation of Uncertainty for Refractive Index $n$}
+
+    The refractive index $n$ of the semicircular dielectric is determined using Snell's Law($n_{air} \approx 1$) is $n = \frac{\sin \theta_i}{\sin \theta_t}$.
+
+    To find the combined standard uncertainty $\sigma_n$, we apply the functional approach for propagation of error:
+    \[
+        \sigma_n = \sqrt{ \left( \frac{\partial n}{\partial \theta_i} \right)^2 \sigma_{\theta_i}^2 + \left( \frac{\partial n}{\partial \theta_t} \right)^2 \sigma_{\theta_t}^2 }
+    \]
+
+    \subsection*{Partial Derivatives}
+    The sensitivity coefficients are found by differentiating the model with respect to each measured variable:
+    \begin{itemize}
+        \item \textbf{With respect to $\theta_i$:}
+        \[
+            \frac{\partial n}{\partial \theta_i} = \frac{\cos \theta_i}{\sin \theta_t}
+        \]
+        
+        \item \textbf{With respect to $\theta_r$:}
+        \[
+            \frac{\partial n}{\partial \theta_t} = -\frac{\sin \theta_i \cos \theta_t}{\sin^2 \theta_r}
+        \]
+    \end{itemize}
+
+    \subsection*{Final Uncertainty Equation}
+    Substituting the derivatives back into the propagation formula:
+    \begin{equation*}
+        \sigma_n = \sqrt{ \left( \frac{\cos \theta_i}{\sin \theta_t} \right)^2 \sigma_{\theta_i}^2 + \left( \frac{\sin \theta_i \cos \theta_t}{\sin^2 \theta_t} \right)^2 \sigma_{\theta_t}^2 }
+    \end{equation*}
+
+    \textit{Note: All angular uncertainties $\sigma_{\theta}$ must be expressed in \textbf{radians} for the calculation to be valid.}
