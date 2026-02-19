@@ -18,4 +18,10 @@ Before the light enters the sensor it first goes through a collimating lens, suc
 \section{Measurements}
 Measurements of the laser intensity are taken by plugging the output from the light sensor into a PicoScope. 
 The PicoScope then measures the voltage over 1 second and calculates the mean voltage measured, together with a standard deviation. 
-The angles are measured manually by reading on the angle scale. We measure 3 angles, $\theta_1$, $\theta_d = \theta_2 - \theta _1$, and $\theta_T = 180^\circ - $
+The angles are measured manually by reading on the angle scale. We measure 3 angles, $\theta_1$, $\theta_d = \theta_2 - \theta _1$, and $\theta_T = 180^\circ - \theta_3 - \theta_1$, where $\theta_3$ here is the reflection angle.
+\section{Execution}
+First the intensity of the laser is measured without the glass, for both s and p polarisation, as well as the background intensity.
+Then the glass is placed, such that the laser travels through its center, and we measure the two mean intensities, standard errors and 3 angles. 
+We then wary the angle of incidence, starting at 0 degrees, and moving in 5 degree increments up to 90 degrees. For each angle, we measure both the refracted and reflected beam, for both s and p polarized light.
+We repeat this experiment twice, once when the light first hits the circular side, and once where it hits the flat side.
+
