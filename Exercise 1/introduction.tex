@@ -1,3 +1,31 @@
 \chapter{Introduction}
 This report will discuss the reflection and refraction of a beam of light at the surface of a transparent dielectric. 
 This will be achived by using the laws of reflection and refraction also known as Snell's law and the four Fresnel Relations.
+
+\subsection*{$s$- and $p$-polarization}
+
+    To understand the Fresnel relations it is usefull to understand two linear polarization-components that behave different.\\
+    The $s$ and $p$ direction is defined from the Plane of Incidence (POI) that is spanned by the incomming and reflected/transmitted lightbeam.
+    \begin{itemize}
+        \item $s$-polarized light is perpenducular to the POI, $s$ stands for senkrecht(German)
+        \item $p$-polarized light is parallel to POI
+    \end{itemize}
+
+\subsection*{Refractive index $n$}
+    To find the refractive index of the semicircle glass we use Snell's law
+    \begin{align*}
+        n_1 \sin(\theta_1) &= n_2 \sin(\theta_2) \tag{Snell's law}
+        \intertext{If we choose $n_1$ to be the index of the glass and $n_2 \approx 1$ for air then,}
+        \frac{n_1}{n_2} &= \frac{\sin(\theta_2)}{\theta_1}\\
+        n_1 &= \frac{\sin(\theta_1+\theta_d)}{\theta_1}\\
+    \end{align*}
+
+    
+    
+    \[
+        r_s = \frac{n_1 \cos\theta_i - n_2 \cos\theta_t}{n_1 \cos\theta_i + n_2 \cos\theta_t}
+    \]
+        
+    \[
+            r_p = \frac{n_2 \cos\theta_i - n_1 \cos\theta_t}{n_2 \cos\theta_i + n_1 \cos\theta_t}
+    \]
