@@ -1,9 +1,17 @@
 \chapter{Experimental Setup}
-
-
+%
     \begin{figure}[h!]
         \includegraphics[width=0.9\textwidth]{figures/EkspFys2_Ex1_setup_drawing.png}
         \centering
-        \caption{Experimental setup}
+        \caption{Experimental setup measuring transmitted light}
         \label{fig:Expsetup}
     \end{figure}
+%
+For the experiment we use a 650 nm diode laser\cite{pasco_os8525a_manual}, such that the wavelength is somewhat constant. 
+This laser is first sent through an aperture to decrease the intensity of the light, because our sensor becomes saturated even at the lowest laser intensity.
+Afterwards it is passed through a polarizer, set to 45 degrees, such that the light is equally polarized in the p and s direction.
+Then the light passes through a semicircular piece of glass, either through the circular side, or the flat side, but in both cases aimed such that the light hits the center of the circle.
+The semicircular piece of glass is placed on a turntable, such that we can vary $\theta_1$. 
+To measure the transmitted and reflected light we have a light sensor\cite{pasco_ci6604_manual}, that is also mounted on a turn table, such that it can be turned to catch the light at different angles.
+Both turntables have an angle scale, such that we can accurately measure the different angles. Here we do not just measure $\theta_1$ and $\theta_2$, but angles from which they can be derived.
+Before the light enters the sensor it first goes through a collimating lens, such that we can catch light that spreads out and focus it on the sensor. Finally it goes through another polarizor, set such that only p or only s polarized light can get through.
