@@ -1,1 +1,14 @@
 \chapter{Results}
+To find the error of our measurement of the refractive index we calculate the propagation of uncertainty.
+In the case of refraction from glass to air $n = \frac{\sin(\theta_2)}{\sin(\theta_1)} = \frac{\sin(\theta_d + \theta_1)}{\sin(\theta_1)}$ and therefore
+\begin{align*}
+    \sigma_n &= \sqrt{\left(\frac{\partial n}{\partial \theta_1} \sigma_{\theta_1} \right)^2 + \left(\frac{\partial n}{\partial \theta_d} \sigma_{\theta_2} \right)^2} \\
+    &=  \sqrt{\left( \frac{\cos(\theta_d + \theta_1)\sin(\theta_1) - \cos(\theta_1)\sin(\theta_d + \theta_1)}{\sin(\theta_1)^2} \sigma_{\theta_1} \right)^2 + \left(\frac{\cos(\theta_d + \theta_1)}{\sin(\theta_1)} \sigma_{\theta_2} \right)^2} \\
+    &= \sqrt{\left( \frac{\cos(\theta_2)\sin(\theta_1) - \cos(\theta_1)\sin(\theta_2)}{\sin(\theta_1)^2} \sigma_{\theta_1} \right)^2 + \left(\frac{\cos(\theta_2)}{\sin(\theta_1)} \sigma_{\theta_2} \right)^2} \\
+\end{align*}
+from air to glass $n = \frac{\sin(\theta_1)}{\sin(\theta_2)} = \frac{\sin(\theta_1)}{\sin(\theta_1 + \theta_d)}$ so
+\begin{align*}
+    \sigma_n &= \sqrt{\left(\frac{\partial n}{\partial \theta_1} \sigma_{\theta_1} \right)^2 + \left(\frac{\partial n}{\partial \theta_d} \sigma_{\theta_2} \right)^2} \\
+    &=  \sqrt{\left( \frac{\cos(\theta_1)\sin(\theta_d + \theta_1) - \cos(\theta_d + \theta_1)\sin(\theta_1)}{\sin(\theta_d + \theta_1)^2} \sigma_{\theta_1} \right)^2 + \left(-\frac{\sin(\theta_1)\cos(\theta_d + \theta_1)}{\sin(\theta_d + \theta_1)^2} \sigma_{\theta_2} \right)^2} \\
+    &=  \sqrt{\left( \frac{\cos(\theta_1)\sin(\theta_2) - \cos(\theta_2)\sin(\theta_1)}{\sin(\theta_2)^2} \sigma_{\theta_1} \right)^2 + \left(-\frac{\sin(\theta_1)\cos(\theta_2)}{\sin(\theta_2)^2} \sigma_{\theta_2} \right)^2} \\
+\end{align*}
