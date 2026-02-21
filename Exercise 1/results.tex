@@ -1,5 +1,7 @@
 \chapter{Results}
-In order to compare our measurements of the lasers intensity to the Fresnell equaiton prediction, we need 
+In order to compare our measurements of the lasers intensity to the Fresnell equation prediction, we need to determine the refractive index.
+This is determinable using Snell's law, and the fact that air has refractive index approximately equal to 1.
+To get a good estimate however, we first need to find the errors of measurement. 
 To find the error of our measurement of the refractive index we calculate the propagation of uncertainty.
 In the case of refraction from glass to air $n = \frac{\sin(\theta_2)}{\sin(\theta_1)} = \frac{\sin(\theta_d + \theta_1)}{\sin(\theta_1)}$ and therefore
 \begin{align*}
@@ -13,3 +15,13 @@ from air to glass $n = \frac{\sin(\theta_1)}{\sin(\theta_2)} = \frac{\sin(\theta
     &=  \sqrt{\left( \frac{\cos(\theta_1)\sin(\theta_d + \theta_1) - \cos(\theta_d + \theta_1)\sin(\theta_1)}{\sin(\theta_d + \theta_1)^2} \sigma_{\theta_1} \right)^2 + \left(\frac{\sin(\theta_1)\cos(\theta_d + \theta_1)}{\sin(\theta_d + \theta_1)^2} \sigma_{\theta_d} \right)^2} \\
     &=  \sqrt{\left( \frac{\cos(\theta_1)\sin(\theta_2) - \cos(\theta_2)\sin(\theta_1)}{\sin(\theta_2)^2} \sigma_{\theta_1} \right)^2 + \left(\frac{\sin(\theta_1)\cos(\theta_2)}{\sin(\theta_2)^2} \sigma_{\theta_d} \right)^2} \\
 \end{align*}
+If we use these errors to calculate a weighted mean using the following formula
+\[n_{\textup{mean}} = \frac{\sum_i \frac{n_i}{\sigma_{n_i}}}{\sum_i \sigma_{n_i}}\]
+and plot it against $\theta_1$ we get:
+   \begin{figure}[h]
+        \includegraphics[width=0.95\textwidth]{figures/Weighted Average.png}
+        \centering
+        \caption{}
+        \label{fig:weighted_average}
+    \end{figure}
+
