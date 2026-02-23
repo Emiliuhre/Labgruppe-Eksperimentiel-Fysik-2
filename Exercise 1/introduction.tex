@@ -18,7 +18,7 @@ This will be achived by using Snell's law to determine the index of refraction o
         To understand the Fresnel relations it is usefull to understand two linear polarization-components that behave different.\\
         The $s$ and $p$ direction is defined from the Plane of Incidence (POI) that is spanned by the incomming and reflected/transmitted lightbeam.
         \begin{itemize}
-            \item $s$-polarized light is perpenducular to the POI, $s$ stands for senkrecht(German)
+            \item $s$-polarized light is perpenducular to the POI,\\ $s$ stands for senkrecht(German)
             \item $p$-polarized light is parallel to POI
         \end{itemize}
     
@@ -39,12 +39,11 @@ This will be achived by using Snell's law to determine the index of refraction o
         \[
             t_s = \frac{2n_1 \cos\theta_i}{n_2 \cos\theta_i + n_1 \cos\theta_t}
         \]
-        From these relations we can derive the intensities of the reflected and refracted light.
+        From these relations we can derive the intensities of the reflected and refracted light by knowing that $R=r^2$ and $T=\frac{\cos{\theta_2}}{\cos{\theta_1}}\frac{n_2}{n_1}\:t^2$.
         \begin{align*}
-            R_{\textup{p}} &= \frac{\tan^{2}(\theta_{\textup{1} - \theta_{\textup{2}}})}{\tan^{2}(\theta_{\textup{1} + \theta_{\textup{2}}})}\tag{1}\\
-            R_{\textup{s}} &= \frac{\sin^{2}(\theta_{\textup{1} - \theta_{\textup{2}}})}{\sin^{2}(\theta_{\textup{1} + \theta_{\textup{2}}})}\tag{2}\\
+            R_{\textup{p}} &= \frac{\tan^{2}(\theta_{\textup{1}} - \theta_{\textup{2}})}{\tan^{2}(\theta_{\textup{1}} + \theta_{\textup{2}})}\tag{1}\\
+            R_{\textup{s}} &= \frac{\sin^{2}(\theta_{\textup{1}} - \theta_{\textup{2}})}{\sin^{2}(\theta_{\textup{1}} + \theta_{\textup{2}})}\tag{2}\\
             T_{\textup{p}} &= \frac{\sin{2\theta_{\textup{1}}}\sin{2\theta_{\textup{2}}}}{\sin^{2}(\theta_{\textup{1}} + \theta_{\textup{2}})\cos^{2}(\theta_{\textup{1}} - \theta_{\textup{2}})}\tag{3}\\
             T_{\textup{s}} &= \frac{\sin{2\theta_{\textup{1}}}\sin{2\theta_{\textup{2}}}}{\sin^{2}(\theta_{\textup{1}} + \theta_{\textup{2}})}\tag{4}
-            \intertext{Where}
-            R+T &= 1 \tag{5}
+            \intertext{Where reflection and transmission add up to one: $R+T = 1$}
         \end{align*}
