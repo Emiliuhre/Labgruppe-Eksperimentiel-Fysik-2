@@ -14,11 +14,20 @@ In the case of refraction from glass to air $n = \frac{\sin(\theta_2)}{\sin(\the
     &=  \sqrt{\left( \frac{\cos(\theta_1)\sin(\theta_2) - \cos(\theta_2)\sin(\theta_1)}{\sin(\theta_2)^2} \sigma_{\theta_1} \right)^2 + \left(\frac{\sin(\theta_1)\cos(\theta_2)}{\sin(\theta_2)^2} \sigma_{\theta_d} \right)^2} \\
 \end{align*}
 If we use these errors to calculate a weighted mean using the following formula
-\[n_{\textup{mean}} = \frac{\sum_i \frac{n_i}{\sigma_{n_i}}}{\sum_i \sigma_{n_i}}\]
-and plot it against $\theta_1$ we get:
+\[n_{\textup{mean}} = \frac{\sum_i \frac{n_i}{\sigma_{n_i}}}{\sum_i \sigma_{n_i}}, \quad \sigma_{n_\text{mean}}^2 = \frac{1}{\sum_i \sigma_{n_i}^{-2}}\]
+and plot it against $\theta_1$ we get figure \ref{fig:weighted_average}.
    \begin{figure}[h]
         \includegraphics[width=0.95\textwidth]{figures/Weighted Average.png}
         \centering
-        \caption{}
+        \caption{Estimation of the refractive index of the semicircular prism used in the experiment}
         \label{fig:weighted_average}
+    \end{figure}
+It is to be noted, that we under the experiment noticed severe stretching of the laser when it hit the detector at large angles of incidence, which ment that we were not able to measure the entire laser beam, and also that the uncertainty of our angle measurements increased with the angle of incidence.
+We have not taken this into consideration in the data analysis, and have instead run with an error $\sigma_\theta = 0.25$, since the scale had 0.5 degree increments. 
+If we instead attempt to include a primitive model of how this uncertainty increases with angle, using $\sigma_\theta = 0.25 + \frac{\theta_1}{\max(\theta_1)}$, we instead get figure \ref{new_weigthed_average}
+   \begin{figure}[h]
+        \includegraphics[width=0.95\textwidth]{figures/New Weighted Average.png}
+        \centering
+        \caption{Estimation of the refractive index of the semicircular prism used in the experiment, using a linearly increasing model for the error}
+        \label{fig:new_weighted_average}
     \end{figure}
