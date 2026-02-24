@@ -23,8 +23,8 @@ and plot it against $\theta_1$ we get figure \ref{fig:weighted_average}.
         \label{fig:weighted_average}
     \end{figure}
 It is to be noted, that we under the experiment noticed severe stretching of the laser when it hit the detector at large angles of incidence, which meant that we were not able to measure the entire laser beam, and also that the uncertainty of our angle measurements increased with the angle of incidence.
-We have not taken this into consideration in the data analysis, and have instead run with an error $\sigma_\theta = 0.25$, since the scale had 0.5 degree increments. 
-If we attempt to include a primitive model of how this uncertainty increases with angle, using $\sigma_\theta = 0.25 + \frac{\theta_1}{\max(\theta_1)}$, we instead get figure \ref{fig:new_weighted_average}.
+We have not taken this into consideration in the data analysis, and have instead run with an error $\sigma_\theta = 0.5$, since the scale had 1 degree increments. 
+If we attempt to include a primitive model of how this uncertainty increases with angle, using $\sigma_\theta = 0.5 + \frac{\theta_1}{\max(\theta_1)}$, we instead get figure \ref{fig:new_weighted_average}.
    \begin{figure}[h]
         \includegraphics[width=0.95\textwidth]{figures/New Weighted Average.png}
         \centering
@@ -35,6 +35,8 @@ As can be seem from the figures, in each case we get quite different indices of 
 We will therefore be using the index of refraction measured in one experiment, in the Fresnell equations for the same experiment, as we do not know which is more accurate.
 If this is done, and we use the intensity measured without the glass $V_0$, as the baseline for $R$ and $T$, i.e $R = \frac{V_R}{V_0}$ and $T = \frac{V_T}{V_0}$, we get a really poor correlation, probably because we aren't catching all of the light as mentioned earlier.
 What works way better is using $R = \frac{V_R}{V_R + V_I}$ and $T = \frac{V_T}{V_R + V_T}$, that is, since $V_R$ and $V_T$ together isn't the total intensity from the laser, we instead assume that $V_T = \alpha \tilde{V_T}$ and $V_R = \alpha \tilde{V_R}$ meaning that they are somehow reduced by a constant factor $\alpha(\theta_1)$ from what they are supposed to be, because then the ratios $R$ and $T$ would be unchanged.
+These new definitions make for the following standard deviations
+\[\sigma_R = \sigma_T = \sqrt{\left( \frac{V_R}{V_R + V_T} \sigma_{V_T} \right)^2 + \left( \frac{V_T}{V_R + V_T} \sigma_{V_R} \right)^2} = \sqrt{\frac{V_T^2\sigma_{V_R}^2 + V_R^2\sigma_{V_T}^2 }{(V_R + V_T)^2}}\]
 This results in figure \ref{fig:fresnell_comparison}. 
    \begin{figure}[h]
         \includegraphics[width=0.95\textwidth]{figures/GlassToAirIntensity.png}
@@ -43,4 +45,5 @@ This results in figure \ref{fig:fresnell_comparison}.
         \caption{Fresnell equation expectations compared to measurements, using $V_0 = V_R + V_T$}
         \label{fig:fresnell_comparison}
     \end{figure}
+    The errors in 
 
