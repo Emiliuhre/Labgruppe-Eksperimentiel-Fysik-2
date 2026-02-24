@@ -1,16 +1,10 @@
 \chapter{Experimental Setup}
 \section{Setup}
-    \begin{figure}[h]
-        \includegraphics[width=0.9\textwidth]{figures/EkspFys2_Ex1_setup_drawing.png}
-        \centering
-        \caption{Experimental setup measuring transmitted light (Glass to air)}
-        \label{fig:Expsetup}
-    \end{figure}
 %
    \begin{figure}[h]
         \includegraphics[width=0.95\textwidth]{figures/EkspFys2_Ex1_setup_drawing2.png}
         \centering
-        \caption{Experimental setup measuring transmitted light, reflected beam also shown}
+        \caption{Experimental setup measuring transmitted light (Glass to air)}
         \label{fig:Expsetup2}
     \end{figure}
     
@@ -25,14 +19,14 @@ For the experiment we use a 650 nm diode laser\autocite{pasco_os8525a_manual}, s
 This laser is first sent through an aperture to decrease the intensity of the light, because our sensor becomes saturated even at the lowest laser intensity.
 Afterwards it is passed through a polarizer, set to 45 degrees, such that the light is equally polarized in the p and s direction.
 Then the light passes through a semicircular piece of glass, either through the circular side, or the flat side, but in both cases aimed such that the light hits the center of the circle.
-The semicircular piece of glass is placed on a turntable, such that we can vary $\theta_1$. 
+The semicircular piece of glass is placed on a turntable, such that we can vary $\theta_i$. 
 To measure the transmitted and reflected light we have a light sensor\autocite{pasco_ci6604_manual}, that is also mounted on a turn table, such that it can be turned to catch the light at different angles.
-Both turntables have an angle scale, such that we can accurately measure the different angles. Here we do not just measure $\theta_1$ and $\theta_2$, but angles from which they can be derived.
+Both turntables have an angle scale, such that we can accurately measure the different angles. Here we do not just measure $\theta_i$ and $\theta_t$, but angles from which they can be derived.
 Before the light enters the sensor it first goes through a collimating lens, such that we can catch light that spreads out and focus it on the sensor. Finally it goes through another polarizor, set such that only p or only s polarized light can get through.
 \section{Measurements}
 Measurements of the laser intensity are taken by plugging the output from the light sensor into a PicoScope. 
 The PicoScope then measures the voltage over 1 second and calculates the mean voltage measured, together with a standard deviation. 
-The angles are measured manually by reading on the angle scale. We measure 3 angles, $\theta_1$, $\theta_d = \theta_2 - \theta _1$, and $\theta_R = 180^\circ - \theta_3 - \theta_1$, where $\theta_3$ here is the reflection angle.
+The angles are measured manually by reading on the angle scale. We measure 3 angles, $\theta_i$, $\theta_d = \theta_t \pm \theta_i$, and $\theta_R = 180^\circ - \theta_r - \theta_1$, where $\theta_r$ here is the reflection angle (where we expect $\theta_i = \theta_r$).
 \section{Execution}
 First the intensity of the laser is measured without the glass, for both s and p polarisation, as well as the background intensity.
 Then the glass is placed, such that the laser travels through its center, and we measure the two mean intensities, standard errors and 3 angles. 

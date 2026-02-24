@@ -4,15 +4,15 @@ This will be achived by using Snell's law to determine the index of refraction o
     \section{Snell's law}
         Snell's law descripe the relation between angels of incidence and refraction for light passing through different isotropic media. The law is given by
         \begin{align*}
-            n_1 \sin(\theta_1) &= n_2 \sin(\theta_2) \tag{Snell's law}
+            n_1 \sin(\theta_i) &= n_2 \sin(\theta_t) \tag{Snell's law}
         \end{align*}
-        With refractive index $n_{\textup{1}}$ for the first media and angle of incidence $\theta_{\textup{1}}$. And for the refracted light in the second media $n_{\textup{2}}$ and $\theta_{\textup{2}}$
+        With refractive index $n_{\textup{1}}$ for the first media and angle of incidence $\theta_i$. And for the refracted light in the second media $n_{\textup{2}}$ and $\theta_t$
     \section{Refractive index $n$}
         To find the refractive index of the semicircle glass we use Snell's law
         If we choose $n_1$ to be the index of the glass and $n_2 \approx 1$ for air then;
         \begin{align*}
-            \frac{n_1}{n_2} &= \frac{\sin(\theta_2)}{\theta_1}\\
-            n_1 &= \frac{\sin(\theta_1+\theta_d)}{\theta_1}\\
+            \frac{n_1}{n_2} &= \frac{\sin(\theta_t)}{\theta_i}\\
+            n_1 &= \frac{\sin(\theta_i+\theta_d)}{\theta_i}\\
         \end{align*}
     \section{$s$- and $p$-polarization}
         To understand the Fresnel relations it is usefull to understand two linear polarization-components that behave different.\\
@@ -39,11 +39,11 @@ This will be achived by using Snell's law to determine the index of refraction o
         \[
             t_s = \frac{2n_1 \cos\theta_i}{n_2 \cos\theta_i + n_1 \cos\theta_t}
         \]
-        From these relations we can derive the intensities of the reflected and refracted light by knowing that $R=r^2$ and $T=\frac{\cos{\theta_2}}{\cos{\theta_1}}\frac{n_2}{n_1}\:t^2$.
+        From these relations we can derive the intensities of the reflected and refracted light by knowing that $R=r^2$ and $T=\frac{\cos{\theta_t}}{\cos{\theta_i}}\frac{n_2}{n_1}\:t^2$.
         \begin{align*}
-            R_{\textup{p}} &= \frac{\tan^{2}(\theta_{\textup{1}} - \theta_{\textup{2}})}{\tan^{2}(\theta_{\textup{1}} + \theta_{\textup{2}})}\tag{1}\\
-            R_{\textup{s}} &= \frac{\sin^{2}(\theta_{\textup{1}} - \theta_{\textup{2}})}{\sin^{2}(\theta_{\textup{1}} + \theta_{\textup{2}})}\tag{2}\\
-            T_{\textup{p}} &= \frac{\sin{2\theta_{\textup{1}}}\sin{2\theta_{\textup{2}}}}{\sin^{2}(\theta_{\textup{1}} + \theta_{\textup{2}})\cos^{2}(\theta_{\textup{1}} - \theta_{\textup{2}})}\tag{3}\\
-            T_{\textup{s}} &= \frac{\sin{2\theta_{\textup{1}}}\sin{2\theta_{\textup{2}}}}{\sin^{2}(\theta_{\textup{1}} + \theta_{\textup{2}})}\tag{4}
+            R_{\textup{p}} &= \frac{\tan^{2}(\theta_i - \theta_t)}{\tan^{2}(\theta_i + \theta_t)}\tag{1}\\
+            R_{\textup{s}} &= \frac{\sin^{2}(\theta_i - \theta_t)}{\sin^{2}(\theta_i + \theta_t)}\tag{2}\\
+            T_{\textup{p}} &= \frac{\sin{2\theta_i}\sin{2\theta_t}}{\sin^{2}(\theta_i + \theta_t)\cos^{2}(\theta_i - \theta_t)}\tag{3}\\
+            T_{\textup{s}} &= \frac{\sin{2\theta_i}\sin{2\theta_t}}{\sin^{2}(\theta_i + \theta_t)}\tag{4}
             \intertext{Where reflection and transmission add up to one: $R+T = 1$}
         \end{align*}

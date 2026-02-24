@@ -35,9 +35,9 @@ As can be seem from the figures, in each case we get quite different indices of 
 We will therefore be using the index of refraction measured in one experiment, in the Fresnell equations for the same experiment, as we do not know which is more accurate.
 If this is done, and we use the intensity measured without the glass $V_0$, as the baseline for $R$ and $T$, i.e $R = \frac{V_R}{V_0}$ and $T = \frac{V_T}{V_0}$, we get a really poor correlation, probably because we aren't catching all of the light as mentioned earlier.
 What works way better is using $R = \frac{V_R}{V_R + V_I}$ and $T = \frac{V_T}{V_R + V_T}$, that is, since $V_R$ and $V_T$ together isn't the total intensity from the laser, we instead assume that $V_T = \alpha \tilde{V_T}$ and $V_R = \alpha \tilde{V_R}$ meaning that they are somehow reduced by a constant factor $\alpha(\theta_1)$ from what they are supposed to be, because then the ratios $R$ and $T$ would be unchanged.
-These new definitions make for the following standard deviations
+These new definitions make for the following standard deviations, and figure \ref{fig:fresnell_comparison}. 
 \[\sigma_R = \sigma_T = \sqrt{\left( \frac{V_R}{V_R + V_T} \sigma_{V_T} \right)^2 + \left( \frac{V_T}{V_R + V_T} \sigma_{V_R} \right)^2} = \sqrt{\frac{V_T^2\sigma_{V_R}^2 + V_R^2\sigma_{V_T}^2 }{(V_R + V_T)^2}}\]
-This results in figure \ref{fig:fresnell_comparison}. 
+Here $\sigma_{V_T}$ and $\sigma_{V_R}$ is the uncertainty in the measurement from the light sensor. They are really small, and therefore the resulting uncertainty in $R$ and $T$ also become really small. 
    \begin{figure}[h]
         \includegraphics[width=0.95\textwidth]{figures/GlassToAirIntensity.png}
         \includegraphics[width=0.95\textwidth]{figures/AirToGlassIntensity.png}
@@ -45,5 +45,5 @@ This results in figure \ref{fig:fresnell_comparison}.
         \caption{Fresnell equation expectations compared to measurements, using $V_0 = V_R + V_T$}
         \label{fig:fresnell_comparison}
     \end{figure}
-    The errors in 
+
 
