@@ -6,12 +6,14 @@ To find the error of our measurement of the refractive index we calculate the pr
 In the case of refraction from glass to air $n = \frac{\sin(\theta_2)}{\sin(\theta_1)} = \frac{\sin(\theta_d + \theta_1)}{\sin(\theta_1)}$ and therefore
 \begin{align*}
     \sigma_n &= \sqrt{\left(\frac{\partial n}{\partial \theta_1} \sigma_{\theta_1} \right)^2 + \left(\frac{\partial n}{\partial \theta_d} \sigma_{\theta_d} \right)^2} \\
-    &=  \sqrt{\left( \frac{\cos(\theta_d + \theta_1)\sin(\theta_1) - \cos(\theta_1)\sin(\theta_d + \theta_1)}{\sin(\theta_1)^2} \sigma_{\theta_1} \right)^2 + \left(\frac{\cos(\theta_d + \theta_1)}{\sin(\theta_1)} \sigma_{\theta_d} \right)^2} \\
-    &= \sqrt{\left( \frac{\cos(\theta_2)\sin(\theta_1) - \cos(\theta_1)\sin(\theta_2)}{\sin(\theta_1)^2} \sigma_{\theta_1} \right)^2 + \left(\frac{\cos(\theta_2)}{\sin(\theta_1)} \sigma_{\theta_d} \right)^2} \\
+    % &=  \left(\left( \frac{\cos(\theta_d + \theta_1)\sin(\theta_1) - \cos(\theta_1)\sin(\theta_d + \theta_1)}{\sin(\theta_1)^2} \sigma_{\theta_1} \right)^2 + \left(\frac{\cos(\theta_d + \theta_1)}{\sin(\theta_1)} \sigma_{\theta_d} \right)^2\right)^{1/2} \\
+    &= \left(\left( \frac{\cos(\theta_2)\sin(\theta_1) - \cos(\theta_1)\sin(\theta_2)}{\sin(\theta_1)^2} \sigma_{\theta_1} \right)^2\right.\\
+    &\quad + \left.\left(\frac{\cos(\theta_2)}{\sin(\theta_1)} \sigma_{\theta_d} \right)^2\right)^{1/2} \\
 \intertext{from air to glass $n = \frac{\sin(\theta_1)}{\sin(\theta_2)} = \frac{\sin(\theta_1)}{\sin(\theta_1 - \theta_d)}$ so}
     \sigma_n &= \sqrt{\left(\frac{\partial n}{\partial \theta_1} \sigma_{\theta_1} \right)^2 + \left(\frac{\partial n}{\partial \theta_d} \sigma_{\theta_d} \right)^2} \\
-    &=  \sqrt{\left( \frac{\cos(\theta_1)\sin(\theta_d + \theta_1) - \cos(\theta_d + \theta_1)\sin(\theta_1)}{\sin(\theta_d + \theta_1)^2} \sigma_{\theta_1} \right)^2 + \left(\frac{\sin(\theta_1)\cos(\theta_d + \theta_1)}{\sin(\theta_d + \theta_1)^2} \sigma_{\theta_d} \right)^2} \\
-    &=  \sqrt{\left( \frac{\cos(\theta_1)\sin(\theta_2) - \cos(\theta_2)\sin(\theta_1)}{\sin(\theta_2)^2} \sigma_{\theta_1} \right)^2 + \left(\frac{\sin(\theta_1)\cos(\theta_2)}{\sin(\theta_2)^2} \sigma_{\theta_d} \right)^2} \\
+    % &=  \sqrt{\left( \frac{\cos(\theta_1)\sin(\theta_d + \theta_1) - \cos(\theta_d + \theta_1)\sin(\theta_1)}{\sin(\theta_d + \theta_1)^2} \sigma_{\theta_1} \right)^2 + \left(\frac{\sin(\theta_1)\cos(\theta_d + \theta_1)}{\sin(\theta_d + \theta_1)^2} \sigma_{\theta_d} \right)^2} \\
+    &= \left(\left( \frac{\cos(\theta_1)\sin(\theta_2) - \cos(\theta_2)\sin(\theta_1)}{\sin(\theta_2)^2} \sigma_{\theta_1} \right)^2\right.\\
+    &\quad + \left.\left(\frac{\sin(\theta_1)\cos(\theta_2)}{\sin(\theta_2)^2} \sigma_{\theta_d} \right)^2\right)^{1/2} \\
 \end{align*}
 If we use these errors to calculate a weighted mean using the following formula
 \[n_{\textup{mean}} = \frac{\sum_i \frac{n_i}{\sigma_{n_i}}}{\sum_i \sigma_{n_i}}, \quad \sigma_{n_\text{mean}}^2 = \frac{1}{\sum_i \sigma_{n_i}^{-2}}\]
@@ -37,7 +39,8 @@ If this is done, and we use the intensity measured without the glass $V_0$, as t
 What works way better is using $R = \frac{V_R}{V_R + V_I}$ and $T = \frac{V_T}{V_R + V_T}$, that is, since $V_R$ and $V_T$ together isn't the total intensity from the laser, we instead assume that $V_T = \alpha \tilde{V_T}$ and $V_R = \alpha \tilde{V_R}$ meaning that they are somehow reduced by a constant factor $\alpha(\theta_1)$ from what they are supposed to be, because then the ratios $R$ and $T$ would be unchanged.
 These new definitions make for the following standard deviations, and figure \ref{fig:fresnell_comparison}. 
 \begin{align*}
-\sigma_R &= \sigma_T = \sqrt{\left( \frac{V_R}{V_R + V_T} \sigma_{V_T} \right)^2 + \left( \frac{V_T}{V_R + V_T} \sigma_{V_R} \right)^2}\\
+\sigma_R &= \sigma_T\\ 
+&= \sqrt{\left( \frac{V_R}{V_R + V_T} \sigma_{V_T} \right)^2 + \left( \frac{V_T}{V_R + V_T} \sigma_{V_R} \right)^2}\\
 &= \sqrt{\frac{V_T^2\sigma_{V_R}^2 + V_R^2\sigma_{V_T}^2 }{(V_R + V_T)^2}}
 \end{align*}
 Here $\sigma_{V_T}$ and $\sigma_{V_R}$ is the uncertainty in the measurement from the light sensor. They are really small, and therefore the resulting uncertainty in $R$ and $T$ also become really small. 
