@@ -1,53 +1,70 @@
 \chapter{Experimental Setup}
 \section{Setup}
 %
-   \begin{figure*}
-        \includegraphics[width=0.80\textwidth]{figures/EkspFys2_Ex1_setup_drawing_GlassToAir.png}
-        \centering
-        \caption{Experimental setup measuring transmitted light (Glass to air)}
-        \label{fig:ExpsetupGlassToAir}
-    \end{figure*}
-    
-    \begin{figure*}
-        \includegraphics[width=0.80\textwidth]{figures/EkspFys2_Ex1_setup_drawing_AirToGlass.png}
-        \centering
-        \caption{Experimental setup measuring transmitted light (Air to glass)}
-        \label{fig:ExpsetupAirToGlass}
-    \end{figure*}
 
-For the experiment we use a 650 nm diode laser\autocite{pasco_os8525a_manual}, such that the wavelength is somewhat constant. 
-This laser is first sent through an aperture to decrease the intensity of the light, by obstructing some, because our sensor becomes saturated even at the lowest laser intensity.
-Afterwards the beam is passed through a polarizer, set to 45 degrees, such that the light is equally polarized in the $p$- and $s$-direction.
-Then the light passes through a semicircular piece of glass, either hitting the curved side, or the flat side first, but in both cases aimed such that the light passes the center of the circle.
-The semicircular piece of glass is placed on a turntable, such that we can vary $\theta_i$. 
-Hitting the center of the would-be circle ensures that the beam is normal to the curved side despite rotation of the semi-circle.
+For the experiment we use a 650 nm diode laser\autocite{pasco_os8525a_manual}, so the wavelength is somewhat constant. 
+This laser is first sent through an aperture to decrease the intensity of the light, by \mbox{obstructing} some, because our sensor becomes saturated even at the lowest laser intensity.
+Afterwards the beam is passed through a polarizer, set to 45 degrees, so the light is equally polarized in the $p$- and $s$-direction.
+Then the light passes through a semicircular piece of glass, either hitting the curved side, or the flat side first, but in both cases the light is aimed to pass through the center of the circle.
 %
 \begin{figure}[h]
-        \includegraphics[width=0.48\textwidth]{figures/LaserSetup.jpg}
-        \centering
-        \caption{First part of the setup with the laser}
-        \label{fig:LaserSetup}
-    \end{figure}
-%    
-    \begin{figure}[h]
-        \includegraphics[width=0.48\textwidth]{figures/SensorSetup.jpg}
-        \centering
-        \caption{Second part of the setup with the sensor}
-        \label{fig:SensorSetup}
-    \end{figure}
+    \includegraphics[width=0.38\textwidth]{figures/EkspFys2_Ex1_setup_drawing_AirToGlass_thetad.png}
+    \centering
+    \caption{Marking of $\theta_d$ in the setup}
+    \label{fig:Thetad}
+\end{figure}
 %
-To measure the transmitted and reflected light we have a light sensor\autocite{pasco_ci6604_manual}, that is also mounted on a turn table, such that it can be turned to catch the light at different angles.
-Both turntables have an angle scale, such that we can accurately measure the different angles. Here we do not just measure $\theta_i$ and $\theta_t$, but angles from which they can be derived.
-Before the light enters the sensor it first goes through a collimating lens, such that we can catch light that spreads out and focus it on the sensor. Finally it goes through another polarizor, set such that only $p$- or $s$-polarized light respectively can get through.
+The semicircular piece of glass is placed on a turntable, in order to have a variable $\theta_i$. 
+Hitting the center of the would-be circle ensures that the beam is normal to the curved side despite rotation of the semi-circle.
+%
+To measure the transmitted and reflected light we have a light sensor\autocite{pasco_ci6604_manual}, that is also mounted on a turn table, so it can be turned to catch the light at different angles.
+Both turntables have marked angles in degrees to accurately measure the different angles. 
+At the execution of the \mbox{experiment} $\theta_i$ and an angle $\theta_d$ was measured.
+$\theta_t$ was calculated with the relation $\theta_t = \theta_i \pm \theta_d$ \mbox{illustrated} by figure \ref{fig:Thetad}.
+%
+Before the light enters the sensor it first goes through a collimating lens, to catch the light that spreads out and focus it on the sensor. 
+Finally it goes through another polarizor, set such that only $p$- or $s$-polarized light respectively goes through.
 %
 \section{Measurements}
 Measurements of the laser intensity are taken by a photodiode detector plugged into a PicoScope\autocite{PicoScope3203D}. 
-The PicoScope measures the voltage over 1 second and calculates the mean voltage measured, together with a standard deviation.  
+The PicoScope measures the voltage over 1 second and calculates the mean voltage measured, along with a standard deviation.  
 The measured voltage in the photodiode detector is proportional to the laser intensity. 
-The angles are measured manually by reading on the angle scale. We measure 3 angles, $\theta_i$, $\theta_d = \theta_t \pm \theta_i$, and $\theta_R = 180^\circ - \theta_r - \theta_1$, where $\theta_r$ here is the reflection angle (where we expect $\theta_i = \theta_r$).
+The angles are measured manually by reading on the angle scale. We measure 3 angles, $\theta_i$, $\theta_d = \theta_t \pm \theta_i$, and $\theta_R = 180^\circ - \theta_r - \theta_1$, where $\theta_r$ is the reflection angle (we expect $\theta_i = \theta_r$).
+%
+% Spørg William hvad der sker med $\theta_R = 180^\circ - \theta_r - \theta_1$, er det rigtigt?
 %
 \section{Execution}
 First the intensity of the laser is measured without the glass, for both $s$- and $p$-polarisation, as well as the background intensity.
-Then the glass is placed, such that the laser travels through its center, and we measure the two mean intensities, standard errors and 3 angles. 
-We then wary the angle of incidence, starting at 0 degrees, and moving in 5 degree increments up to 80 degrees. For each angle, we measure both the refracted and reflected beam, for both $s$- and $p$-polarized light.
+Then the glass is placed, such that the laser \mbox{travels} through its center, and we measure the two mean intensities, standard errors and 3 angles. 
+We then wary the angle of incidence, starting at 0 degrees, and moving in 5 degree increments up to 80 degrees. 
+For each angle, we measure both the refracted and reflected beam, for both $s$- and $p$-polarized light.
 We repeat this experiment twice, one where the light first hits the curved side, and one where it first hits the flat side.
+
+\begin{figure*}
+    \includegraphics[width=0.82\textwidth]{figures/EkspFys2_Ex1_setup_drawing_GlassToAir.png}
+    \centering
+    \caption{Experimental setup measuring transmitted light (Glass to air)}
+    \label{fig:ExpsetupGlassToAir}
+\end{figure*}
+    
+\begin{figure*}
+    \includegraphics[width=0.82\textwidth]{figures/EkspFys2_Ex1_setup_drawing_AirToGlass.png}
+    \centering
+    \caption{Experimental setup measuring transmitted light (Air to glass)}
+    \label{fig:ExpsetupAirToGlass}
+\end{figure*}
+
+    %
+\begin{figure}[htbp]
+    \includegraphics[height=0.35\textwidth]{figures/LaserSetup.jpg}
+    \centering
+    \caption{Laser part of the setup}
+    \label{fig:LaserSetup}
+\end{figure}
+%    
+\begin{figure}[htbp]
+    \includegraphics[height=0.35\textwidth]{figures/SensorSetup.jpg}
+    \centering
+    \caption{Sensor part of the setup}
+    \label{fig:SensorSetup}
+\end{figure}
