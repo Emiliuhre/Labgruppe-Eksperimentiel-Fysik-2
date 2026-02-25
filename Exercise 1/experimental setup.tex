@@ -42,12 +42,12 @@ Before the light enters the sensor it first goes through a collimating lens, suc
 %
 \section{Measurements}
 Measurements of the laser intensity are taken by a photodiode detector plugged into a PicoScope\autocite{PicoScope3203D}. 
-The PicoScope measures the voltage over 1 second and calculates the mean voltage measured, together with a standard deviation.  
+The PicoScope measures the voltage over 1 second at $10^{5}$ sampels per second and calculates the mean voltage measured, together with a standard deviation.  
 The measured voltage in the photodiode detector is proportional to the laser intensity. 
 The angles are measured manually by reading on the angle scale. We measure 3 angles, $\theta_i$, $\theta_d = \theta_t \pm \theta_i$, and $\theta_R = 180^\circ - \theta_r - \theta_1$, where $\theta_r$ here is the reflection angle (where we expect $\theta_i = \theta_r$).
 %
 \section{Execution}
 First the intensity of the laser is measured without the glass, for both $s$- and $p$-polarisation, as well as the background intensity.
 Then the glass is placed, such that the laser travels through its center, and we measure the two mean intensities, standard errors and 3 angles. 
-We then wary the angle of incidence, starting at 0 degrees, and moving in 5 degree increments up to 80 degrees. For each angle, we measure both the refracted and reflected beam, for both $s$- and $p$-polarized light.
+We then vary the angle of incidence, starting at 0 degrees, and moving in 5 degree increments up to 80 degrees. For each angle, we measure both the refracted and reflected beam, for both $s$- and $p$-polarized light.
 We repeat this experiment twice, one where the light first hits the curved side, and one where it first hits the flat side.
