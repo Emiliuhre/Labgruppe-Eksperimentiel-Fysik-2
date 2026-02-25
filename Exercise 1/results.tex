@@ -16,34 +16,37 @@ In the case of refraction from glass to air $n = \frac{\sin(\theta_2)}{\sin(\the
 If we use these errors to calculate a weighted mean using the following formula
 \[n_{\textup{mean}} = \frac{\sum_i \frac{n_i}{\sigma_{n_i}}}{\sum_i \sigma_{n_i}}, \quad \sigma_{n_\text{mean}}^2 = \frac{1}{\sum_i \sigma_{n_i}^{-2}}\]
 and plot it against $\theta_1$ we get figure \ref{fig:weighted_average}.
-   \begin{figure}[h]
+   \begin{figure*}[h]
         \includegraphics[width=0.95\textwidth]{figures/Weighted Average.png}
         \centering
         \caption{Estimation of the refractive index of the semicircular prism used in the experiment}
         \label{fig:weighted_average}
-    \end{figure}
+    \end{figure*}
 It is to be noted, that we under the experiment noticed severe stretching of the laser when it hit the detector at large angles of incidence, which meant that we were not able to measure the entire laser beam, and also that the uncertainty of our angle measurements increased with the angle of incidence.
 We have not taken this into consideration in the data analysis, and have instead run with an error $\sigma_\theta = 0.5$, since the scale had 1 degree increments. 
 If we attempt to include a primitive model of how this uncertainty increases with angle, using $\sigma_\theta = 0.5 + \frac{\theta_1}{\max(\theta_1)}$, we instead get figure \ref{fig:new_weighted_average}.
-   \begin{figure}[h]
+   \begin{figure*}[h]
         \includegraphics[width=0.95\textwidth]{figures/New Weighted Average.png}
         \centering
         \caption{Estimation of the refractive index of the semicircular prism used in the experiment, using a linearly increasing model for the error}
         \label{fig:new_weighted_average}
-    \end{figure}
+    \end{figure*}
 As can be seem from the figures, in each case we get quite different indices of refraction for the 2 different experiments.
 We will therefore be using the index of refraction measured in one experiment, in the Fresnell equations for the same experiment, as we do not know which is more accurate.
 If this is done, and we use the intensity measured without the glass $V_0$, as the baseline for $R$ and $T$, i.e $R = \frac{V_R}{V_0}$ and $T = \frac{V_T}{V_0}$, we get a really poor correlation, probably because we aren't catching all of the light as mentioned earlier.
 What works way better is using $R = \frac{V_R}{V_R + V_I}$ and $T = \frac{V_T}{V_R + V_T}$, that is, since $V_R$ and $V_T$ together isn't the total intensity from the laser, we instead assume that $V_T = \alpha \tilde{V_T}$ and $V_R = \alpha \tilde{V_R}$ meaning that they are somehow reduced by a constant factor $\alpha(\theta_1)$ from what they are supposed to be, because then the ratios $R$ and $T$ would be unchanged.
 These new definitions make for the following standard deviations, and figure \ref{fig:fresnell_comparison}. 
-\[\sigma_R = \sigma_T = \sqrt{\left( \frac{V_R}{V_R + V_T} \sigma_{V_T} \right)^2 + \left( \frac{V_T}{V_R + V_T} \sigma_{V_R} \right)^2} = \sqrt{\frac{V_T^2\sigma_{V_R}^2 + V_R^2\sigma_{V_T}^2 }{(V_R + V_T)^2}}\]
+\begin{align*}
+\sigma_R &= \sigma_T = \sqrt{\left( \frac{V_R}{V_R + V_T} \sigma_{V_T} \right)^2 + \left( \frac{V_T}{V_R + V_T} \sigma_{V_R} \right)^2}\\
+&= \sqrt{\frac{V_T^2\sigma_{V_R}^2 + V_R^2\sigma_{V_T}^2 }{(V_R + V_T)^2}}
+\end{align*}
 Here $\sigma_{V_T}$ and $\sigma_{V_R}$ is the uncertainty in the measurement from the light sensor. They are really small, and therefore the resulting uncertainty in $R$ and $T$ also become really small. 
-   \begin{figure}[h]
+   \begin{figure*}[h]
         \includegraphics[width=0.95\textwidth]{figures/GlassToAirIntensity.png}
         \includegraphics[width=0.95\textwidth]{figures/AirToGlassIntensity.png}
         \centering
         \caption{Fresnell equation expectations compared to measurements, using $V_0 = V_R + V_T$}
         \label{fig:fresnell_comparison}
-    \end{figure}
+    \end{figure*}
 
 
