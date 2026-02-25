@@ -1,4 +1,5 @@
 \chapter{Results}
+\section{Uncertainty}
 In order to compare our measurements of the lasers intensity to the Fresnel equation prediction, we need to determine the refractive index.
 This is determinable using Snell's law, and the fact that air has refractive index approximately equal to 1.
 To get a good estimate however, we first need to find the errors of measurement. 
@@ -15,6 +16,8 @@ In the case of refraction from glass to air $n = \frac{\sin(\theta_2)}{\sin(\the
     &= \left(\left( \frac{\cos(\theta_1)\sin(\theta_2) - \cos(\theta_2)\sin(\theta_1)}{\sin(\theta_2)^2} \sigma_{\theta_1} \right)^2\right.\\
     &\quad + \left.\left(\frac{\sin(\theta_1)\cos(\theta_2)}{\sin(\theta_2)^2} \sigma_{\theta_d} \right)^2\right)^{1/2} \\
 \end{align*}
+\section{Data}
+\subsection{The refractive index}
 If we use these errors to calculate a weighted mean using the following formula
 \[n_{\textup{mean}} = \frac{\sum_i \frac{n_i}{\sigma_{n_i}}}{\sum_i \sigma_{n_i}}, \quad \sigma_{n_\text{mean}}^2 = \frac{1}{\sum_i \sigma_{n_i}^{-2}}\]
 and plot it against $\theta_1$ we get figure \ref{fig:weighted_average}.
@@ -34,7 +37,9 @@ If we attempt to include a primitive model of how this uncertainty increases wit
         \label{fig:new_weighted_average}
     \end{figure*}
 As can be seem from the figures, in each case we get quite different indices of refraction for the 2 different experiments.
-We will therefore be using the index of refraction measured in one experiment, in the Fresnell equations for the same experiment, as we do not know which is more accurate.
+We will therefore be using the index of refraction measured in one experiment, in the Fresnel equations for the same experiment, as we do not know which is more accurate.
+\vspace*{-1.3em}
+\subsection{The Fresnel equation}
 If this is done, and we use the intensity measured without the glass $V_0$, as the baseline for $R$ and $T$, i.e $R = \frac{V_R}{V_0}$ and $T = \frac{V_T}{V_0}$, we get a really poor correlation, probably because we aren't catching all of the light as mentioned earlier.
 What works way better is using $R = \frac{V_R}{V_R + V_I}$ and $T = \frac{V_T}{V_R + V_T}$, that is, since $V_R$ and $V_T$ together isn't the total intensity from the laser, we instead assume that $V_T = \alpha \tilde{V_T}$ and $V_R = \alpha \tilde{V_R}$ meaning that they are somehow reduced by a constant factor $\alpha(\theta_1)$ from what they are supposed to be, because then the ratios $R$ and $T$ would be unchanged.
 These new definitions make for the following standard deviations, and figure \ref{fig:fresnell_comparison}. 
@@ -48,7 +53,7 @@ Here $\sigma_{V_T}$ and $\sigma_{V_R}$ is the uncertainty in the measurement fro
         \includegraphics[width=0.95\textwidth]{figures/GlassToAirIntensity.png}
         \includegraphics[width=0.95\textwidth]{figures/AirToGlassIntensity.png}
         \centering
-        \caption{Fresnell equation expectations compared to measurements, using $V_0 = V_R + V_T$}
+        \caption{Fresnel equation expectations compared to measurements, using $V_0 = V_R + V_T$}
         \label{fig:fresnell_comparison}
     \end{figure*}
 
