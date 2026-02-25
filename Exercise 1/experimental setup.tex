@@ -27,7 +27,11 @@ Finally it goes through another polarizor, set such that only $p$- or $s$-polari
 %
 \section{Measurements}
 Measurements of the laser intensity are taken by a photodiode detector plugged into a PicoScope\autocite{PicoScope3203D}. 
+<<<<<<< HEAD
 The PicoScope measures the voltage over 1 second and calculates the mean voltage measured, along with a standard deviation.  
+=======
+The PicoScope measures the voltage over 1 second at $10^{5}$ sampels per second and calculates the mean voltage measured, together with a standard deviation.  
+>>>>>>> 30966f5710ebffcad2875453ecbe0264c7b65a22
 The measured voltage in the photodiode detector is proportional to the laser intensity. 
 The angles are measured manually by reading on the angle scale. We measure 3 angles, $\theta_i$, $\theta_d = \theta_t \pm \theta_i$, and $\theta_R = 180^\circ - \theta_r - \theta_1$, where $\theta_r$ is the reflection angle (we expect $\theta_i = \theta_r$).
 %
@@ -35,6 +39,7 @@ The angles are measured manually by reading on the angle scale. We measure 3 ang
 %
 \section{Execution}
 First the intensity of the laser is measured without the glass, for both $s$- and $p$-polarisation, as well as the background intensity.
+<<<<<<< HEAD
 Then the glass is placed, such that the laser \mbox{travels} through its center, and we measure the two mean intensities, standard errors and 3 angles. 
 We then wary the angle of incidence, starting at 0 degrees, and moving in 5 degree increments up to 80 degrees. 
 For each angle, we measure both the refracted and reflected beam, for both $s$- and $p$-polarized light.
@@ -68,3 +73,8 @@ We repeat this experiment twice, one where the light first hits the curved side,
     \caption{Sensor part of the setup}
     \label{fig:SensorSetup}
 \end{figure}
+=======
+Then the glass is placed, such that the laser travels through its center, and we measure the two mean intensities, standard errors and 3 angles. 
+We then vary the angle of incidence, starting at 0 degrees, and moving in 5 degree increments up to 80 degrees. For each angle, we measure both the refracted and reflected beam, for both $s$- and $p$-polarized light.
+We repeat this experiment twice, one where the light first hits the curved side, and one where it first hits the flat side.
+>>>>>>> 30966f5710ebffcad2875453ecbe0264c7b65a22
