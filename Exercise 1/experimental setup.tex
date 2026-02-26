@@ -10,7 +10,7 @@ Then the light passes through a semicircular piece of glass, either hitting the 
 \begin{figure}[h]
     \includegraphics[width=0.38\textwidth]{figures/EkspFys2_Ex1_setup_drawing_AirToGlass_thetad.png}
     \centering
-    \caption{Marking of $\theta_d$ in the setup}
+    \caption{Marking of $\theta_d$ in the setup, in the case of refraction from air to glass}
     \label{fig:Thetad}
 \end{figure}
 %
@@ -19,8 +19,6 @@ Hitting the center of the would-be circle ensures that the beam is normal to the
 %
 To measure the transmitted and reflected light we have a light sensor\autocite{pasco_ci6604_manual}, that is also mounted on a turn table, so it can be turned to catch the light at different angles.
 Both turntables have marked angles in degrees to accurately measure the different angles. 
-At the execution of the \mbox{experiment} $\theta_i$ and an angle $\theta_d$ was measured.
-$\theta_t$ was calculated with the relation $\theta_t = \theta_i \pm \theta_d$ \mbox{illustrated} by figure \ref{fig:Thetad}.
 %
 Before the light enters the sensor it first goes through a collimating lens, to catch the light that spreads out and focus it on the sensor. 
 Finally it goes through another polarizor, set such that only $p$- or $s$-polarized light respectively goes through.
@@ -29,7 +27,7 @@ Finally it goes through another polarizor, set such that only $p$- or $s$-polari
 Measurements of the laser intensity are taken by a photodiode detector plugged into a PicoScope\autocite{PicoScope3203D}. 
 The PicoScope measures the voltage over 1 second at $10^{5}$ sampels per second and calculates the mean voltage measured, together with a standard deviation.  
 The measured voltage in the photodiode detector is proportional to the laser intensity. 
-The angles are measured manually by reading on the angle scale. We measure 3 angles, $\theta_i$, $\theta_d = \theta_t \pm \theta_i$, and $\theta_R = 180^\circ - \theta_r - \theta_1$, where $\theta_r$ is the reflection angle (we expect $\theta_i = \theta_r$).
+The angles are measured manually by reading on the angle scale. We measure 3 angles, $\theta_i$, $\theta_d = \theta_t \pm \theta_i$ (see figure \ref{fig:Thetad}), and $\theta_R = 180^\circ - \theta_r - \theta_1$, where $\theta_r$ is the reflection angle (we expect $\theta_i = \theta_r$).
 %
 % Spørg William hvad der sker med $\theta_R = 180^\circ - \theta_r - \theta_1$, er det rigtigt?
 %
