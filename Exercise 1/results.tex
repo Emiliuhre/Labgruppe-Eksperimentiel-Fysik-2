@@ -14,7 +14,7 @@ In the case of refraction from glass to air $n = \frac{\sin(\theta_2)}{\sin(\the
     \sigma_n &= \sqrt{\left(\frac{\partial n}{\partial \theta_1} \sigma_{\theta_1} \right)^2 + \left(\frac{\partial n}{\partial \theta_d} \sigma_{\theta_d} \right)^2} \\
     % &=  \sqrt{\left( \frac{\cos(\theta_1)\sin(\theta_d + \theta_1) - \cos(\theta_d + \theta_1)\sin(\theta_1)}{\sin(\theta_d + \theta_1)^2} \sigma_{\theta_1} \right)^2 + \left(\frac{\sin(\theta_1)\cos(\theta_d + \theta_1)}{\sin(\theta_d + \theta_1)^2} \sigma_{\theta_d} \right)^2} \\
     &= \left(\left( \frac{\cos(\theta_1)\sin(\theta_2) - \cos(\theta_2)\sin(\theta_1)}{\sin(\theta_2)^2} \sigma_{\theta_1} \right)^2\right.\\
-    &\quad + \left.\left(\frac{\sin(\theta_1)\cos(\theta_2)}{\sin(\theta_2)^2} \sigma_{\theta_d} \right)^2\right)^{1/2} \\
+    &\quad + \left.\left(\frac{\sin(\theta_1)\cos(\theta_2)}{\sin(\theta_2)^2} \sigma_{\theta_d} \right)^2\right)^{1/2}. \\
 \end{align*}
 \section{Data}
 \subsection{The refractive index}
@@ -37,11 +37,19 @@ If we attempt to include a primitive model of how this uncertainty increases wit
         \label{fig:new_weighted_average}
     \end{figure*}
 As can be seem from the figures, in each case we get quite different indices of refraction for the 2 different experiments.
-We will therefore be using the index of refraction measured in one experiment, in the Fresnel equations for the same experiment, as we do not know which is more accurate.
+We will therefore be using the index of refraction measured in one experiment (as in air to glass or glass to air), in the Fresnel equations for the same experiment, as we do not know which is more accurate.
 \vspace*{-1.3em}
 \subsection{The Fresnel equation}
-If this is done, and we use the intensity measured without the glass $V_0$, as the baseline for $R$ and $T$, i.e $R = \frac{V_R}{V_0}$ and $T = \frac{V_T}{V_0}$, we get a really poor correlation, probably because we aren't catching all of the light as mentioned earlier.
-What works way better is using $R = \frac{V_R}{V_R + V_I}$ and $T = \frac{V_T}{V_R + V_T}$, that is, since $V_R$ and $V_T$ together isn't the total intensity from the laser, we instead assume that $V_T = \alpha \tilde{V_T}$ and $V_R = \alpha \tilde{V_R}$ meaning that they are somehow reduced by a constant factor $\alpha(\theta_1)$ from what they are supposed to be, because then the ratios $R$ and $T$ would be unchanged.
+If we subtract the background intensity (measured once at the beginning of the experiment for both s and p polarisation) from all the data points $V'_i$, for $i = R,T$ such that $V_i = V'_i - V_{\text{background}}$ and we then use the intensity measured without the glass (also measured independently for s and p polarisation) $V_{0} = V_{0}' - V_{\text{background}}$, as the baseline for $R$ and $T$, i.e $R = \frac{V_R}{V_0}$ and $T = \frac{V_T}{V_0}$, we get a really poor agreement between data and the expected values shown in \ref{fig:bad_fresnel_comparison}, probably because we aren't catching all of the light as mentioned earlier.
+   \begin{figure*}[h]
+        % Få emil til at lave grafer, og husk at få ordentlige errors på
+        \includegraphics[width=0.95\textwidth]{figures/BadGlassToAirIntensity.png}
+        \includegraphics[width=0.95\textwidth]{figures/BadAirToGlassIntensity.png}
+        \centering
+        \caption{Fresnel equation expectations compared to measurements, using the measured $V_0$ as baseline}
+        \label{fig:bad_fresnel_comparison}
+    \end{figure*}
+What works way better is using $R = \frac{V_R}{V_R + V_T}$ and $T = \frac{V_T}{V_R + V_T}$, that is, since $V_R$ and $V_T$ together isn't the total intensity from the laser, we instead assume that $V_T = \alpha \tilde{V_T}$ and $V_R = \alpha \tilde{V_R}$ meaning that they are somehow reduced by a constant factor $\alpha(\theta_1)$ from what they are supposed to be, because then the ratios $R$ and $T$ would be unchanged.
 These new definitions make for the following standard deviations, and figure \ref{fig:fresnell_comparison}. 
 \begin{align*}
 \sigma_R &= \sigma_T\\ 
@@ -56,5 +64,5 @@ Here $\sigma_{V_T}$ and $\sigma_{V_R}$ is the uncertainty in the measurement fro
         \caption{Fresnel equation expectations compared to measurements, using $V_0 = V_R + V_T$}
         \label{fig:fresnell_comparison}
     \end{figure*}
-
+% AFSNIT OMKRING FITTET
 
