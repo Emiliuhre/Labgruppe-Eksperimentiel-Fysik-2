@@ -63,6 +63,23 @@ Here $\sigma_{V_T}$ and $\sigma_{V_R}$ is the uncertainty in the measurement fro
         \centering
         \caption{Fresnel equation expectations compared to measurements, using $V_0 = V_R + V_T$}
         \label{fig:fresnell_comparison}
-    \end{figure*}
-% AFSNIT OMKRING FITTET
-
+    \end{figure*}\\
+A different approach was also tried for for a sanity check which should have resulted in a refractive index close to those reached with the weighted mean.
+As earlier an reflective index of air being equal to one and with Snell's Law the Fresnel Equations can be rewritten as only being dependent on the angle of incidence $\theta_{\textup{i}}$ and the refractive index of the second media $n_{\textup{2}}$.
+Using the Levenberg-Marquardt algorithm thorugh \textit{scipy}'s \textit{curve\_fit} function. It was possible to fit a function over a set of fixed set of incidence angles and optimizing for the best fitting $n_{\textup{2}}$ the following indices for each set seen in table 1 was achived.
+\begin{table}[!ht]
+    \caption{Reflective indices from the Levenberg-Marquardt algorithm. The uncertainty $\sigma$ is the the numercial uncertainty returned from the \textit{curve\_fit} function}
+    \label{tab:photometry}
+    \centering
+    \begin{tabular}{lcc}
+        \hline\hline
+        Dataset & $n$ & $\sigma$ \\
+        \hline
+        \rule{0pt}{1.1em}\noindent
+        $R_{\textup{p}}$ & 1,3042948 & 0,023701 \\
+        $T_{\textup{p}}$ & 1,3042913 & 0,023700 \\
+        $R_{\textup{s}}$ & 1,3042963 & 0,023700 \\
+        $T_{\textup{s}}$ & 1,3042898 & 0,023683 \\
+        \hline
+    \end{tabular}
+\end{table}
