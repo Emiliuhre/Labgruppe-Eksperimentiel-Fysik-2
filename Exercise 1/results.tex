@@ -65,11 +65,17 @@ Here $\sigma_{V_T}$ and $\sigma_{V_R}$ is the uncertainty in the measurement fro
         \label{fig:fresnell_comparison}
     \end{figure*}\\
 A different approach was also tried for for a sanity check which should have resulted in a refractive index close to those reached with the weighted mean.
-As earlier an reflective index of air being equal to one and with Snell's Law the Fresnel Equations can be rewritten as only being dependent on the angle of incidence $\theta_{\textup{i}}$ and the refractive index of the second media $n_{\textup{2}}$.
-Using the Levenberg-Marquardt algorithm thorugh \textit{scipy}'s \textit{curve\_fit} function. It was possible to fit a function over a set of fixed set of incidence angles and optimizing for the best fitting $n_{\textup{2}}$ the following indices for each set seen in table 1 was achived.
+As earlier an reflective index of air being equal to one and with Snell's Law the Fresnel Equations can be rewritten as only being dependent on the angle of incidence $\theta_{\textup{i}}$ and the refractive index of the second media $n_{\textup{2}}$. 
+As can be seen in the following equations where $\Phi = \sin^{-1}\left(\frac{n_{\textup{1}}}{n_{\textup{2}}} \cdot \sin\theta_i\right)$
+\begin{align*}
+            R_{\textup{p}} &= \frac{\tan^{2}(\theta_i - \Phi)}{\tan^{2}(\theta_i + \Phi)}\\
+            R_{\textup{s}} &= \frac{\sin^{2}(\theta_i - \Phi)}{\sin^{2}(\theta_i + \Phi)}\\
+            T_{\textup{p}} &= \frac{\sin{2\theta_i}\sin{2\Phi}}{\sin^{2}(\theta_i + \Phi)\cos^{2}(\theta_i - \Phi)}\\
+            T_{\textup{s}} &= \frac{\sin{2\theta_i}\sin{2\Phi}}{\sin^{2}(\theta_i + \Phi)}.\\
+\end{align*}
+Using the Levenberg-Marquardt algorithm through \textit{scipy}'s \textit{curve\_fit} function. It was possible to fit a function over a set of fixed set of incidence angles and optimizing for the best fitting $n_{\textup{2}}$ the following indices for each set seen in table 1 was achived.
 \begin{table}[!ht]
     \caption{Reflective indices from the Levenberg-Marquardt algorithm. The uncertainty $\sigma$ is the the numercial uncertainty returned from the \textit{curve\_fit} function}
-    \label{tab:photometry}
     \centering
     \begin{tabular}{lcc}
         \hline\hline
