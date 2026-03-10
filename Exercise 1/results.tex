@@ -22,7 +22,7 @@ If we use these errors to calculate a weighted mean using the following formula
 \[n_{\textup{mean}} = \frac{\sum_i \frac{n_i}{\sigma_{n_i}}}{\sum_i \sigma_{n_i}}, \quad \sigma_{n_\text{mean}}^2 = \frac{1}{\sum_i \sigma_{n_i}^{-2}}\]
 and plot it against $\theta_1$ we get figure \ref{fig:weighted_average}.
    \begin{figure*}[h]
-        \includegraphics[width=0.95\textwidth]{figures/Weighted Average.png}
+        \includesvg[width=0.95\textwidth]{figures/Weighted Average.svg}
         \centering
         \caption{Estimation of the refractive index of the semicircular prism used in the experiment}
         \label{fig:weighted_average}
@@ -31,7 +31,7 @@ It is to be noted, that we under the experiment noticed widening of the laser wh
 We have not taken this into consideration in the data analysis, and have instead run with an error $\sigma_\theta = 0.5$, since the scale had 1 degree increments. 
 If we attempt to include a primitive model of how this uncertainty increases with angle, using $\sigma_\theta = 0.5 + \frac{\theta_1}{\max(\theta_1)}$, we instead get figure \ref{fig:new_weighted_average}.
    \begin{figure*}[h]
-        \includegraphics[width=0.95\textwidth]{figures/New Weighted Average.png}
+        \includesvg[width=0.95\textwidth]{figures/Weighted AverageV2.svg}
         \centering
         \caption{Estimation of the refractive index of the semicircular prism used in the experiment, using a linearly increasing model for the error}
         \label{fig:new_weighted_average}
@@ -57,8 +57,8 @@ These new definitions make for the following standard deviations, and figure \re
 \end{align*}
 Here $\sigma_{V_T}$ and $\sigma_{V_R}$ is the uncertainty in the measurement from the light sensor. They are really small, and therefore the resulting uncertainty in $R$ and $T$ also become really small. 
    \begin{figure*}[h]
-        \includegraphics[width=0.95\textwidth]{figures/GlassToAirIntensity.png}
-        \includegraphics[width=0.95\textwidth]{figures/AirToGlassIntensity.png}
+        \includesvg[width=0.95\textwidth]{figures/GlassToAirIntensity.svg}
+        \includesvg[width=0.95\textwidth]{figures/AirToGlassIntensity.svg}
         \centering
         \caption{Fresnel equation expectations compared to measurements, using $V_0 = V_R + V_T$}
         \label{fig:fresnell_comparison}
