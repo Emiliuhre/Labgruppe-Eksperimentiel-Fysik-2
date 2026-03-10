@@ -42,9 +42,8 @@ We will therefore be using the index of refraction measured in one experiment (a
 \subsection{The Fresnel equation}
 If we subtract the background intensity (measured once at the beginning of the experiment for both s and p polarisation) from all the data points $V'_i$, for $i = R,T$ such that $V_i = V'_i - V_{\text{background}}$ and we then use the intensity measured without the glass (also measured independently for s and p polarisation) $V_{0} = V_{0}' - V_{\text{background}}$, as the baseline for $R$ and $T$, i.e $R = \frac{V_R}{V_0}$ and $T = \frac{V_T}{V_0}$, we get a really poor agreement between data and the expected values shown in \ref{fig:bad_fresnel_comparison}, probably because we aren't catching all of the light as mentioned earlier.
    \begin{figure*}[h]
-        % Få emil til at lave grafer, og husk at få ordentlige errors på
-        \includegraphics[width=0.95\textwidth]{figures/BadGlassToAirIntensity.png}
-        \includegraphics[width=0.95\textwidth]{figures/BadAirToGlassIntensity.png}
+        \includesvg[width=0.95\textwidth]{figures/GlassToAirIntensityBack.svg}
+        \includesvg[width=0.95\textwidth]{figures/AirToGlassIntensityBack.svg}
         \centering
         \caption{Fresnel equation expectations compared to measurements, using the measured $V_0$ as baseline}
         \label{fig:bad_fresnel_comparison}
@@ -66,14 +65,14 @@ Here $\sigma_{V_T}$ and $\sigma_{V_R}$ is the uncertainty in the measurement fro
     \end{figure*}\\
 A different approach was also tried for for a sanity check which should have resulted in a refractive index close to those reached with the weighted mean.
 As earlier an reflective index of air being equal to one and with Snell's Law the Fresnel Equations can be rewritten as only being dependent on the angle of incidence $\theta_{\textup{i}}$ and the refractive index of the second media $n_{\textup{2}}$. 
-As can be seen in the following equations where $\Phi = \sin^{-1}\left(\frac{n_{\textup{1}}}{n_{\textup{2}}} \cdot \sin\theta_i\right)$
+As can be seen in the following equations where $\Phi(\theta_{\textup{i}}, n_{\textup{1}}, n_{\textup{2}}) = \sin^{-1}\left(\frac{n_{\textup{1}}}{n_{\textup{2}}} \cdot \sin\theta_i\right) \\ \approx \Phi (\theta_{\textup{i}}, n_{\textup{2}}) = \sin^{-1}\left(\frac{1}{n_{\textup{2}}} \cdot \sin\theta_i\right)$
 \begin{align*}
-            R_{\textup{p}} &= \frac{\tan^{2}(\theta_i - \Phi)}{\tan^{2}(\theta_i + \Phi)}\\
-            R_{\textup{s}} &= \frac{\sin^{2}(\theta_i - \Phi)}{\sin^{2}(\theta_i + \Phi)}\\
-            T_{\textup{p}} &= \frac{\sin{2\theta_i}\sin{2\Phi}}{\sin^{2}(\theta_i + \Phi)\cos^{2}(\theta_i - \Phi)}\\
-            T_{\textup{s}} &= \frac{\sin{2\theta_i}\sin{2\Phi}}{\sin^{2}(\theta_i + \Phi)}.\\
+            R_{\textup{p}}(\theta_{\textup{i}}, n_{\textup{2}}) &= \frac{\tan^{2}(\theta_i - \Phi)}{\tan^{2}(\theta_i + \Phi)}\\
+            R_{\textup{s}}(\theta_{\textup{i}}, n_{\textup{2}}) &= \frac{\sin^{2}(\theta_i - \Phi)}{\sin^{2}(\theta_i + \Phi)}\\
+            T_{\textup{p}}(\theta_{\textup{i}}, n_{\textup{2}}) &= \frac{\sin{2\theta_i}\sin{2\Phi}}{\sin^{2}(\theta_i + \Phi)\cos^{2}(\theta_i - \Phi)}\\
+            T_{\textup{s}}(\theta_{\textup{i}}, n_{\textup{2}}) &= \frac{\sin{2\theta_i}\sin{2\Phi}}{\sin^{2}(\theta_i + \Phi)}.\\
 \end{align*}
-Using the Levenberg-Marquardt algorithm through \textit{scipy}'s \textit{curve\_fit} function. It was possible to fit a function over a set of fixed set of incidence angles and optimizing for the best fitting $n_{\textup{2}}$ the following indices for each set seen in table 1 was achived.
+Using the Levenberg-Marquardt algorithm through \textit{scipy}'s \textit{curve\_fit} function. It was possible to fit a function over a set of fixed set of incidence angles and optimizing for the best fitting $n_{\textup{2}}$ the following indices for each set seen in Table 1 was achived.
 \begin{table}[!ht]
     \caption{Reflective indices from the Levenberg-Marquardt algorithm. The uncertainty $\sigma$ is the the numercial uncertainty returned from the \textit{curve\_fit} function}
     \centering
