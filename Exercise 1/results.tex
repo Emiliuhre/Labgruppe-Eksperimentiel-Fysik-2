@@ -36,8 +36,23 @@ If we attempt to include a primitive model of how this uncertainty increases wit
         \caption{Estimation of the refractive index of the semicircular prism used in the experiment, using a linearly increasing model for the error}
         \label{fig:new_weighted_average}
     \end{figure*}
-As can be seem from the figures, in each case we get quite different indices of refraction for the 2 different experiments.
-We will therefore be using the index of refraction measured in one experiment (as in air to glass or glass to air), in the Fresnel equations for the same experiment, as we do not know which is more accurate.
+As can be seem from figures \ref{fig:weighted_average} and \ref{fig:new_weighted_average}, in each case we get quite different indices of refraction for the 2 different experiments.
+We will therefore be using the index of refraction measured in one experiment (as in air to glass or glass to air), in the Fresnel equations for the same experiment, as we do not know which is more accurate. We will also be using the one with the linearly increasing error, as we deem it more accurate than having a constant error, which we know to be false.
+\begin{table}[!ht]
+    \caption{Reflective indices calculated through Snells Law and a weighted average, with GA being glass to air, and AG being air to glass, and constant vs linear denoting the model for the error}
+    \centering
+    \begin{tabular}{lcc}
+        \hline\hline
+        Dataset & $n$ & $\sigma$ \\
+        \hline
+        \rule{0pt}{1.1em}\noindent
+        GA constant & 1.506 & 0.007 \\
+        AG constant & 1.424 & 0.006 \\
+        GA linear & 1.503 & 0.012 \\
+        AG linear & 1.427 & 0.014 \\
+        \hline
+    \end{tabular}
+\end{table}
 \vspace*{-1.3em}
 \subsection{The Fresnel equation}
 If we subtract the background intensity (measured once at the beginning of the experiment for both s and p polarisation) from all the data points $V'_i$, for $i = R,T$ such that $V_i = V'_i - V_{\text{background}}$ and we then use the intensity measured without the glass (also measured independently for s and p polarisation) $V_{0} = V_{0}' - V_{\text{background}}$, as the baseline for $R$ and $T$, i.e $R = \frac{V_R}{V_0}$ and $T = \frac{V_T}{V_0}$, we get a really poor agreement between data and the expected values shown in \ref{fig:bad_fresnel_comparison}, probably because we aren't catching all of the light as mentioned earlier.
@@ -81,10 +96,10 @@ Using the Levenberg-Marquardt algorithm through \textit{scipy}'s \textit{curve\_
         Dataset & $n$ & $\sigma$ \\
         \hline
         \rule{0pt}{1.1em}\noindent
-        $R_{\textup{p}}$ & 1,3042948 & 0,023701 \\
-        $T_{\textup{p}}$ & 1,3042913 & 0,023700 \\
-        $R_{\textup{s}}$ & 1,3042963 & 0,023700 \\
-        $T_{\textup{s}}$ & 1,3042898 & 0,023683 \\
+        $R_{\textup{p}}$ & 1.3042948 & 0.023701 \\
+        $T_{\textup{p}}$ & 1.3042913 & 0.023700 \\
+        $R_{\textup{s}}$ & 1.3042963 & 0.023700 \\
+        $T_{\textup{s}}$ & 1.3042898 & 0.023683 \\
         \hline
     \end{tabular}
 \end{table}
