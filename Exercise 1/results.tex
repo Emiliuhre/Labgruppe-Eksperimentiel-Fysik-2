@@ -57,8 +57,8 @@ We will therefore be using the index of refraction measured in one experiment (a
 \subsection{The Fresnel equation}
 If we subtract the background intensity (measured once at the beginning of the experiment for both s and p polarisation) from all the data points $V'_i$, for $i = R,T$ such that $V_i = V'_i - V_{\text{background}}$ and we then use the intensity measured without the glass (also measured independently for s and p polarisation) $V_{0} = V_{0}' - V_{\text{background}}$, as the baseline for $R$ and $T$, i.e $R = \frac{V_R}{V_0}$ and $T = \frac{V_T}{V_0}$, we get a really poor agreement between data and the expected values shown in \ref{fig:bad_fresnel_comparison}, probably because we aren't catching all of the light as mentioned earlier.
    \begin{figure*}[h]
-        \includesvg[width=0.95\textwidth]{figures/GlassToAirIntensityBack.svg}
-        \includesvg[width=0.95\textwidth]{figures/AirToGlassIntensityBack.svg}
+        \includesvg[width=1\textwidth]{figures/GlassToAirIntensityBack.svg}
+        \includesvg[width=1\textwidth]{figures/AirToGlassIntensityBack.svg}
         \centering
         \caption{Fresnel equation expectations compared to measurements, using the measured $V_0$ as baseline}
         \label{fig:bad_fresnel_comparison}
@@ -72,10 +72,10 @@ These new definitions make for the following standard deviations, and figure \re
 \end{align*}
 Here $\sigma_{V_T}$ and $\sigma_{V_R}$ is the uncertainty in the measurement from the light sensor. They are really small, and therefore the resulting uncertainty in $R$ and $T$ also become really small. 
    \begin{figure*}[h]
-        \includesvg[width=0.95\textwidth]{figures/GlassToAirIntensity.svg}
-        \includesvg[width=0.95\textwidth]{figures/AirToGlassIntensity.svg}
+        \includesvg[width=1\textwidth]{figures/GlassToAirIntensity.svg}
+        \includesvg[width=1\textwidth]{figures/AirToGlassIntensity.svg}
         \centering
-        \caption{Fresnel equation expectations compared to measurements, using $V_0 = V_R + V_T$}
+        \caption{Fresnel equation expectations compared to measurements, using $V_0 = V_R + V_T$. Best fit in legend refers to both fits since the approxite values are the same. But they are plottet with their respective values.}
         \label{fig:fresnell_comparison}
     \end{figure*}\\
 A different approach was also tried for for a sanity check which should have resulted in a refractive index close to those reached with the weighted mean.
@@ -96,10 +96,10 @@ Using the Levenberg-Marquardt algorithm through \textit{scipy}'s \textit{curve\_
         Dataset & $n$ & $\sigma$ \\
         \hline
         \rule{0pt}{1.1em}\noindent
-        $R_{\textup{p}}$ & 1.3042948 & 0.023701 \\
-        $T_{\textup{p}}$ & 1.3042913 & 0.023700 \\
-        $R_{\textup{s}}$ & 1.3042963 & 0.023700 \\
-        $T_{\textup{s}}$ & 1.3042898 & 0.023683 \\
+        $R_{\textup{p}}$ & 1.304295 & 0.023701 \\
+        $T_{\textup{p}}$ & 1.304291 & 0.023700 \\
+        $R_{\textup{s}}$ & 1.304296 & 0.023700 \\
+        $T_{\textup{s}}$ & 1.304290 & 0.023683 \\
         \hline
     \end{tabular}
 \end{table}
