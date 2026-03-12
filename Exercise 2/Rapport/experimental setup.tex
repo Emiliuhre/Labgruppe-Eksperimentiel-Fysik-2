@@ -1,7 +1,18 @@
 \chapter{Experimental Setup}
 \section{Setup}
-Firstly, we use a Helium Neon laser as the light source in the interferometer.
+Firstly, we use a HeNe laser as the light source in the interferometer.
 We also use 2 alignment mirrors to direct and control the light into a beam splitter, that splits the light into 2 directions.
 One hits a normal mirror, but the other hits a mirror mounted on a piezoelectric ring\autocite{thorlabs_pa44lew_datasheet_2024}. 
 This piezoelectric is controlled by a piezo-driver\autocite{thorlabs_mdt630b_datasheet_2026}, 
 which gets its signal from a function generator
+
+\begin{figure*}[h]
+    \includesvg[width=0.90\textwidth]{../Figures/interferometer_setup.svg}
+    \centering
+    \caption{Setup of the Michelson Interferometer. 
+    To show differnce in the splitted beams green and orange are used, 
+    and the mixing of the beams are shown as a dashed line of the two colors.
+    $s_1$ and $s_2(V)$ are the distances to the mirrors.
+    $s_2(V)$ vary with the voltage of the piezo.}
+    \label{fig:interferometer_setup}
+\end{figure*}
