@@ -23,12 +23,16 @@ and that we would need to redo this part of the experiment.
 
 \section{The Fresnel Equations}
 There was also the issue that a significant portion of the light disappeared somewhere, 
-so that we could not calculate the reflection and transmission coeffitients using $V_0$. 
-We are unsure as to why this is, but maybe the glass that we used absorbed alot of the light.
+as we noticed that $R + T$ was alot lower than 1 (see figure \ref{fig:bad_fresnel_comparison}) when we normalized using $V_0$.
+We are unsure as to why this is, 
+as it cannot only be a product of the large angle beam widening, because the dramatic intensity drop off happened at all angles.
+It would therefore have to be the result of something else, 
+maybe the glass that we used absorbed alot of the light, or the lens reflected some of it.
 
 In spite of this, our model that the light decreased by a constant factor for both the reflected and transmitted light, 
-seems to have worked great (which was to be expected, as we forced $R + T = 1$), as can be seen in figure \ref{fig:fresnell_comparison}, even though it is doubtful that the assumption really holds,
-so this is something we should investigate further in order to be confident in our conclusions. 
+led to great agreement between the expected and measured values, as can be seen in figure \ref{fig:fresnell_comparison}.
+Of course, this is in part thanks to us forcing $R + T = 1$ by construction, but it does not force it to vary as a function of $\theta_i$ in the way it does, 
+so this does still strongly support the validity of the Fresnel equations.
 
 \section{Application of the Fresnel relations}
 When would it be useful to understand the Fresnel relations? \newline
