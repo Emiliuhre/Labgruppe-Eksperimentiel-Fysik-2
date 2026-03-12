@@ -1,8 +1,10 @@
-\chapter{Raw Data}
-        \begin{sidewaystable*}[!ht]
+\onecolumn
+\begin{landscape}
+
+\chapter{Measurements}
+        \begin{table}[!ht]
             \caption{Data collected for Air To Glass. Places where no angles where measured are blank. Standard deviations with $0$ is where The PicoScope oscilloscope calculated a standard deviation so low its digit-rounding function displayed only zeros}
             \centering
-            \resizebox{\textwidth}{!}{
             \begin{tabular}{ccccccccccc}
                 \hline\hline
                 $\theta_1$ [\textup{Degrees}] & $\theta_d$ [\textup{Degrees}] & $\theta_R$ [\textup{Degrees}]& $T_s$ [\textup{V}] & $\mathrm{std}(T_s)$ [\textup{mV}] & $R_s$ [\textup{V}] & $\mathrm{std}(R_s)$ [\textup{mV}] & $T_p$ [\textup{V}] & $\mathrm{std}(T_p)$ [\textup{mV}] & $R_p$ [\textup{V}] & $\mathrm{std}(R_p)$ [\textup{mV}]\\    
@@ -25,12 +27,11 @@
                 75       & 32       & 29       & 1,338  & 0,08485   & 1,153  & 0,09552   & 0,707  & 0,1137    & 0,1748  & 0         \\
                 80       & 34       & 18,5     & 0,9418 & 0         & 1,565  & 0         & 0,5505 & 0,1099    & 0,3439  & 0 \\       
                                 \hline
-            \end{tabular}}
-        \end{sidewaystable*}
-        \begin{sidewaystable*}[!ht]
+            \end{tabular}
+        \end{table}
+        \begin{table}[!ht]
                     \caption{Data collected for Glass To Air.  Standard deviations with $0$ is where The PicoScope oscilloscope calculated a standard deviation so low its digit-rounding function displayed only zeros}
             \centering
-            \resizebox{\textwidth}{!}{
             \begin{tabular}{ccccccccccc}
                 \hline\hline
                 $\theta_1$ [\textup{Degrees}] & $\theta_d$ [\textup{Degrees}] & $\theta_R$ [\textup{Degrees}]& $T_s$ [\textup{V}] & $\mathrm{std}(T_s)$ [\textup{mV}] & $R_s$ [\textup{V}] & $\mathrm{std}(R_s)$ [\textup{mV}] & $T_p$ [\textup{V}] & $\mathrm{std}(T_p)$ [\textup{mV}] & $R_p$ [\textup{V}] & $\mathrm{std}(R_p)$ [\textup{mV}]\\               
@@ -54,8 +55,12 @@
                 80             &               & 14,5     &        &           & 0,8216  & 0,1193    &        &           & 0,3699  & 0,06554  \\     
                 \hline
                 \end{tabular}
-                }
-\end{sidewaystable*}
+\end{table}
+
+
+\end{landscape}
+
+
 \begin{table}[!ht]
     \caption{Data from background.  Standard deviations with $0$ is where The PicoScope oscilloscope calculated a standard deviation so low its digit-rounding function displayed only zeros}
     \centering
