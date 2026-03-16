@@ -13,3 +13,21 @@ This means that the phase is constant across the beams wavefront.
 When the laser beam is split by the beamsplitter and reflected back to meet again the phases should lineup to interfere. 
 The difference in distance of the two mirrors change the interference from destructive to constructive and in between. 
 \section{The Plane Wave}
+The electric field of a plane wave moving in one direction can be written in the following form
+$$\vec{E} = E_{\textup{0}}\cos{\left(\omega t - k x\right)}\hat{y}.$$
+Where $\omega$ is the angular frequency, $t$ is the time, k is the wave propagation and x is the direction of propagation.
+The definition of the coefficents reflection and transmission, R and T respectively can be rewritten in the following form of a given electric field's amplitude
+$$\left|\vec{E}\right| = \sqrt{R \cdot T} \cdot E_{\textup{0}}\cos{\left(\omega t - k x\right)}.$$
+Assumming that the plane wave is only consisting of a reflected and transmitted field. We can rewrite the term $-kx$ as a specific phase $\varphi_{\textup{1}}$. As to get a specific electric field amplitude.
+$$\left|\vec{E_{\textup{1}}}\right| = \sqrt{R \cdot T} \cdot E_{\textup{0}}\cos{\left(\omega t + \varphi_{\textup{1}}\right)}.$$
+If we have another wave with a phase $\varphi_{\textup{2}}$ and send it along the same axis as the first wave we superposition to se that we will have a total wavefront of
+$$\vec{E} = \vec{E_{\textup{1}}} + \vec{E_{\textup{2}}}.$$
+The intesity of this wave can be messured and hence we need to know to relation og the electric field and the intesity. The intesity is can be written as
+$$I = c \varepsilon_{\textup{0}} \left|\vec{E_{\textup{1}}} + \vec{E_{\textup{2}}}\right|^{2}.$$
+If we integrate this over a full period we can get the average intesity as
+$$I_{\textup{avg}} = \int_{0}^{2\pi} c \varepsilon_{\textup{0}} \left|\vec{E_{\textup{1}}} + \vec{E_{\textup{2}}}\right|^{2} = \frac{1}{4}c \varepsilon_{\textup{0}}E_{\textup{0}}^{2}\left(1+\cos{\Delta\varphi}\right)$$
+where $\Delta\varphi = \phi_{\textup{1}}-\varphi_{\textup{2}}$
+\autocite{Eldyn}. \\
+We see this relation by changing the phases by using a piezo that can change its position. This can be used because the change in phase can be directly translated be the following relation
+$$\Delta\varphi = \frac{2\pi}{\lambda}\Delta s.$$
+This relation is what we will use as a basis for the experimental setup.
