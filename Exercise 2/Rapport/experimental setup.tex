@@ -12,12 +12,15 @@ which gets its signal from a function generator. A sawtooth signal is used, beca
 After being reflected off their respective mirrors they return to the beamsplitter and are then directed towards a sensor.
 The aperture on the sensor is opened just enough to take in all of the laser light.
 \section{Measurements}
-Measurements are taken with a PicoScope plugged into the sensor. This PicoScope is also fed the signal from the function generator, which was also measured, to be compared to the intensity.
-Firstly we measure the intensity with the laser turned off (background intensity). 
+Measurements are taken with a PicoScope plugged into the sensor. 
+This PicoScope is also fed the signal from the function generator, which was also measured, to be compared to the intensity.
+Firstly we measure the intensity with the laser turned off (background \mbox{intensity}). 
 Then we turn on the laser and the signal to the piezo and measure the intensity over a time interval big enough to fit many wavefronts.
-We varied this time interval as the frequency of the piezo oscillations increased, such that the resolution on our measurents would increase,
+We varied this time interval as the frequency of the piezo oscillations increased, 
+such that the resolution on our measurents would increase,
 and we measured around the same amount of wavefronts at each frequency. 
-At a given frequency, the intensity was measured for voltage amplitudes equal to 2,4,6,8 and 10. The offset was changed each time to half of this, 
+At a given \mbox{frequency}, the intensity was measured for voltage amplitudes equal to 2,4,6,8 and 10. 
+The offset was changed each time to half of this, 
 so the supplied voltage varied between 0 and the amplitude, never becoming negative.
 
 \begin{figure*}[h]
@@ -43,6 +46,8 @@ so the supplied voltage varied between 0 and the amplitude, never becoming negat
     \includesvg[width=1.3\textwidth]{../Figures/interferometer_setup_destructive.svg}
     \end{adjustbox}
 \end{minipage}
+    \caption{The setup from figure \ref{fig:interferometer_setup} in the case of respectively constructive and destructive interference.}
+    \label{fig:interferometer_destructive_setup}
 \end{figure*}
 
 %test
