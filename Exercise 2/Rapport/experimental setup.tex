@@ -1,6 +1,6 @@
 \chapter{Experimental Setup}
 \section{Setup}
-Firstly, we use a HeNe laser as the light source in the interferometer.
+Firstly, we use a HeNe laser \autocite{thorlabs_hnls008l_spec} as the light source in the interferometer.
 The light from the laser is first sent through a polarizer to decrease the intensity of the light. 
 This is done to avoid saturation of the sensor.
 We also use 2 alignment mirrors to direct and control the light.
@@ -12,7 +12,8 @@ which gets its signal from a function generator. A sawtooth signal is used, beca
 After being reflected off their respective mirrors they return to the beamsplitter and are then directed towards a sensor.
 The aperture on the sensor is opened just enough to take in all of the laser light. As can be seen in Figure 1.
 \section{Measurements}
-Measurements are taken with a PicoScope plugged into the sensor. 
+Measurements of the laser intensity are taken by a detector \autocite{thorlabs_det100a_manual} plugged into a PicoScope\autocite{PicoScope3203D}. 
+The measured voltage in the photodiode detector is proportional to the laser intensity. 
 This PicoScope is also fed the signal from the function generator, 
 which was also measured, to be compared to the intensity.
 Firstly we measure the intensity with the laser turned off (background intensity). 
