@@ -1,8 +1,24 @@
 \chapter{Results}
-Measurements at 5 different frequencies were taken (5.36, 20, 53.1, 98.4 and 187 Hz).
+Measurements at 5 different frequencies were taken ($5.36 \textup{ Hz}$, $20 \textup{ Hz}$, $53.1 \textup{ Hz}$, $98.4 \textup{ Hz}$ and $187 \textup{ Hz}$). 
+Each at 5 different voltages ($2\textup{ V}$, $4\textup{ V}$, $6\textup{ V}$, $8\textup{ V}$, $10\textup{ V}$)
 \section{Modelling the expansion of the Piezo}
 The simplest model of the expansion of the piezo is $s(V) = \kappa V + s_0$.
 Since we haven't measured the expansion itself, 
 we need to determine the coefficients by fitting the function $I_\text{avg} = \frac{1}{4}c \epsilon_0 E_0^2 (1 + \cos(\frac{4\pi}{\lambda} \delta s(V)))$.
 Since we know that the piezo expands differently when the voltage decreases and increases, 
-we need to make 2 different fits.
+we need to make 2 different fits. \\
+The signal from the function generator (REF funktionsgenerator) was used to determine the waveforms of the increasing and decreasing voltages.
+This was done by splitting the data up for each peek and valley of the sawtooth function from the generator and seperating them by if the gradient was positive or negative. 
+After the data was split the aformentioned fit was made by using \textit{scipy}'s \textit{curve\_fit} function at fitting parameters $a, b, c$ and $d$ using the Levenberg-Marquardt algorithm.
+$$I(t) = a\cdot \cos{\left(\frac{4 \pi}{\lambda} \cdot b \cdot V(t) + c\right)} + d$$
+Where the $b \cdot V(t)$ is equivalent to the beforementioned term $\delta s(V)$, the constant componet $s_{\textup{0}}$ will be in the parameter $c$. We are also carefull to note that the function $V(t)$ of cause has a different gradient depending on whether i is falling og raising.
+We can see this analasys of one of the datasets in (FIGUR) where the frequency was X and voltage Y. 
+Below we see (TABEL) where the fitted parameters $b$ is shown with numerical uncertaincy.
+\section{New model of Expansion}
+We clearly see in (FIGUR) that something is wrong with the assumed function of expansion of the piezo. 
+This is also obvious when looking into the documentation of the piezo \autocite{thorlabs_pa44lew_datasheet_2024} where it is shown to have hysteresis. So a linear function will not be correct. 
+We do not know which functions the displacement of the piezo will be, so another guess could be that the expansion follows a third degree polynomial 
+$$s(V) = \kappa_{\textup{1}} V + \kappa_{\textup{2}} V^{2} + \kappa_{\textup{3}} V^{3} + s_0.$$
+Which when modelling like ealier mentioned with 2 extra fitting parameters gives us (FIGUR).
+If we try and plot dispalcement for the op and down segments and averages the result of the function we get (FIGUR).
+
