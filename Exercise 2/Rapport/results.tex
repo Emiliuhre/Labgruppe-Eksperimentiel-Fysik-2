@@ -1,15 +1,36 @@
 \chapter{Results}
 Measurements at 5 different frequencies were taken ($5.36 \textup{ Hz}$, $20 \textup{ Hz}$, $53.1 \textup{ Hz}$, $98.4 \textup{ Hz}$ and $187 \textup{ Hz}$). 
-Each at 5 different voltages ($2\textup{ V}$, $4\textup{ V}$, $6\textup{ V}$, $8\textup{ V}$, $10\textup{ V}$).
+Each at 5 different voltages ($2\textup{ V}$, $4\textup{ V}$, $6\textup{ V}$, $8\textup{ V}$, $10\textup{ V}$). We got data in the form of the following Table~\ref{table:example}. The complete data is in a zip-file\autocite{Michelson_data} seperate of this PDF.
+
+\begin{table}[!ht]
+    \caption{Example of the dataset at a frequency of 5.36 Hz and voltage of 2 volts.}
+    \centering
+    \begin{tabular}{c c c}
+        \hline\hline
+        Time & Channel A & Channel B  \\
+        $[\text{s}]$ & $[\text{V}]$ & $[\text{V}]$ \\
+        \hline
+        \rule{0pt}{1.1em}\noindent
+        0.00016000 & 0.69389770 & 7.70238700\\
+        0.00018000 & 0.69389770 & 7.78881600  \\
+        \vdots & \vdots & \vdots   \\
+        0.01804000 & 1.82148100 & 3.20189500\\
+        0.01806000 & 1.73474400 & 3.20189500\\
+        \vdots & \vdots & \vdots\\
+        \hline
+    \end{tabular}
+    \label{table:example}
+\end{table}
+
 \section{Linear model of piezo expansion}
-The simplest model of the expansion of the piezo is $s(V) = \kappa V + s_0$.
+The simplest model of the expansion of the piezoelectric actuator is $s(V) = \kappa V + s_0$.
 Since we haven't measured the expansion itself, 
 we need to determine the coefficients by fitting the function $I_\text{avg} = \frac{1}{4}c \epsilon_0 E_0^2 (1 + \cos(\frac{4\pi}{\lambda} \Delta s(V)))$.
-Since we know that the piezo expands differently when the voltage decreases and increases, 
+Since we know that the piezoelectric actuator expands differently when the voltage decreases and increases, 
 we need to make 2 different fits. \\
 The signal from the function generator was used to determine the waveforms of the increasing and decreasing voltages.
 This was done by subtracting a measurement of the intensity background and then splitting the data up for each peak and valley of the sawtooth function from the generator and seperating them by if the gradient was positive or negative. 
-After the data was split the aforementioned fit was made by using \textit{scipy}'s \textit{curve\_fit} function at fitting parameters $a, b, c$ and $d$ using the Trust Region Reflective algorithm.
+After the data was split the aforementioned fit was made by using \textit{scipy}'s \textit{curve\_fit} function at fitting parameters $a, b, c$ and $d$ using the \mbox{Trust Region Reflective algorithm.}
 $$I(t) = a\cdot \cos{\left(\frac{4 \pi}{\lambda} \cdot b \cdot V(t) + c\right)} + d$$
 Where the $b \cdot V(t)$ is equivalent to the beforementioned term $\Delta s(V)$, the constant component $s_{\textup{0}}$ will be in the parameter $c$. We are also careful to note that the function $V(t)$ ofcourse has a different gradient depending on whether it is falling og rising.
 We can see this analysis of one of the datasets in figure \ref{fig:IntensityFit}. We have chosen a measurement with low voltage range, 
