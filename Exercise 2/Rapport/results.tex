@@ -41,7 +41,7 @@ Below we see table \ref{table:linear_fit} where the fitted parameter $b$ is show
     \centering
     \begin{tabular}{c c c c c}
         \hline\hline
-        Frequency& $b_\text{up} $ (m/V) & $\sigma_{b_\text{up}}$ & $b_\text{down} $ & $\sigma_{b_\text{down}}$\\
+        Frequency& $b_\text{up} $ & $\sigma_{b_\text{up}}$ & $b_\text{down} $ & $\sigma_{b_\text{down}}$\\
         $[\text{Hz}]$ & $[\text{m/V}]$ & $[\text{m/V}]$ & $[\text{m/V}]$ & $[\text{m/V}]$\\
         \hline
         \rule{0pt}{1.1em}\noindent
@@ -77,3 +77,18 @@ With an extra parameter we seem to get something closer to expectations as can b
     \caption{Note: The $t$ variables in each fit is not the same. $t = 0$ for the blue fit is in agreement with the x-axis, but $t = 0$ for the red graph when the red points begin.}
     \label{fig:IntensityFitSecondDegree}
 \end{figure*}
+\begin{table}[!ht]
+    \caption{Examples of second degree polynomials fit for datasets at 2 volts.}
+    \centering
+    \begin{tabular}{c c c c c c c c c}
+        \hline\hline
+        Frequency& $b_\text{1up}$ & $\sigma_{b_\text{1up}}$ & $b_\text{2up} $ & $\sigma_{b_\text{2up}}$ & $b_\text{1down} $ & $\sigma_{b_\text{1down}}$ & $b_\text{2down} $ & $\sigma_{b_\text{2down}}$\\
+        $[\text{Hz}]$ & $[\text{m/V}]$ & $[\text{m/V}]$ & $[\text{m/V}]$ & $[\text{m/V}]$ & $[\text{m/V}]$ & $[\text{m/V}]$ & $[\text{m/V}]$ & $[\text{m/V}]$ \\
+        \hline
+        \rule{0pt}{1.1em}\noindent
+        20.0 & 4.9e-08 & 3.36e-10 & 4.80e-08 & 7.49e-10 & 1.43e-07 & 2.62e-10 & 1.43e-07 & 5.42e-10   \\
+        53.1 & 4.94e-08 & 3.36e-10 & 4.80e-08 & 7.49e-10 & 1.65e-32 & 2.62e-10 & 1.43e-07 & 5.42e-10  \\
+        \hline
+    \end{tabular}
+    \label{table:second_degree_fit}
+\end{table}
