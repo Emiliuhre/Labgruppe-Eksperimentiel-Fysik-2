@@ -20,8 +20,8 @@ Below we see table \ref{table:linear_fit} where the fitted parameter $b$ is show
     \centering
     \begin{tabular}{c c c c c}
         \hline\hline
-        Frequency (Hz) & $b_\text{up} $ (m/V) & $\sigma_{b_\text{up}}$ (m/V) & $b_\text{down} $ (m/V) & $\sigma_{b_\text{down}}$ (m/V) \\
-        $[\text{s}]$ & $[\text{V}]$ & $[\text{V}]$ \\
+        Frequency& $b_\text{up} $ (m/V) & $\sigma_{b_\text{up}}$ & $b_\text{down} $ & $\sigma_{b_\text{down}}$\\
+        $[\text{Hz}]$ & $[\text{m/V}]$ & $[\text{m/V}]$ & $[\text{m/V}]$ & $[\text{m/V}]$\\
         \hline
         \rule{0pt}{1.1em}\noindent
         20.0 & 1.36e-07 & 1.75e-10 & 1.51e-07 & 4.11e-11  \\
@@ -49,11 +49,10 @@ This was done but yielded no satisisfying results, as we were unable to get a re
 The model as third degree polynomial was too difficult to fit, which calls for a simpler model.
 Therefore we instead attempt a second degree polynomial:
 $$s(V) = \kappa_{\textup{1}} V + \kappa_{\textup{2}} V^{2} + s_{\textup{0}}.$$
-With an extra parameter we seem to get something closer as can be seen in figur \ref{fig:IntensityFitSecondDegree}
+With an extra parameter we seem to get something closer to expectations as can be seen in figur \ref{fig:IntensityFitSecondDegree}.
 \begin{figure*}[h]
     \includesvg[width=0.90\textwidth]{../Figures/IntensityFitSecondDegree(20.0Hz2.0V).svg}
     \centering
     \caption{Note: The $t$ variables in each fit is not the same. $t = 0$ for the blue fit is in agreement with the x-axis, but $t = 0$ for the red graph when the red points begin.}
     \label{fig:IntensityFitSecondDegree}
 \end{figure*}
-This looks more like what was expected.
