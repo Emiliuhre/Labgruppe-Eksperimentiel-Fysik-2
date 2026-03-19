@@ -1,20 +1,34 @@
 \chapter{Results}
 Measurements at 5 different frequencies were taken ($5.36 \textup{ Hz}$, $20 \textup{ Hz}$, $53.1 \textup{ Hz}$, $98.4 \textup{ Hz}$ and $187 \textup{ Hz}$). 
-Each at 5 different voltages ($2\textup{ V}$, $4\textup{ V}$, $6\textup{ V}$, $8\textup{ V}$, $10\textup{ V}$)
+Each at 5 different voltages ($2\textup{ V}$, $4\textup{ V}$, $6\textup{ V}$, $8\textup{ V}$, $10\textup{ V}$).
 \section{Linear model of piezo expansion}
 The simplest model of the expansion of the piezo is $s(V) = \kappa V + s_0$.
 Since we haven't measured the expansion itself, 
 we need to determine the coefficients by fitting the function $I_\text{avg} = \frac{1}{4}c \epsilon_0 E_0^2 (1 + \cos(\frac{4\pi}{\lambda} \Delta s(V)))$.
 Since we know that the piezo expands differently when the voltage decreases and increases, 
 we need to make 2 different fits. \\
-The signal from the function generator (REF funktionsgenerator) was used to determine the waveforms of the increasing and decreasing voltages.
-This was done by subtracting a messurement of the intensity background and then splitting the data up for each peak and valley of the sawtooth function from the generator and seperating them by if the gradient was positive or negative. 
-After the data was split the aformentioned fit was made by using \textit{scipy}'s \textit{curve\_fit} function at fitting parameters $a, b, c$ and $d$ using the Levenberg-Marquardt algorithm.
+The signal from the function generator was used to determine the waveforms of the increasing and decreasing voltages.
+This was done by subtracting a measurement of the intensity background and then splitting the data up for each peak and valley of the sawtooth function from the generator and seperating them by if the gradient was positive or negative. 
+After the data was split the aforementioned fit was made by using \textit{scipy}'s \textit{curve\_fit} function at fitting parameters $a, b, c$ and $d$ using the Trust Region Reflective algorithm.
 $$I(t) = a\cdot \cos{\left(\frac{4 \pi}{\lambda} \cdot b \cdot V(t) + c\right)} + d$$
-Where the $b \cdot V(t)$ is equivalent to the beforementioned term $\Delta s(V)$, the constant componet $s_{\textup{0}}$ will be in the parameter $c$. We are also carefull to note that the function $V(t)$ of cause has a different gradient depending on whether i is falling og raising.
+Where the $b \cdot V(t)$ is equivalent to the beforementioned term $\Delta s(V)$, the constant component $s_{\textup{0}}$ will be in the parameter $c$. We are also careful to note that the function $V(t)$ ofcourse has a different gradient depending on whether it is falling og rising.
 We can see this analysis of one of the datasets in figure \ref{fig:IntensityFit}. We have chosen a measurement with low voltage range, 
 as the true relation is close to linear in this regime \autocite{thorlabs_pa44lew_datasheet_2024}
-Below we see table \ref{table:example} where the fitted parameters $b$ is shown with numerical uncertaincy.
+Below we see table \ref{table:example} where the fitted parameter $b$ is shown with numerical uncertaincy.
+\begin{table}[!ht]
+    \caption{Example of fit for datasets at 2 volts.}
+    \centering
+    \begin{tabular}{c c c}
+        \hline\hline
+        Frequency (Hz) & $b_\text{up} (m/V) $ & $\sigma_{b_\text{up}} v$ & $b_\text{down} (m/V)$ & $\sigma_{b_\text{down}} (m/V)$ \\
+        $[\text{s}]$ & $[\text{V}]$ & $[\text{V}]$ \\
+        \hline
+        \rule{0pt}{1.1em}\noindent
+        20.0 & 1.36e-07 & 1.75e-10 & 1.51e-07 & 4.11e-11  \\
+        53.1 & 1.29e-07 & 4.97e-10 & 1.43e-07 & 9.68e-11  \\
+    \end{tabular}
+    \label{table:example}
+\end{table}
 \begin{figure*}[h]
     \includesvg[width=0.90\textwidth]{../Figures/IntensityFit(20.0Hz2.0V).svg}
     \centering
@@ -28,11 +42,17 @@ The problem is however, that since a linear function is uniquely determined by 2
 it is impossible to have physically meaningful hysteresis in the linear model.
 We do not know which functions the displacement of the piezo will be, so another guess could be that the expansion follows a third degree polynomial:
 $$s(V) = \kappa_{\textup{1}} V + \kappa_{\textup{2}} V^{2} + \kappa_{\textup{3}} V^{3} + s_0.$$
-This was done but yielded no satisisfying results.
-
+This was done but yielded no satisisfying results, as we were unable to get a reasonable fit.
 
 \section{Second degree model for piezo expansion}
-The model as third degree polynomial also seem to have faults so i could be that we might be overfitting the data.
-So a simpler model could maybe be more appropriate. So instead we could have an expansion function given as
+The model as third degree polynomial was too difficult to fit, which calls for a simpler model.
+Therefore we instead attempt a second degree polynomial:
 $$s(V) = \kappa_{\textup{1}} V + \kappa_{\textup{2}} V^{2} + s_{\textup{0}}.$$
-With an extra parameter we seem to get something closer as can be seen in (FIGUR)
+With an extra parameter we seem to get something closer as can be seen in figur \ref{IntensityFitSecondDegree}
+\begin{figure*}[h]
+    \includesvg[width=0.90\textwidth]{../Figures/IntensityFitSecondDegree(20.0Hz2.0V).svg}
+    \centering
+    \caption{Note: The $t$ variables in each fit is not the same. $t = 0$ for the blue fit is in agreement with the x-axis, but $t = 0$ for the red graph when the red points begin.}
+    \label{fig:IntensityFitSecondDegree}
+\end{figure*}
+This looks more like what was expected.

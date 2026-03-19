@@ -8,13 +8,14 @@ These mirrors are aligned before measurements, and then never touched again for 
 The light from the mirrors is directed into a beam splitter, that splits the light into 2 directions.
 One hits a normal mirror, but the other hits a mirror mounted on a piezoelectric ring\autocite{thorlabs_pa44lew_datasheet_2024}. 
 This piezoelectric actuator is controlled by a piezo-driver\autocite{thorlabs_mdt630b_datasheet_2026}, 
-which gets its signal from a function generator. A sawtooth signal is used, because it is simplest (constant derivative).
+which gets its signal from a function generator\autocite{FunctionGenerator}. A sawtooth signal is used, because it is simplest (constant derivative).
 After being reflected off their respective mirrors they return to the beamsplitter and are then directed towards a sensor.
-The aperture on the sensor is opened just enough to take in all of the laser light. As can be seen in Figure~\ref{fig:interferometer_setup}.
+The aperture on the sensor is opened just enough to take in all of the laser light, but avoiding unnecessary background light. 
+As can be seen in Figure~\ref{fig:interferometer_setup} as a drawing of the optical table. And as a photograph in Figure~\ref{fig:setup_photo}.
 \section{Measurements}
 Measurements of the laser intensity are taken by a detector \autocite{thorlabs_det100a_manual} plugged into a PicoScope\autocite{PicoScope3203D}. 
 The measured voltage in the photodiode detector is proportional to the laser intensity. 
-This PicoScope is also fed the signal from the function generator, 
+This PicoScope is also fed the signal from the function generator \autocite{FunctionGenerator}, 
 which was also measured, to be compared to the intensity.
 The intensity is measured with the laser turned off (background intensity). 
 Then we turn on the laser and the signal to the piezo and measure the intensity over a time interval big enough to fit many wavefronts.
@@ -25,15 +26,15 @@ At a given \mbox{frequency}, the intensity was measured for voltage amplitudes e
 The offset was changed each time to half of this, 
 so the supplied voltage varied between 0 and the amplitude, never becoming negative.
 \section{Execution}
-Firstly the mirrors, beamsplitter and piezo are aligned so the laser beam creates an interference pattern. 
+Firstly the mirrors, beamsplitter and piezo are aligned so the laser beam creates an interference pattern. The example of constructive and destructive interference is shown in Figure~\ref{fig:interferometer_interferenceexample_setup} with intermediate interference being a phasedifference $\Delta\varphi \ne \mathbb{N}\pi$.
 This is to insure we see a significant change in intensity as the piezo moves. Then a polarizer and sensor is placed as seen in Figure~\ref{fig:interferometer_setup} insuring that there is still an interference pattern when the laser is turned on.
 Then the sensor and laser is turned on and the polarizer is turned until the sensor is not oversaturated. Then a messurement of the background intensity is taken. After this measurents are taken with varied frequency and voltage.
 \begin{figure*}[h]
     \includesvg[width=0.90\textwidth]{../Figures/interferometer_setup.svg}
     \centering
     \caption{Setup of the Michelson Interferometer. 
-    To show differnce in the splitted beams green and orange are used, 
-    and the mixing of the beams are shown as a dashed line of the two colors.
+    To show phasedifference in the returning splitted beams, green and orange is used. 
+    An arbitrary interference is shown as a dashed line of the two colors.
     $s_1$ and $s_2(V)$ are the distances to the mirrors.
     $s_2(V)$ vary with the voltage of the piezo.
     A polarizer is used to limit the light intensity, to not oversaturate the detector.}
@@ -61,7 +62,5 @@ Then the sensor and laser is turned on and the polarizer is turned until the sen
     \centering
 \end{minipage}
     \caption{The setup from figure \ref{fig:interferometer_setup} in the case of respectively constructive and destructive \mbox{interference.}}
-    \label{fig:interferometer_destructive_setup}
+    \label{fig:interferometer_interferenceexample_setup}
 \end{figure*}
-
-%test
