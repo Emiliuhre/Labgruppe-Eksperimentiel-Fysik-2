@@ -8,12 +8,12 @@ we need to determine the coefficients by fitting the function $I_\text{avg} = \f
 Since we know that the piezo expands differently when the voltage decreases and increases, 
 we need to make 2 different fits. \\
 The signal from the function generator (REF funktionsgenerator) was used to determine the waveforms of the increasing and decreasing voltages.
-This was done by splitting the data up for each peak and valley of the sawtooth function from the generator and seperating them by if the gradient was positive or negative. 
+This was done by subtracting a messurement of the intensity background and then splitting the data up for each peak and valley of the sawtooth function from the generator and seperating them by if the gradient was positive or negative. 
 After the data was split the aformentioned fit was made by using \textit{scipy}'s \textit{curve\_fit} function at fitting parameters $a, b, c$ and $d$ using the Levenberg-Marquardt algorithm.
 $$I(t) = a\cdot \cos{\left(\frac{4 \pi}{\lambda} \cdot b \cdot V(t) + c\right)} + d$$
 Where the $b \cdot V(t)$ is equivalent to the beforementioned term $\Delta s(V)$, the constant componet $s_{\textup{0}}$ will be in the parameter $c$. We are also carefull to note that the function $V(t)$ of cause has a different gradient depending on whether i is falling og raising.
 We can see this analysis of one of the datasets in figure \ref{fig:IntensityFit}. We have chosen a measurement with low voltage range, 
-as the true relation is close to linear in this regime \autocite{thorlabs_pa44lew_datasheet_2024}
+as the true relation is close to linear in this regime. \autocite{thorlabs_pa44lew_datasheet_2024} 
 Below we see (TABEL) where the fitted parameters $b$ is shown with numerical uncertaincy.
 \begin{figure*}[h]
     \includesvg[width=0.90\textwidth]{../Figures/IntensityFit(20.0Hz2.0V).svg}
