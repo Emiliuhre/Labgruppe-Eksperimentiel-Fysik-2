@@ -29,5 +29,10 @@ it is impossible to have physically meaningful hysteresis in the linear model.
 We do not know which functions the displacement of the piezo will be, so another guess could be that the expansion follows a third degree polynomial:
 $$s(V) = \kappa_{\textup{1}} V + \kappa_{\textup{2}} V^{2} + \kappa_{\textup{3}} V^{3} + s_0.$$
 Which when modelling like earlier mentioned with 2 extra fitting parameters gives us (FIGUR).
-If we try and plot displacement for the up and down segments and averages the result of the function we get (FIGUR).
+If we try and plot displacement for the up and down segments and averages the result of the function we get (FIGUR).\\
 
+\section{Second degree model for piezo expansion}
+The model as third degree polynomial also seem to have faults so i could be that we might be overfitting the data.
+So a simpler model could maybe be more appropriate. So instead we could have an expansion function given as
+$$s(V) = \kappa_{\textup{1}} V + \kappa_{\textup{2}} V^{2} + s_{\textup{0}}.$$
+Which can be seen in (FIGUR).
