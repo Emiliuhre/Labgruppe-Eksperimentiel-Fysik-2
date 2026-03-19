@@ -14,20 +14,21 @@ $$I(t) = a\cdot \cos{\left(\frac{4 \pi}{\lambda} \cdot b \cdot V(t) + c\right)} 
 Where the $b \cdot V(t)$ is equivalent to the beforementioned term $\Delta s(V)$, the constant component $s_{\textup{0}}$ will be in the parameter $c$. We are also careful to note that the function $V(t)$ ofcourse has a different gradient depending on whether it is falling og rising.
 We can see this analysis of one of the datasets in figure \ref{fig:IntensityFit}. We have chosen a measurement with low voltage range, 
 as the true relation is close to linear in this regime \autocite{thorlabs_pa44lew_datasheet_2024}
-Below we see table \ref{table:example} where the fitted parameter $b$ is shown with numerical uncertaincy.
+Below we see table \ref{table:linear_fit} where the fitted parameter $b$ is shown with numerical uncertaincy.
 \begin{table}[!ht]
     \caption{Example of fit for datasets at 2 volts.}
     \centering
     \begin{tabular}{c c c}
         \hline\hline
-        Frequency (Hz) & $b_\text{up} (m/V) $ & $\sigma_{b_\text{up}} v$ & $b_\text{down} (m/V)$ & $\sigma_{b_\text{down}} (m/V)$ \\
+        Frequency (Hz) & $b_\text{up} $ (m/V) & $\sigma_{b_\text{up}}$ (m/V) & $b_\text{down} $ (m/V) & $\sigma_{b_\text{down}}$ (m/V) \\
         $[\text{s}]$ & $[\text{V}]$ & $[\text{V}]$ \\
         \hline
         \rule{0pt}{1.1em}\noindent
         20.0 & 1.36e-07 & 1.75e-10 & 1.51e-07 & 4.11e-11  \\
         53.1 & 1.29e-07 & 4.97e-10 & 1.43e-07 & 9.68e-11  \\
+        \hline
     \end{tabular}
-    \label{table:example}
+    \label{table:linear_fit}
 \end{table}
 \begin{figure*}[h]
     \includesvg[width=0.90\textwidth]{../Figures/IntensityFit(20.0Hz2.0V).svg}
@@ -48,7 +49,7 @@ This was done but yielded no satisisfying results, as we were unable to get a re
 The model as third degree polynomial was too difficult to fit, which calls for a simpler model.
 Therefore we instead attempt a second degree polynomial:
 $$s(V) = \kappa_{\textup{1}} V + \kappa_{\textup{2}} V^{2} + s_{\textup{0}}.$$
-With an extra parameter we seem to get something closer as can be seen in figur \ref{IntensityFitSecondDegree}
+With an extra parameter we seem to get something closer as can be seen in figur \ref{fig:IntensityFitSecondDegree}
 \begin{figure*}[h]
     \includesvg[width=0.90\textwidth]{../Figures/IntensityFitSecondDegree(20.0Hz2.0V).svg}
     \centering
