@@ -1,0 +1,27 @@
+\chapter{Introduction}
+\section{Cauchy's Formula}
+Suppose we have a gas of molecules. 
+When we impose an electromagnetic wave on the molecules, 
+their electrons will begin to move. 
+If we model this movement as a dampened harmonic oscillator driven at frequency $\omega$ by the light
+\[F_\text{total} = -m\gamma v - m\omega_0^2 x + qE_0\cos(\omega t),\]
+we find that the complex dipole moment of the molecules become\autocite{Eldyn}:
+\[\tilde{p}(t) = \frac{q^2}{m} \sum_j \frac{f_j}{\omega_{kj}^2 - \omega^2 - i\gamma_j \omega}E_0e^{-i\omega t}.\]
+Where $q$ is the charge of the electron, $m$ is the mass of an electron, and $f_j$ is the amount of electrons in the molecule with resonant frequency $\omega_j$ and dampening coefficient $\gamma_j$.
+We then find that the total complex dipole moment per unit volume becomes
+\[\tilde{\mathbf{P}} = \frac{q^2}{m} \left( \sum_k N_k \sum_j \frac{f_{kj}}{\omega_{kj}^2 - \omega^2_{kj} - i\gamma_{kj} \omega} \right) \tilde{\mathbf{E}}.\]
+where $N_k$ is the amount of molecules per unit volume of molekule $k$, such that we are summing over all the different kinds of molecules.
+We now introduce the complex susceptibility $\tilde{\chi}_e$,
+since we can write $\tilde{\mathbf{P}} = \epsilon_0 \tilde{\chi}_e \tilde{\mathbf{E}}$, and see that (using $\tilde{\epsilon_r} = 1 + \tilde{\chi}_e$):
+\[\tilde{\epsilon_r} = 1 + \frac{q^2}{\epsilon_0 m} \left( \sum_k N_k \sum_j \frac{f_{kj}}{\omega_{kj}^2 - \omega^2 - i\gamma_{kj} \omega} \right)\]
+We can now calculate $n$ from the real part of the complex wavenumber $\tilde{k} = \sqrt{\epsilon_r} \frac{\omega}{c}$, by expanding $\sqrt{1 + \tilde{\chi}_e} \approx 1 + \frac{1}{2}\tilde{\chi}_e$, since $\tilde{\chi}_e$ is small for gasses\autocite{Eldyn}.
+\[
+    \tilde{k} \approx \frac{\omega}{c} \left( 1 + \frac{q^2}{2\epsilon_0 m} \sum_k N_k \sum_j \frac{f_{kj}(\omega_{kj}^2 - \omega^2 - i\gamma_{kj} \omega)}{(\omega_{kj}^2 - \omega^2)^2 + \gamma_{kj}^2 \omega^2}  \right)
+\]
+so (using $n = \frac{c}{\omega}\text{Re}(\tilde{k})$)
+
+\[n = 1 + \frac{q^2}{2\epsilon_0 m} \sum_k N_k \sum_j \frac{f_{kj}(\omega_{kj}^2 - \omega^2)}{(\omega_{kj}^2 - \omega^2)^2 + \gamma_{kj}^2 \omega^2}   \]
+We now see that $n - 1$ is proportional to $N$, where $N = \sum_k N_k$, so we get from the ideal gas law that
+\begin{equation}
+    n - 1 \propto P \label{prop_to_pressure}
+\end{equation}
