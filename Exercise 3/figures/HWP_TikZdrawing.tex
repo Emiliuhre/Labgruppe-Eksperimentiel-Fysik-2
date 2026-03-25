@@ -11,7 +11,7 @@
     % Incident Light Vector (E_in)
     \coordinate (O) at (0,0);
     \coordinate (Ein) at (50:1.3);
-    \draw[vector, red] (O) -- (Ein) node[above left] {$\vec{E}_{in}$};
+    \draw[vector, red] (O) -- (Ein) node[above left] {$\mathbf{E}_{in}$};
     
     % Components of E_in
     \draw[component] (0,0) -- (0, {1.3*cos(40)}) node[left] {$E_f$};
@@ -19,7 +19,7 @@
 
     % Resulting Vector (E_out)
     \coordinate (Eout) at (40+90:1.3);
-    \draw[vector, green!70!black] (O) -- (Eout) node[above right] {$\vec{E}_{out}$};
+    \draw[vector, green!70!black] (O) -- (Eout) node[above right] {$\mathbf{E}_{out}$};
     
     % Components of E_out
     \draw[component, dashed] (0,0) -- ({-1.3*sin(40)}, 0) node[above] {$-E_s$};
