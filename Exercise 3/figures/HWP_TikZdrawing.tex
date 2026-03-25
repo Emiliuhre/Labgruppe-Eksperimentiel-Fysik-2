@@ -1,42 +1,27 @@
+
 \begin{tikzpicture}[scale=2, >=Stealth, 
-    axis/.style={dashed, gray, thin},
+    axis/.style={dashed, ->, gray, thin},
     vector/.style={very thick, ->},
     component/.style={thick, blue, ->}]
 
-    % Coordinate Axes (Fast and Slow)
-    \draw[axis] (-1.5,0) -- (1.5,0) node[right] {Fast Axis ($f$)};
-    \draw[axis] (0,-1.5) -- (0,1.5) node[above] {Slow Axis ($s$)};
+    % Coordinate Axes (Slow and Fast)
+    \draw[axis] (-1,0) -- (1.2,0) node[right] {Slow Axis ($s$)};
+    \draw[axis] (0,-0.15) -- (0,1.2) node[above] {Fast Axis ($f$)};
 
     % Incident Light Vector (E_in)
     \coordinate (O) at (0,0);
-    \coordinate (Ein) at (30:1.3);
-    \draw[vector, red] (O) -- (Ein) node[above right] {$\vec{E}_{in}$};
+    \coordinate (Ein) at (50:1.3);
+    \draw[vector, red] (O) -- (Ein) node[above left] {$\vec{E}_{in}$};
     
     % Components of E_in
-    \draw[component] (0,0) -- ({1.3*cos(30)}, 0) node[below] {$E_f$};
-    \draw[component] (0,0) -- (0, {1.3*sin(30)}) node[left] {$E_s$};
-    
-    % The Phase Shift (Retardance) Explanation
-    \node[draw, fill=white, font=\small, text width=4cm, align=left] at (1.8, 1) {
-        \textbf{Phase Retardance}: \\
-        $E_f \rightarrow E_f$ \\
-        $E_s \rightarrow E_s \cdot e^{i\pi} = -E_s$ \\
-        The slow component is delayed by $\lambda/2$.
-    };
+    \draw[component] (0,0) -- (0, {1.3*cos(40)}) node[left] {$E_f$};
+    \draw[component] (0,0) -- ({1.3*sin(40)}, 0) node[above] {$E_s$};
 
     % Resulting Vector (E_out)
-    \coordinate (Eout) at (-30:1.3);
-    \draw[vector, green!70!black] (O) -- (Eout) node[below right] {$\vec{E}_{out}$};
+    \coordinate (Eout) at (40+90:1.3);
+    \draw[vector, green!70!black] (O) -- (Eout) node[above right] {$\vec{E}_{out}$};
     
     % Components of E_out
-    \draw[component, dashed] (0,0) -- (0, {-1.3*sin(30)}) node[left] {$-E_s$};
-
-    % Mirroring Arc/Arrow
-    \draw[<->, bend right, orange, thick] (Ein) to[bend left=45] node[right, midway] {Mirror effect} (Eout);
-
-    % Angles
-    \pic [draw, "$\theta$", angle radius=0.6cm] {angle = Ein--O--Ein}; % Placeholder logic
-    \node at (15:0.5) {$\theta$};
-    \node at (-15:0.5) {$\theta$};
-
+    \draw[component, dashed] (0,0) -- ({-1.3*sin(40)}, 0) node[above] {$-E_s$};
 \end{tikzpicture}
+
