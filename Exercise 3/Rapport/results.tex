@@ -1,2 +1,23 @@
 \chapter{Results}
 \section{Determining the index of refraction of air}
+At 0 gauge pressure the velocity of the light is $v_1$, 
+so the time it takes the light to move through the cylinder (of length $L$) is $t_1 = \frac{L}{v_1}$.
+When we increase the pressure in the glass cylinder the index of refraction changes,
+so now the time is instead $t_2 = \frac{L}{v_2}$.
+We therefore get that the difference in time between the two pressures is 
+\[\Delta t = t_2 - t_1 = L\frac{v_1 - v_2}{v_2v_1}\]
+$v_1$ and $v_2$ can be expressed using the refractive indices 
+$$v_i = \frac{c}{n_i}, i = 1,2.$$
+If we now use equation \refeq{prop_to_pressure}, where $n_1 = 1 + \eta$ and $n_2 = 1 + \eta_2$
+we get that $$\frac{\eta_2}{\eta} = \frac{p}{p_0} \iff \eta_2 = \frac{p}{p_0}\eta$$
+where $p_0$ is the starting pressure (we will be using atmospheric pressure), and $p$ is the end pressure.
+All this together finally gets us
+\[\Delta t = \frac{L}{c}\frac{\frac{1}{1 + \eta} - \frac{1}{1 + \frac{p}{p_0}\eta}}{\frac{1}{1 + \frac{p}{p_0}\eta}\frac{1}{1 + \eta}} = (\frac{p}{p_0}-1)\frac{L}{c}\eta\]
+This difference in time results in a difference in phase by the relation $\Delta \phi = \omega \Delta t = \frac{2\pi c}{\lambda} \Delta t$.
+However we can also determine $\Delta \phi$ by counting the amount of periods $\Omega$, givin the relation $\Delta \phi = 2\pi \Omega$.
+We can then get the final result by equating our two expressions for $\Delta \phi$:
+\[2\pi \Omega = \frac{2\pi c}{\lambda}(\frac{p}{p_0}-1)\frac{L}{c}\eta \iff \eta = \frac{\Omega \lambda}{L(\frac{p}{p_0} - 1)}\]
+
+%The errors become
+%\[\sigma_\eta = \eta \sqrt{\frac{\sigma_P^2}{P^2} + \frac{\sigma_L^2}{L^2}}\]
+%where $\sigma_P = \frac{\sigma_V}{2V_\text{max}}$.
