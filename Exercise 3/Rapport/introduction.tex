@@ -49,7 +49,21 @@ The effect of a plate cut to a thickness for $\lambda/2$ retardance (a half-wave
 We will in the following determine the effects of adding a waveplate to one of the interferometer arms on the measured intensity.
 \subsection{Interferometer intensity dependence on waveplate rotation}
 Let $\mathbf{E}_i = \mathbf{E}_0\cos(\omega t - kx)$ be the incident planewave (where $x$ in this case is just distance traveled, as the wave will change directions).
-The first wave without the waveplate moves through two beamsplitters, so at the end screen it will be
-\[\mathbf{E}_1 = \sqrt{R T}\; \mathbf{E}_0 \cos(\omega t - kx_1)\]
-where $x_1$ is the distance travelled by the first 
+The first wave without the waveplate moves through two beamsplitters, so at the detector it will be
+\[\mathbf{E}_1 = \sqrt{R T} \mathbf{E}_0 \cos(\omega t - kx_1)\]
+where $x_1$ is the distance travelled by the first laserbeam. 
+The polarisation of the second beam gets changed.
+The polarisation vector can be split up into components along the fast and slow axis of the waveplate
+$$\mathbf{E}_0 = E_0 (a \mathbf{f} + b \mathbf{s})$$
+where $\mathbf{f}$ is the fast axis and $\mathbf{s}$ is the slow axis.
+After this hits the waveplate the two components are shifted by half a wavelength with respect to each other, so at the detector:
+\begin{align*}
+    \mathbf{E}_2 &= \sqrt{RT}E_0 (a \mathbf{f} - b \mathbf{s})\cos(\omega t - kx_2) \\
+\end{align*}
+since $\cos(x + \pi) = -\cos(x)$, so a half wavelength difference is the same as changing the sign between the fast and slow axis.
+The total E field is therefore
+\begin{equation*}
+    \mathbf{E_1} + \mathbf{E_2} = \sqrt{RT}E_0\left(a(\cos(\omega t - kx_1) + \cos(\omega t - kx_2))\mathbf{f} + b(\cos(\omega t - kx_1) - \cos(\omega t - kx_2))\mathbf{s}\right)
+\end{equation*}
+
 
