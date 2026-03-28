@@ -1,18 +1,18 @@
 \chapter{Introduction}
 The Mach-Zehnder interferometer will be used to determine the refractive index of air, 
-and investigate how the intensity changes when a waveplate is inserted in one of the interferometer arms.
+and investigate how the intensity changes when a half-wave plate is inserted in one of the interferometer arms.
 \section{Cauchy's Formula}
 Suppose we have a gas of molecules. 
 When we impose an electromagnetic wave on the molecules, 
 their electrons will begin to move. 
-If we model this movement as a dampened harmonic oscillator driven at frequency $\omega$ by the light
+If we model this movement as a dampened harmonic \mbox{oscillator} driven at a frequency $\omega$ by the light
 \[F_\text{total} = -m\gamma v - m\omega_0^2 x + qE_0\cos(\omega t),\]
 we find that the complex dipole moment of the molecules become\autocite{Eldyn}:
 \[\tilde{p}(t) = \frac{q^2}{m} \sum_j \frac{f_j}{\omega_{kj}^2 - \omega^2 - i\gamma_j \omega}E_0e^{-i\omega t}.\]
 Where $q$ is the charge of the electron, $m$ is the mass of an electron, and $f_j$ is the amount of electrons in the molecule with resonant frequency $\omega_j$ and dampening coefficient $\gamma_j$.
 We then find that the total complex dipole moment per unit volume becomes
-\[\tilde{\mathbf{P}} = \frac{q^2}{m} \left( \sum_k N_k \sum_j \frac{f_{kj}}{\omega_{kj}^2 - \omega^2_{kj} - i\gamma_{kj} \omega} \right) \tilde{\mathbf{E}}.\]
-where $N_k$ is the amount of molecules per unit volume of molekule $k$, such that we are summing over all the different kinds of molecules.
+\[\tilde{\mathbf{P}} = \frac{q^2}{m} \left( \sum_k N_k \sum_j \frac{f_{kj}}{\omega_{kj}^2 - \omega^2 - i\gamma_{kj} \omega} \right) \tilde{\mathbf{E}}.\]
+where $N_k$ is the number of molecules per unit volume of molecule type $k$, such that we are summing over all the different kinds of molecules.
 We now introduce the complex susceptibility $\tilde{\chi}_e$,
 since we can write $\tilde{\mathbf{P}} = \epsilon_0 \tilde{\chi}_e \tilde{\mathbf{E}}$, and see that (using $\tilde{\epsilon_r} = 1 + \tilde{\chi}_e$):
 \[\tilde{\epsilon_r} = 1 + \frac{q^2}{\epsilon_0 m} \left( \sum_k N_k \sum_j \frac{f_{kj}}{\omega_{kj}^2 - \omega^2 - i\gamma_{kj} \omega} \right)\]
@@ -22,40 +22,39 @@ We can now calculate $n$ from the real part of the complex wavenumber $\tilde{k}
 \]
 so (using $n = \frac{c}{\omega}\text{Re}(\tilde{k})$)
 
-\[n = 1 + \frac{q^2}{2\epsilon_0 m} \sum_k N_k \sum_j \frac{f_{kj}(\omega_{kj}^2 - \omega^2)}{(\omega_{kj}^2 - \omega^2)^2 + \gamma_{kj}^2 \omega^2}   \]
+\[n = 1 + \frac{q^2}{2\epsilon_0 m} \sum_k N_k \sum_j \frac{f_{kj}(\omega_{kj}^2 - \omega^2)}{(\omega_{kj}^2 - \omega^2)^2 + \gamma_{kj}^2 \omega^2} .  \]
 We now see that $n - 1$ is proportional to $N$, where $N = \sum_k N_k$, so we get from the ideal gas law that
 \begin{equation}
     n - 1 \propto p. \label{prop_to_pressure}
 \end{equation}
 \section{Phase retarder}
 A phase retarder/waveplate is an optical device that alters the phase between different polarization components of light.
-A phase retarder is often made of a crystal where the refractive index depend on the polarization direction, a crystal of this property is called a birefringent crystal \autocite{paschotta_birefringence}.
+A phase retarder is often made of a crystal where the refractive index depends on the polarization direction, a crystal of this property is called a birefringent crystal \autocite{paschotta_birefringence}.
 The birefringent crystal is oriented and cut into a plate with the optical axis parallel to the surface of the plate.
 The right orientation and cut of the crystal results in two axis with different index of refraction ($n$).
 The axis with the largest $n$ is called the often called the slow axis and the axis with smallest $n$ is called the fast axis.
-When linear polarized light goes through the phase retarder polarization direction can be described in terms of the components in the respectively slow and fast axis.
+When linear polarized light goes through the phase retarder, polarization direction can be described in terms of the components in the respectively slow and fast axis.
 The plate of crystal is cut to a thickness that insures a specific retardance of the slow and fast axis described in fractions of the wavelength of the light \autocite{paschotta_retardance}.
 The effect of a plate cut to a thickness for $\lambda/2$ retardance (a half-wave plate) is shown in Figure~\ref{fig:HWP_TikZ_drawing}.
 
 \begin{figure}
     \input{../figures/HWP_TikZdrawing.tex}
     \caption{Phase Retardance:
-        $E_f \rightarrow E_f$,
-        $E_s \rightarrow E_s \cdot e^{i\pi} = -E_s$.
+        $E_f \rightarrow E_f$, $E_s \rightarrow E_s \cdot e^{i\pi} = -E_s$.
         The slow component is delayed by $\lambda/2$.}
         \label{fig:HWP_TikZ_drawing}
 \end{figure}
 
-We will in the following determine the effects of adding a waveplate to one of the interferometer arms on the measured intensity.
-\subsection{Interferometer intensity dependence on waveplate rotation}
-Let $\mathbf{E}_i = \mathbf{E}_0\cos(\omega t - kx)$ be the incident planewave (where $x$ in this case is just distance traveled, as the wave will change directions).
+We will in the following determine the effects of adding a half-wave plate to one of the interferometer arms on the measured intensity.
+\subsection{Interferometer intensity dependence on half-wave plate rotation}
+Let $\mathbf{E}_i = \mathbf{E}_0\cos(\omega t - kx)$ be the incident plane wave (where $x$ in this case is just distance traveled, as the wave will change directions).
 The first wave without the waveplate moves through two beamsplitters, so at the detector it will be
-\[\mathbf{E}_1 = \sqrt{R T} \mathbf{E}_0 \cos(\omega t - kx_1)\]
+\[\mathbf{E}_1 = \sqrt{R T} \;\mathbf{E}_0 \cos(\omega t - kx_1),\]
 where $x_1$ is the distance travelled by the first laserbeam. 
 The polarisation of the second beam gets changed.
 The polarisation vector can be split up into components along the fast and slow axis of the waveplate
-$$\mathbf{E}_0 = E_0 (a \mathbf{f} + b \mathbf{s})$$
-where $\mathbf{f}$ is the fast axis and $\mathbf{s}$ is the slow axis.
+$\mathbf{E}_0 = E_0 (a \mathbf{f} + b \mathbf{s}),$
+where $\mathbf{f}$ and $\mathbf{s}$ are unit vectors in the direction og the slow and fast axis respectively.
 We can find the coefficients $a$ and $b$ as $a = \frac{\mathbf{E_0}}{E_0} \cdot \mathbf{f} = \cos\theta$ and $b = \sin\theta$ where $\theta$ is the angle between the original polarisation vector,
 and the fast axis.
 After this wave hits the waveplate the two components are shifted by half a wavelength with respect to each other, so at the detector:
@@ -65,9 +64,10 @@ After this wave hits the waveplate the two components are shifted by half a wave
 since $\cos(x + \pi) = -\cos(x)$, so a half wavelength difference is the same as changing the sign between the fast and slow axis.
 The total E field is therefore
 \begin{align*}
-    \mathbf{E_1} + \mathbf{E_2} &= \sqrt{RT}E_0\left(a(\cos(\omega t - kx_1) + \cos(\omega t - kx_2))\mathbf{f} \right. \\
-    &+ \left. b(\cos(\omega t - kx_1) - \cos(\omega t - kx_2))\mathbf{s}\right) \\
-    &\equiv \sqrt{RT}E_0 \left( a'\mathbf{f} + b'\mathbf{s} \right)
+    \mathbf{E_1} + \mathbf{E_2} &= \sqrt{RT}\; E_0\Bigl(a(\cos(\omega t - kx_1)\\
+    &+ \cos(\omega t - kx_2))\mathbf{f} \\
+    &+ b(\cos(\omega t - kx_1) - \cos(\omega t - kx_2))\mathbf{s}\bigr) \\
+    &\equiv \sqrt{RT}\;E_0 \left( a'\mathbf{f} + b'\mathbf{s} \right).
 \end{align*}
 We can now find the intensity:
 \begin{align}
