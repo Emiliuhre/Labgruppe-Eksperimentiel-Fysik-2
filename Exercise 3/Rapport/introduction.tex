@@ -1,6 +1,6 @@
 \chapter{Introduction}
 The Mach-Zehnder interferometer will be used to determine the refractive index of air, 
-and investigate the effects of a waveplate inserted in one of he interferometer arms.
+and investigate how the intensity changes when a waveplate is inserted in one of the interferometer arms.
 \section{Cauchy's Formula}
 Suppose we have a gas of molecules. 
 When we impose an electromagnetic wave on the molecules, 
@@ -56,14 +56,28 @@ The polarisation of the second beam gets changed.
 The polarisation vector can be split up into components along the fast and slow axis of the waveplate
 $$\mathbf{E}_0 = E_0 (a \mathbf{f} + b \mathbf{s})$$
 where $\mathbf{f}$ is the fast axis and $\mathbf{s}$ is the slow axis.
-After this hits the waveplate the two components are shifted by half a wavelength with respect to each other, so at the detector:
+We can find the coefficients $a$ and $b$ as $a = \frac{\mathbf{E_0}}{E_0} \cdot \mathbf{f} = \cos\theta$ and $b = \sin\theta$ where $\theta$ is the angle between the original polarisation vector,
+and the fast axis.
+After this wave hits the waveplate the two components are shifted by half a wavelength with respect to each other, so at the detector:
 \begin{align*}
     \mathbf{E}_2 &= \sqrt{RT}E_0 (a \mathbf{f} - b \mathbf{s})\cos(\omega t - kx_2) \\
 \end{align*}
 since $\cos(x + \pi) = -\cos(x)$, so a half wavelength difference is the same as changing the sign between the fast and slow axis.
 The total E field is therefore
-\begin{equation*}
-    \mathbf{E_1} + \mathbf{E_2} = \sqrt{RT}E_0\left(a(\cos(\omega t - kx_1) + \cos(\omega t - kx_2))\mathbf{f} + b(\cos(\omega t - kx_1) - \cos(\omega t - kx_2))\mathbf{s}\right)
-\end{equation*}
-
+\begin{align*}
+    \mathbf{E_1} + \mathbf{E_2} &= \sqrt{RT}E_0\left(a(\cos(\omega t - kx_1) + \cos(\omega t - kx_2))\mathbf{f} \right. \\
+    &+ \left. b(\cos(\omega t - kx_1) - \cos(\omega t - kx_2))\mathbf{s}\right) \\
+    &\equiv \sqrt{RT}E_0 \left( a'\mathbf{f} + b'\mathbf{s} \right)
+\end{align*}
+We can now find the intensity:
+\begin{align}
+    I &= c \epsilon_0 |\mathbf{E_1} + \mathbf{E_2}|^2 \nonumber \\
+    &= c \epsilon_0 RT E_0^2 \left( a'^2 + b'^2 \right) \nonumber \\
+    \intertext{We find the average, using $\int_0^{2\pi} [\cos(\omega t + \phi_1) + \cos(\omega t + \phi_2)]^2 d(\omega t) = 1 + \cos(\phi_1 - \phi_2)$}
+    \langle I \rangle &= c \epsilon_0 RT E_0^2 \frac{1}{2\pi}\int_0^{2\pi} a'^2 + b'^2 dt  \nonumber \\
+    &= c \epsilon_0 RT E_0^2 (\cos^2\theta (1 + \cos(kx_1 - kx_2)) \nonumber \\
+    &+ \sin^2\theta (1 + \cos(\pi + kx_1 - kx_2))) \nonumber \\
+    &= I_0 (1 + \cos\Delta \phi (\cos^2\theta - \sin^2\theta)) \label{RetardedIntensity}
+\end{align}
+where $\Delta \phi = k(x_1 - x_2)$ and $I_0 = c \epsilon_0 RT E_0^2$.
 
