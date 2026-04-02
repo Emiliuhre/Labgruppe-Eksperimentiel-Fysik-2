@@ -1,6 +1,19 @@
 \chapter{Experimental Setup}
-\section{Setup}
-
+The experiment is split up into two parts, where the Mach-Zehnder Interferometer is common for them both.
+\section{Mach-Zehnder Interferometer}
+A helium-neon laser\autocite{thorlabs_henelaser_manual} is used as the light source.
+This light is sent through a neutral density filter to decrease its intensity, 
+as the sensor\autocite{thorlabs_detector_manual}, oversaturates at the lasers unfiltered intensity.
+After moving through the neutral density filter, 
+the laserbeam is aligned using two mirrors,
+afterwhich it moves through a beamsplitter.
+The two split laserbeams then hit a mirror each,
+that directs them towards a second beamsplitter,
+that unifies the two beams, before they hit the sensor, which is connected to a PicoScope\autocite{PicoScope3203D},
+\subsection{Variation with Aircell}
+In this setup (see figure \ref{fig:setup_with_aircell}),
+an aircell is added to one of the arms of the interferometer. 
+This aircell is connected to a bicycle pump that can increase the density of the air inside the aircell (and in turn, the pressure).
 \begin{figure*}
     \includesvg[width=0.95\textwidth]{../figures/Mach-Zender_IFM_setup_Aircell.svg}
     \caption{Setup of the Mach-Zehnder Interferometer. 
@@ -11,3 +24,17 @@
     When the two beams meet again their interference is shown as the dashed overlap of the beams.}
     \label{fig:setup_with_aircell}
 \end{figure*}
+\subsection{Variation with Waveplate}
+% Add something about this setup
+\section{Measurements}
+\subsection{Variation with Aircell}
+First air is pumped into the aircell using the bicycle pump, 
+until the gauge pressure exceeds 1 bar. 
+The connection between pump and aircell is slightly leaky,
+so the pressure will drop slowly. When the pressure is at exactly one bar (measured by eye),
+the PicoScope starts measuring the intensity. 
+The measurement is stopped when the gauge pressure reaches zero.
+\subsection{Variation with Waveplate}
+% lorem ipsum
+
+
