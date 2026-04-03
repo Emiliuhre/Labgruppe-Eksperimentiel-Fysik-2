@@ -25,7 +25,17 @@ This aircell is connected to a bicycle pump that can increase the density of the
     \label{fig:setup_with_aircell}
 \end{figure*}
 \subsection{Variation with Waveplate}
-% Add something about this setup
+In this setup (see figure \ref{fig:setup_with_waveplate}) the aircell is replaced by a waveplate.
+\begin{figure*}
+    %\includesvg[width=0.95\textwidth]{../figures/Mach-Zender_IFM_setup_Aircell.svg}
+    \caption{Setup of the Mach-Zehnder Interferometer. 
+    A HeNe laser beam (red) is attenuated and aligned before entering the first beam splitter. 
+    In one of the interferometer arms, the beam through an air cell, where the optical path length is increased relative to the other arm due to the higher refractive index ($n$) of the glass and pressurized air.  
+    This lengthened optical path means a phase shift from the other arm, and is represented as the green colored beam. 
+    The air cell has a variable refractive index $n$ depending on the pressurization. 
+    When the two beams meet again their interference is shown as the dashed overlap of the beams.}
+    \label{fig:setup_with_waveplate}
+\end{figure*}
 \section{Measurements}
 \subsection{Variation with Aircell}
 First air is pumped into the aircell using the bicycle pump, 
@@ -35,6 +45,8 @@ so the pressure will drop slowly. When the pressure is at exactly one bar (measu
 the PicoScope starts measuring the intensity. 
 The measurement is stopped when the gauge pressure reaches zero.
 \subsection{Variation with Waveplate}
-% lorem ipsum
+Firstly we measured the initial polarisation of the laser by rotating a polarizer until the intensity measured became zero.
+This is neccessary in order to calculate the angle between the fast axis and the polarisation of the light.
+Then we rotate the waveplate, 10 degrees at a time, and measure an average intensity with the PicoScope.
 
 
