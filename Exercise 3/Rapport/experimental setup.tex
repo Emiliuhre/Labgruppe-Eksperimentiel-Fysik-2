@@ -26,13 +26,17 @@ This aircell is connected to a bicycle pump that can increase the density of the
     \label{fig:setup_with_aircell}
 \end{figure*}
 \subsection{Variation with Waveplate}
-In this setup (see figure \ref{fig:setup_with_waveplate}) the aircell is replaced by a waveplate.
+This setup is almost the same as before (see figure \ref{fig:setup_with_waveplate}), but in this case the aircell is replaced by a half-waveplate, 
+and one of the mirrors is instead mounted on a piezo \autocite{piezo}.
+The neutral density filter is also replaced with a polarizer, 
+because the polarizer can decrease the intensity, while also allowing us to enforce the polarization of the light.
+This polarization angle will later be relevant in calculations of the angle between the fast axis of the waveplate and the polarization of the light.
 \begin{figure*}
     \centering
     %\includesvg[width=0.95\textwidth]{../figures/Mach-Zender_IFM_setup_HWP.svg}
     \caption{Setup of the Mach-Zehnder Interferometer. 
     A HeNe laser beam (red) is attenuated and aligned before entering the first beam splitter. 
-    In one of the interferometer arms, the beam through an air cell, where the optical path length is increased relative to the other arm due to the higher refractive index ($n$) of the glass and pressurized air.  
+    In one of the interferometer arms, the beam goes thorugh a waveplate, where the optical path length is increased relative to the other arm due to the higher refractive index ($n$) of the glass and pressurized air.  
     This lengthened optical path means a phase shift from the other arm, and is represented as the green colored beam. 
     The air cell has a variable refractive index $n$ depending on the pressurization. 
     When the two beams meet again their interference is shown as the dashed overlap of the beams.}
@@ -47,8 +51,18 @@ so the pressure will drop slowly. When the pressure is at exactly one bar (measu
 the PicoScope starts measuring the intensity. 
 The measurement is stopped when the gauge pressure reaches zero.
 \subsection{Variation with Waveplate}
-Firstly we measured the initial polarisation of the laser by rotating a polarizer until the intensity measured became zero.
-This is neccessary in order to calculate the angle between the fast axis and the polarisation of the light.
-Then we rotate the waveplate, 10 degrees at a time, and measure an average intensity with the PicoScope.
+Firstly we set the polarizer to an angle at which the sensor was not oversaturated. 
+This angle ended up being 130 degrees with respect to the vertical.
+Then a signal from a signal generator is added to the piezo, so it oscillates back and forth,
+changing the path length of one of the light beams, 
+and therefore resulting in a signal that oscillates between the maximum and minimum amount of interference.
+We do this to ensure that $\delta \phi$ is always known, as we can always choose the maximum value measured,
+and know that at this point $\cos(\delta \phi)$ must be either $1$ or $-1$ depending on the sign of $\cos(2\theta)$.
+If this is not done, we risk that $\delta \phi$ changes between measurements.
+We then rotate the waveplate, 10 degrees at a time, and measure the signal for 5 seconds,
+such that the piezo completes several periods. 
+We measure the angle of the waveplate using the anglescale on it, 
+but it is important to note that the fast axis is offset by 52 degrees, 
+meaning that when the angle scale measures 52 degrees, the fast axis is vertical.
 
 

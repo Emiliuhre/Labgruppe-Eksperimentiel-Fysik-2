@@ -29,5 +29,26 @@ where $\sigma_\Omega = \frac{\sigma_V}{2V_\text{max}}$, because a period is the 
 %I now see that this is not competely correct and that i am in fact retarded and should have listened to you guys. <--- This
 The challenge when trying to get a correct value for $\eta$ was determining $\Omega$ because of the unkown change in fequency results in an unkown extra fraction of the easily countible peaks.
 We have tried to account for this by assuming that occilation closest to either the end or start has the same period and then calculation the fraction it has reached in the period.
-The difference between the whole number of periods and the fractional can be seen in FIGUR. Where we achive the following TABEL from the weighted means of 2 assumptions.
+The difference between the whole number of periods and the fractional can be seen in figure \ref{fig:RefractiveIndex}. Where we achieve the following TABEL from the weighted means of 2 assumptions.
+\begin{figure*}
+    \centering
+    %\includesvg[width=0.95\textwidth]{../figures/WaveplateFit.svg}
+    \caption{}
+    \label{fig:RefractiveIndex}
+\end{figure*}
 \section{Test of intensity hypothesis}
+In order to test the validity of equation \eqref{RetardedIntensity}, 
+we will attempt to fit it to our data.
+To do this, we will extract the maximum value of each intensity measurement,
+knowing that this happens when $\cos(\Delta \phi) = \text{sgn}(\cos(2\theta))$.
+We will therefore be fitting the function
+\[I = I_0(1 + |\cos(2\theta)|) + b\]
+where $b$ is added because of background radiation. 
+This fit results in figure \ref{fig:WaveplateFit}.
+When picking the maxima, we require that a certain amount of peaks have that maximal value, to prevent counting outliers.
+\begin{figure*}
+    \centering
+    \includesvg[width=0.95\textwidth]{../figures/WaveplateFit.svg}
+    \caption{}
+    \label{fig:WaveplateFit}
+\end{figure*}
