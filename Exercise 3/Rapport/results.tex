@@ -29,5 +29,34 @@ where $\sigma_\Omega = \frac{\sigma_V}{2V_\text{max}}$, because a period is the 
 %I now see that this is not competely correct and that i am in fact retarded and should have listened to you guys. <--- This
 The challenge when trying to get a correct value for $\eta$ was determining $\Omega$ because of the unkown change in fequency results in an unkown extra fraction of the easily countible peaks.
 We have tried to account for this by assuming that occilation closest to either the end or start has the same period and then calculation the fraction it has reached in the period.
-The difference between the whole number of periods and the fractional can be seen in FIGUR. Where we achive the following TABEL from the weighted means of 2 assumptions.
+The difference between the whole number of periods and the fractional can be seen in Figure 4. 
+\begin{figure*}
+    \centering
+    \includesvg[width=0.95\textwidth]{../figures/Aircell.svg}
+    \caption{The calculation of $n=1+\eta$ for the different datasets with uncertainty and a $95\%$ confidence interval. The upper is the whole number period approximation and the lower is where a fractional approximation is included.} 
+    \label{fig:AircellFig}
+\end{figure*}
+Where we achive the results seen in Tabel 1 from the weighted means of the 2 assumptions.
+\begin{table}[!ht]
+    \caption{The results of the experiments with the aircell with the whole number approximation labelled as Method 1 and fractional as Method 2 with their uncertainties.}
+    \centering
+    \begin{tabular}{c c c}
+        \hline\hline
+        Method & $n$ & $\sigma_{n}$ \\
+         & $[\text{atm}]$ & $[\text{atm}]$\\
+        \hline
+        \rule{0pt}{1.1em}\noindent
+        1 & 1.0002042 & $5.2 \cdot 10^{-6}$\\
+        2 & 1.0002103 & $5.3 \cdot 10^{-6}$\\
+        \hline
+    \end{tabular}
+    \label{table:AircellData}
+\end{table}
+We notice a value closer to the expected value of $n=1.00027717$ \autocite{air}. Though the calculated value still seems to be far off. The expected value is out of the $95\%$ confidence interval. \\
+We think the offset could be explained by an uncertainty in the atmospheric pressure $p_{\textup{0}}$. 
+This is because of the way out data was collected as explained in $1.2$. The data collection was started when the gauge pressure was seen to fall to $1 \textup{ atm}$ and stopped close to $0 \textup{ atm}$.
+Because the gauge was only given in increments of $0.1 \textup{ atm}$ we assumme our visual messurement will have an uncertainty of $\sigma_{p} = 0.1 \textup{ atm}$.
+But we failed to consider that we did not alwas end the data collection at exactly $p_{\textup{0}} = 1 \textup{ atm}$ as assumed before. 
+If we try to evaluate this error and change our $p_{\textup{0}}$ in the calculation of $\eta$ we get a value of $n$ within the the confidence interval at $p_{\textup{0}} = 1.111$ and an almost exact value of $n$ at $p_{\textup{0}} = 1.137$.
+This makes sense when if we assume our uncertainty of $\sigma_{p} = 0.1 \text{ atm}$ also would apply to $p_{\textup{0}}$.
 \section{Test of intensity hypothesis}
