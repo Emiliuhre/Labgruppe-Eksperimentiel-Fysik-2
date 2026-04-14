@@ -60,3 +60,18 @@ But we failed to consider that we did not alwas end the data collection at exact
 If we try to evaluate this error and change our $p_{\textup{0}}$ in the calculation of $\eta$ we get a value of $n$ within the the confidence interval at $p_{\textup{0}} = 1.111$ and an almost exact value of $n$ at $p_{\textup{0}} = 1.137$.
 This makes sense when if we assume our uncertainty of $\sigma_{p} = 0.1 \text{ atm}$ also would apply to $p_{\textup{0}}$.
 \section{Test of intensity hypothesis}
+In order to test the validity of equation \eqref{RetardedIntensity}, 
+we will attempt to fit it to our data.
+To do this, we will extract the maximum value of each intensity measurement,
+knowing that this happens when $\cos(\Delta \phi) = \text{sgn}(\cos(2\theta))$.
+We will therefore be fitting the function
+\[I = I_0(1 + |\cos(2\theta)|) + b\]
+where $b$ is added because of background radiation. 
+This fit results in figure \ref{fig:WaveplateFit}.
+When picking the maxima, we require that a certain amount of peaks have that maximal value, to prevent counting outliers.
+\begin{figure*}
+    \centering
+    \includesvg[width=0.95\textwidth]{../figures/WaveplateFit.svg}
+    \caption{}
+    \label{fig:WaveplateFit}
+\end{figure*}
