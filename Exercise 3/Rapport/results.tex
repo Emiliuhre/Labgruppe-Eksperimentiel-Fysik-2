@@ -1,13 +1,13 @@
 \chapter{Results}
 \section{Determining the index of refraction of air}
-At 0 gauge pressure the velocity of the light is $v_1$, 
-so the time it takes the light to move through the cylinder (of length $L$) is $t_1 = \frac{L}{v_1}$.
-When we increase the pressure in the glass cylinder the index of refraction changes,
-so now the time is instead $t_2 = \frac{L}{v_2}$.
-We therefore get that the difference in time between the two pressures is 
+At zero gauge pressure the velocity of the light is $v_1$, 
+making the travel time over length $L$  equal to $t_1=\frac{L}{v_1}$ through the cylinder.
+Increasing the pressure in the glass cylinder changes index of refraction,
+leading to a new velocity $v_2$ and travel time $t_2 = \frac{L}{v_2}$.
+The difference in time between the two pressures is 
 \[\Delta t = t_2 - t_1 = L\frac{v_1 - v_2}{v_2v_1}\]
 $v_1$ and $v_2$ can be expressed using the refractive indices 
-$$v_i = \frac{c}{n_i}, i = 1,2.$$
+$$v_i = \frac{c}{n_i},\quad i = 1,2.$$
 If we now use equation \refeq{prop_to_pressure}, where $n_1 = 1 + \eta$ and $n_2 = 1 + \eta_2$
 we get that $$\frac{\eta_2}{\eta} = \frac{p}{p_0} \iff \eta_2 = \frac{p}{p_0}\eta$$
 where $p_0$ is the starting pressure (we will be using atmospheric pressure), and $p$ is the end pressure.
@@ -52,7 +52,8 @@ Where we achive the results seen in Tabel 1 from the weighted means of the 2 ass
     \end{tabular}
     \label{table:AircellData}
 \end{table}
-We notice a value closer to the expected value of $n=1.00027717$ \autocite{air}. Though the calculated value still seems to be far off. The expected value is out of the $95\%$ confidence interval. \\
+\mbox{We notice a }value closer to the expected value of $n=1.00027717$ \autocite{air}. 
+Though the calculated value still seems to be far off. The expected value is out of the $95\%$ confidence interval. \\
 We think the offset could be explained by an uncertainty in the atmospheric pressure $p_{\textup{0}}$. 
 This is because of the way our data was collected as explained in $1.2$. The data collection was started when the gauge pressure was seen to fall to $1 \textup{ atm}$ and stopped close to $0 \textup{ atm}$.
 Because the gauge was only given in increments of $0.1 \textup{ atm}$ we would normally say that the uncertainty is onlt $0.05 \text{ atm}$, but because we were measuring it as it was changing, we will asumme our visual messurement had an uncertainty of $\sigma_{p} = 0.1 \textup{ atm}$.
