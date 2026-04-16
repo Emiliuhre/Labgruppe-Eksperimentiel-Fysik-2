@@ -31,7 +31,7 @@ The difference between the whole number of periods and the fractional can be see
 \begin{figure*}
     \centering
     \includesvg[width=0.95\textwidth]{../figures/Aircell.svg}
-    \caption{The calculation of $n=1+\eta$ for the different datasets with uncertainty and a $95\%$ confidence interval. The upper is the whole number period approximation and the lower is where a fractional approximation is included.} 
+    \caption{The calculation of $n=1+\eta$ for the different datasets with uncertainty and a $95\%$ confidence interval. The upper is the whole number period and the lower is where a fractional approximation is included.} 
     \label{fig:AircellFig}
 \end{figure*}
 Where we achieve the results seen in Tabel 1 from the weighted means, where the errors where assumed to be $\sigma_p = 0.1 \text{ bar}, \sigma_\Omega = 1$ and $\sigma_L = 0.5 \cdot 10^{-3} \text{ m}$.
@@ -65,11 +65,14 @@ knowing that this happens when $\cos(\Delta \phi) = \text{sgn}(\cos(2\theta))$.
 We will therefore be fitting the function
 \[I = I_0(1 + |\cos(2\theta)|) + b\]
 where $b$ is added because of background radiation. 
-This fit results in figure \ref{fig:WaveplateFit}.
-When picking the maxima, we require that a certain amount of peaks have that maximal value, to prevent counting outliers.
+This fit, using the Levenberg-Marquardt algorithmn, results in figure \ref{fig:WaveplateFit}.
+When picking the maxima, we require that 200 'peaks' have this value, to prevent counting outliers.
+200 is a large number compared to the total number of periods measured, but this is because the algorithmn we use to find the peaks, 
+counts the same peak multiple times, so instead of fixing this, we use this as a feature, as wider peaks are then counted more than thin peaks, as they should,
+as very thin peaks are often outliers.
 \begin{figure*}
     \centering
     \includesvg[width=0.95\textwidth]{../figures/WaveplateFit.svg}
-    \caption{}
+    \caption{The maximum intensity measured as a function of the angle between the polarization of the laser and the fast axis $\theta$.}
     \label{fig:WaveplateFit}
 \end{figure*}
