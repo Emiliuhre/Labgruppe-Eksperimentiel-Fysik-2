@@ -58,7 +58,7 @@ def process_spectrum(file_path):
 
 # EXECUTION
 # Usage:
-# data = process_spectrum('your_data.txt')
+# data = process_spectrum('../Date/Day 2/data.txt')
 # print(data.head())
 
 # Plotting
