@@ -1,7 +1,7 @@
 import numpy as np
 
 b = 2.897771955e-3 # m * K
-sigmaLambda = 1e-9 # m
+sigmaLambda = 2e-9 # m
 
 temperatures = np.array([])
 sigmaTs = np.array([])
