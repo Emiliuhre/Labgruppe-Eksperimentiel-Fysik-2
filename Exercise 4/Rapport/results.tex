@@ -18,4 +18,17 @@ We assume a constant $\pm 2 \text{ nm}$ uncertainty on the wavelength measuremen
 which then becomes an uncertainty in the temperature measurement of $\sigma_T = |\frac{T_\text{max}}{\lambda_\text{max}}\sigma_\lambda|$, when we use Wien's displacement law.
 The final estimate for the temperature is then given by a weighted mean of our 3 measurements, and becomes 
 \[T = 5564.1 \text{ K} \pm 12.6 \text{ K}\]
+\section{Determining salts and their concentrations}
+If we plot the absorbtion spectra for the 3 solutions (figure \ref{fig:AbsorbtionSpectra}), we can compare them to the absorbtion spectra for the salts
+$\text{CuSO}_4$,$\text{NiSO}_4$ og $\text{CoSO}_4$, and find out which solution is which.
+We determined that the R solution contained $\text{CoSO}_4$, the G solution contained $\text{NiSO}_4$ and the B solution contained $\text{CuSO}_4$.
+The relative number densities were also determined as 
+\[N_{rel} = \frac{\text{max}(I_1)}{\text{max}(I)},\]
+where $\text{max}(I_1)$ is the intensity at the most prominent absorbtion maxima of the first solution (i.e R1), and $\text{max}(I)$, is the intensity at the most prominent absorbtion maxima of the solution we are calculating the relative number density off.
+\begin{figure*}
+    \centering
+    \includesvg[width=0.95\textwidth]{../Figures/AbsorbtionSpectra.svg}
+    \caption{Absorbtion spectra of the R,G and B solutions. Relative number density is given in the labels.}
+    \label{fig:AbsorbtionSpectra}
+\end{figure*}
 \section{Precision of our Spectrometer}
