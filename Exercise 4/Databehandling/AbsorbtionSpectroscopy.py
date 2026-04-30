@@ -23,12 +23,12 @@ air = pd.read_table(f"Exercise 4/Data/Day 1/R background.txt",skiprows = 1, head
 fig, axes = plt.subplots(3,1, sharex = True)
 for dataX, color, ax in zip(data, ["R", "G", "B"], axes):
     for i, dat in enumerate(dataX):
-        intensity = dat.Intensity - water.Intensity
+        intensity = dat.Intensity.replace(0,np.nan) - water.Intensity
         if i == 0:
-            max_index = np.argmax(intensity[300:1000]) + 300
+            max_index = np.argmax(intensity[300:1100]) + 300
             max_intensity = intensity[max_index]
         ax.plot(dat.Wavelength, intensity, label = f"{color}{i+1}, $N = {intensity[max_index] / max_intensity:.2f}N_{{{color}1}}$")
-        #ax.plot(dat.Wavelength[max_index],intensity[max_index], "o", color = "pink")
+        ax.plot(dat.Wavelength[max_index],intensity[max_index], "o", color = "black")
     ax.grid()
     ax.legend()
 fig.suptitle("Absorbtion spectre of solutions of 3 different salts")
@@ -36,7 +36,8 @@ axes[0].set_title("CoSO$_4$")
 axes[1].set_title("NiSO$_4$")
 axes[2].set_title("CuSO$_4$")
 axes[2].set_xlabel("Wavelength [nm]")
-axes[1].set_ylabel("Intensity [?]")
+axes[1].set_ylabel("Absorption")
 #fig.subplots_adjust(hspace=1,top = 0.9)
 fig.tight_layout()
+#plt.show()
 fig.savefig("Exercise 4/Figures/AbsorbtionSpectra.svg")
