@@ -37,7 +37,7 @@ ax.indicate_inset_zoom(inset_ax, edgecolor="C0", alpha = 1)
 ax.set_ylim(min(intensity), max(intensity))
 ax.set_title("Hydrogen Spectra")
 ax.set_xlabel("Wavelength [nm]")
-ax.set_ylabel("Intensity [?]")
+ax.set_ylabel("Intensity [counts]")
 ax.legend()
 
 #plt.show()
