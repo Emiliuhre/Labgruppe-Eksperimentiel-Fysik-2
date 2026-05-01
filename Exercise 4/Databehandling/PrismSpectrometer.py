@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 
 # CONFIGURATION
 # Define input angle (theta_i) relative to the normal of the entry face of the prism (in degrees).
-THETA_I_DEG = 15.0  # Change this to your experimental value
+THETA_I_DEG = 60  # Change this to your experimental value
 THETA_I = np.radians(THETA_I_DEG)
 
 # PHYSICAL EQUATIONS
