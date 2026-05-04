@@ -1,23 +1,31 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.optimize import brentq
+from scipy.optimize import minimize, fsolve
 
 # CONFIGURATION
 # Define input angle (theta_i) relative to the normal of the entry face of the prism (in degrees).
-theta_i_deg = -60  # Change this to your experimental value
+theta_i_deg = 60  # Change this to your experimental value
 theta_i = np.radians(theta_i_deg)
 
-def sellmeier_eqn(lmbda):
-    l2 = lmbda**2
-    n2_minus_1 = (1.73759695 * l2) / (l2 - 0.013188707) + \
-                 (0.313747346 * l2) / (l2 - 0.0623068142) + \
-                 (1.89878101 * l2) / (l2 - 155.23629)
-    return np.sqrt(n2_minus_1 + 1)
+def sellmeier_eqn(lamb, n_target):
+    B1, C1 = 1.73759695, 0.013188707
+    B2, C2 = 0.313747346, 0.0623068142
+    B3, C3 = 1.89878101, 155.23629
+    
+    term1 = (B1 * lamb**2) / (lamb**2 - C1)
+    term2 = (B2 * lamb**2) / (lamb**2 - C2)
+    term3 = (B3 * lamb**2) / (lamb**2 - C3)
+    
+    # Dette er n^2 ifølge formlen
+    n2_calc = 1 + term1 + term2 + term3
+    
+    # TRICK: Returner forskellen i n^2 i stedet for n. 
+    # Så slipper vi for np.sqrt() helt!
+    return n2_calc - n_target**2
 
 def theta_o(n):
     return np.arcsin(n * np.sin(np.radians(60) - np.arcsin(np.sin(theta_i) / n)))
-
 
 fig, axes = plt.subplots(3,1)
 data = pd.read_excel("Exercise 4/Data/Day 3/OurSpectrometer.xlsx")
@@ -34,16 +42,24 @@ for element, ax in zip(elements, axes):
         reference_background = pd.read_table(f"Exercise 4/Data/Day 2/{element[:2]} BG.txt", skiprows=1, header = None, index_col = False, names = ["Wavelength", "Intensity"])
         reference_intensity = reference_data.Intensity - reference_background.Intensity
 
-        our_theta_o = np.radians(120 - angles)
-        f  = lambda n, theta: theta_o(n) - theta
+        our_theta_o = np.radians(angles)
+        f  = lambda n, theta: np.abs(theta_o(n) - theta)
         ns = []
-        for theta in our_theta_o:
-            n = brentq(lambda n: f(n, theta), 1,1.05)
+        nner = np.linspace(1.7, 1.9, 1000)
+        
+        for theta in our_theta_o:       
+            n = nner[min(f(nner, theta)) == f(nner, theta)]
             ns.append(n)
-        print(n)
+        lambs = []
+        for n in ns:
+            lamb = fsolve(sellmeier_eqn, 0.5, args=(n,)) #mu m
+            lambs.append(lamb*1e3) #nm
+
+        ax.plot(lambs, intensity)
         #ax.plot(our_theta_o, intensity)
+axes[1].set_ylabel("Intensity $\\left[\\text{mV}\\right]$")
+axes[2].set_xlabel("Wavelength $\\left[\\text{nm}\\right]$")
 
 
 
-
-#plt.show()
+plt.show()
