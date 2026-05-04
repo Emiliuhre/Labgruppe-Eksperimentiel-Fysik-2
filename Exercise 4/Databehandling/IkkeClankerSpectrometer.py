@@ -21,7 +21,7 @@ def theta_o(lamb):
 
 fig, axes = plt.subplots(3,1)
 data = pd.read_excel("Exercise 4/Data/Day 3/OurSpectrometer.xlsx")
-angles = data["Angle [deg]"]
+angles = data["Angle [deg]"][1:].astype(float)
 elements = [col for col in data.columns if col != "Angle [deg]"]
 
 for element, ax in zip(elements, axes):
@@ -29,11 +29,12 @@ for element, ax in zip(elements, axes):
 
         our_data = data[element][1:] # mV
         our_background = data[element][0] # mV
+        intensity = our_data - our_background
         reference_data = pd.read_table(f"Exercise 4/Data/Day 2/{element[:2]}.txt", skiprows=1, header = None, index_col = False, names = ["Wavelength", "Intensity"])
         reference_background = pd.read_table(f"Exercise 4/Data/Day 2/{element[:2]} BG.txt", skiprows=1, header = None, index_col = False, names = ["Wavelength", "Intensity"])
         reference_intensity = reference_data.Intensity - reference_background.Intensity
 
-        our_theta_o = 1
-        ax.plot(reference_data.Wavelength, reference_intensity)
+        our_theta_o = angles - 120
+        ax.plot(our_theta_o, intensity)
 
 plt.show()
