@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy.optimize import brentq
 
 # CONFIGURATION
 # Define input angle (theta_i) relative to the normal of the entry face of the prism (in degrees).
@@ -14,8 +15,7 @@ def sellmeier_eqn(lmbda):
                  (1.89878101 * l2) / (l2 - 155.23629)
     return np.sqrt(n2_minus_1 + 1)
 
-def theta_o(lamb):
-    n = sellmeier_eqn(lamb)
+def theta_o(n):
     return np.arcsin(n * np.sin(np.radians(60) - np.arcsin(np.sin(theta_i) / n)))
 
 
@@ -34,7 +34,16 @@ for element, ax in zip(elements, axes):
         reference_background = pd.read_table(f"Exercise 4/Data/Day 2/{element[:2]} BG.txt", skiprows=1, header = None, index_col = False, names = ["Wavelength", "Intensity"])
         reference_intensity = reference_data.Intensity - reference_background.Intensity
 
-        our_theta_o = 120 - angles
-        ax.plot(our_theta_o, intensity)
+        our_theta_o = np.radians(120 - angles)
+        f  = lambda n, theta: theta_o(n) - theta
+        ns = []
+        for theta in our_theta_o:
+            n = brentq(lambda n: f(n, theta), 1,1.05)
+            ns.append(n)
+        print(n)
+        #ax.plot(our_theta_o, intensity)
 
-plt.show()
+
+
+
+#plt.show()
