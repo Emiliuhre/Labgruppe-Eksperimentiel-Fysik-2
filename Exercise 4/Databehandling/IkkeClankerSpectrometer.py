@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 # CONFIGURATION
 # Define input angle (theta_i) relative to the normal of the entry face of the prism (in degrees).
-theta_i_deg = 60  # Change this to your experimental value
+theta_i_deg = -60  # Change this to your experimental value
 theta_i = np.radians(theta_i_deg)
 
 def sellmeier_eqn(lmbda):
@@ -21,7 +21,7 @@ def theta_o(lamb):
 
 fig, axes = plt.subplots(3,1)
 data = pd.read_excel("Exercise 4/Data/Day 3/OurSpectrometer.xlsx")
-angles = data["Angle [deg]"][1:].astype(float)
+angles = data["Angle [deg]"][1: ].astype(float)
 elements = [col for col in data.columns if col != "Angle [deg]"]
 
 for element, ax in zip(elements, axes):
@@ -34,7 +34,7 @@ for element, ax in zip(elements, axes):
         reference_background = pd.read_table(f"Exercise 4/Data/Day 2/{element[:2]} BG.txt", skiprows=1, header = None, index_col = False, names = ["Wavelength", "Intensity"])
         reference_intensity = reference_data.Intensity - reference_background.Intensity
 
-        our_theta_o = angles - 120
+        our_theta_o = 120 - angles
         ax.plot(our_theta_o, intensity)
 
 plt.show()
