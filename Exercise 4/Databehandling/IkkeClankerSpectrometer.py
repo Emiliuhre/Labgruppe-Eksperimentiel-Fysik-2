@@ -3,6 +3,18 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import minimize, fsolve
 
+
+plt.rc("xtick", labelsize = 20, top = False, bottom = False, direction = "in")   
+plt.rc("ytick", labelsize = 20, left = False, right = False, direction = "in")
+plt.rc("axes", grid = False, linewidth = 1.2, axisbelow = True)
+plt.rc("grid", ls = "dotted", lw = 1)     
+plt.rc("font", size = 40, family = "serif", serif = ["Computer Modern Serif"])
+plt.rc("text", usetex = True)
+plt.rc("figure", figsize = (12, 10), dpi = 72)
+plt.rc("ytick.major", width = 1)
+plt.rc("xtick.major", width = 1)
+plt.rc("legend", fontsize = 15, framealpha = 0.5, edgecolor = "black", fancybox = True)
+
 # CONFIGURATION
 # Define input angle (theta_i) relative to the normal of the entry face of the prism (in degrees).
 theta_i_deg = 60  # Change this to your experimental value
@@ -27,11 +39,10 @@ def sellmeier_eqn(lamb, n_target):
 def theta_o(n):
     return np.arcsin(n * np.sin(np.radians(60) - np.arcsin(np.sin(theta_i) / n)))
 
-fig, axes = plt.subplots(3,1)
+fig, axes = plt.subplots(3,1, sharex = True)
 data = pd.read_excel("Exercise 4/Data/Day 3/OurSpectrometer.xlsx")
 angles = data["Angle [deg]"][1: ].astype(float)
 elements = [col for col in data.columns if col != "Angle [deg]"]
-t = 0
 for element, ax in zip(elements, axes):
     if element != "Angle [deg]":
 
@@ -56,19 +67,14 @@ for element, ax in zip(elements, axes):
             lamb = fsolve(sellmeier_eqn, 0.4, args=(n,)) #mu m
             lambs.append(lamb*1e3) #nm
         
-        ax.stem(lambs, intensity/max(intensity), linefmt='grey', markerfmt='o', basefmt=" ")
-        ax.plot(reference_data.Wavelength, reference_intensity/max(reference_intensity))
-        # Find ud af hvilket element vi kigger på (sikrer at navnet matcher dict)
-        
-        
+        ax.stem(lambs, intensity/max(intensity), linefmt='C3', markerfmt='o', basefmt=" ", label = "Homemade Spectrometer" if ax == axes[0] else None)
+        ax.plot(reference_data.Wavelength, reference_intensity/max(reference_intensity), color = "black", label = "OceanOptics Spectrometer" if ax == axes[0] else None)
+        ax.set_title(f"{element[:2]}")
 
-        ax.legend() # Vis en boks, der forklarer farverne
-        t += 1
-        #ax.plot(our_theta_o, intensity)
+axes[1].set_ylabel("Normalised Intensity")
+axes[2].set_xlabel("Wavelength [nm]")
+fig.suptitle("Comparison between measurements of same gas lamp with different spectrometers")
+fig.legend(loc = "lower right") 
+fig.tight_layout()
 
-axes[1].set_ylabel("Intensity $\\left[\\text{mV}\\right]$")
-axes[2].set_xlabel("Wavelength $\\left[\\text{nm}\\right]$")
-
-
-
-plt.show()
+fig.savefig("Exercise 4/Figurer/OurSpectrometer.svg")

@@ -42,4 +42,4 @@ ax.legend()
 
 #plt.show()
 
-fig.savefig("Exercise 4/Figures/HydrogenSpecta.svg")
+fig.savefig("Exercise 4/Figurer/HydrogenSpecta.svg")
