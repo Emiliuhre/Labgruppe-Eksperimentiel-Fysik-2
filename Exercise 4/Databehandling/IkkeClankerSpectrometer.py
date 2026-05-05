@@ -31,7 +31,7 @@ fig, axes = plt.subplots(3,1)
 data = pd.read_excel("Exercise 4/Data/Day 3/OurSpectrometer.xlsx")
 angles = data["Angle [deg]"][1: ].astype(float)
 elements = [col for col in data.columns if col != "Angle [deg]"]
-
+t = 0
 for element, ax in zip(elements, axes):
     if element != "Angle [deg]":
 
@@ -50,13 +50,22 @@ for element, ax in zip(elements, axes):
         for theta in our_theta_o:       
             n = nner[min(f(nner, theta)) == f(nner, theta)]
             ns.append(n)
+        
         lambs = []
         for n in ns:
-            lamb = fsolve(sellmeier_eqn, 0.5, args=(n,)) #mu m
+            lamb = fsolve(sellmeier_eqn, 0.4, args=(n,)) #mu m
             lambs.append(lamb*1e3) #nm
+        
+        ax.stem(lambs, intensity/max(intensity), linefmt='grey', markerfmt='o', basefmt=" ")
+        ax.plot(reference_data.Wavelength, reference_intensity/max(reference_intensity))
+        # Find ud af hvilket element vi kigger på (sikrer at navnet matcher dict)
+        
+        
 
-        ax.plot(lambs, intensity)
+        ax.legend() # Vis en boks, der forklarer farverne
+        t += 1
         #ax.plot(our_theta_o, intensity)
+
 axes[1].set_ylabel("Intensity $\\left[\\text{mV}\\right]$")
 axes[2].set_xlabel("Wavelength $\\left[\\text{nm}\\right]$")
 
