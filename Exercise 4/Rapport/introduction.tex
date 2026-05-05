@@ -17,4 +17,20 @@ This concept can be used both for emission and absorbance spectroscopy.
 Emission spectroscopy is measuring the light something emits by itself,
 while absorbance spectroscopy works by letting light pass through a sample, 
 and then measuring what wavelengths originally present are missing when the light comes back out of the sample.
+\subsection{N-SF11 Equilateral Prism}
+It can be show that the relationship between the angle of incidence $\theta_i$, and the outgoing angle  $\theta_o $ is
+\begin{equation}
+    \theta_o = \sin^{-1} \left(  n \sin\left( 60^\circ - \sin^{-1}\left(\frac{\sin(\theta_i)}{n} \right) \right) \right). \label{eq:Diffraction}
+\end{equation}
+The index of refraction $n$, can be found using the Sellmeier equation for the N-SF11 material:
+\begin{align}
+    n^2 - 1 &= \frac{1.73759695\,\lambda^2}{\lambda^2 - 0.013188707} \nonumber \\
+&+ \frac{0.313747346\,\lambda^2}{\lambda^2 - 0.0623068142} \nonumber \\
+&+ \frac{1.89878101\,\lambda^2}{\lambda^2 - 155.23629} \label{eq:Sellmeier} 
+\end{align}
 \section{Wien Displacement Law}
+Wiens displacement law says that the wavelength at which the intensity is highest $\lambda_\text{max}$, is related to the temperature $T$ in the following way:
+\begin{equation}
+    \lambda_\text{max} = bT,  \label{eq:WienDisplacement}
+\end{equation}
+where $b \approx 2.898 \cdot 10^{-3} \text{m $\cdot$ K}$ is a constant.

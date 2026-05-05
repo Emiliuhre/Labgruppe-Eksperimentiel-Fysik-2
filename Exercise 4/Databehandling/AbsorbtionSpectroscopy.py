@@ -2,8 +2,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-plt.rc("xtick", labelsize = 15, top = False, bottom = False, direction = "in")   
-plt.rc("ytick", labelsize = 15, left = False, right = False, direction = "in")
+plt.rc("xtick", labelsize = 15, top = False, bottom = True, direction = "in")   
+plt.rc("ytick", labelsize = 15, left = True, right = False, direction = "in")
 plt.rc("axes", grid = False, linewidth = 1.2, axisbelow = True)
 plt.rc("grid", ls = "dotted", lw = 1)     
 plt.rc("font", size = 30, family = "serif", serif = ["Computer Modern Serif"])
@@ -39,5 +39,5 @@ axes[2].set_xlabel("Wavelength [nm]")
 axes[1].set_ylabel("Absorption")
 #fig.subplots_adjust(hspace=1,top = 0.9)
 fig.tight_layout()
-#plt.show()
+plt.show()
 fig.savefig("Exercise 4/Figurer/AbsorbtionSpectra.svg")

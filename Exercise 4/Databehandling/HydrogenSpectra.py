@@ -1,8 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-plt.rc("xtick", labelsize = 15, top = False, bottom = False, direction = "in")   
-plt.rc("ytick", labelsize = 15, left = False, right = False, direction = "in")
+plt.rc("xtick", labelsize = 15, top = False, bottom = True, direction = "in")   
+plt.rc("ytick", labelsize = 15, left = True, right = False, direction = "in")
 plt.rc("axes", grid = False, linewidth = 1.2, axisbelow = True)
 plt.rc("grid", ls = "dotted", lw = 1)     
 plt.rc("font", size = 30, family = "serif", serif = ["Computer Modern Serif"])
@@ -40,6 +40,5 @@ ax.set_xlabel("Wavelength [nm]")
 ax.set_ylabel("Intensity [counts]")
 ax.legend()
 
-#plt.show()
-
+plt.show()
 fig.savefig("Exercise 4/Figurer/HydrogenSpecta.svg")
