@@ -4,13 +4,13 @@ import matplotlib.pyplot as plt
 from scipy.optimize import minimize, fsolve
 
 
-plt.rc("xtick", labelsize = 20, top = False, bottom = False, direction = "in")   
-plt.rc("ytick", labelsize = 20, left = False, right = False, direction = "in")
-plt.rc("axes", grid = False, linewidth = 1.2, axisbelow = True)
+plt.rc("xtick", labelsize = 20, top = True, bottom = True, direction = "in")   
+plt.rc("ytick", labelsize = 20, left = True, right = True, direction = "in")
+plt.rc("axes", grid = True, linewidth = 1.2, axisbelow = True)
 plt.rc("grid", ls = "dotted", lw = 1)     
 plt.rc("font", size = 40, family = "serif", serif = ["Computer Modern Serif"])
 plt.rc("text", usetex = True)
-plt.rc("figure", figsize = (12, 10), dpi = 72)
+plt.rc("figure", figsize = (20, 14), dpi = 72)
 plt.rc("ytick.major", width = 1)
 plt.rc("xtick.major", width = 1)
 plt.rc("legend", fontsize = 15, framealpha = 0.5, edgecolor = "black", fancybox = True)
@@ -77,4 +77,5 @@ fig.suptitle("Comparison between measurements of same gas lamp with different sp
 fig.legend(loc = "lower right") 
 fig.tight_layout()
 
+plt.show()
 fig.savefig("Exercise 4/Figurer/OurSpectrometer.svg")

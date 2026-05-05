@@ -13,7 +13,7 @@ A corresponding figure could be created for the other emission spectras measured
 \section{Identifying Absorbtion lines in the Solar Spectra}
 \section{Determining the temperature of the Sun}
 To determine the temperature of the sun we find the wavelength with maximum intensity, 
-in each of the 3 measurements we took.
+in each of the 3 measurements we took using equation \eqref{eq:WienDisplacement}.
 We assume a constant $\pm 2 \text{ nm}$ uncertainty on the wavelength measurement,
 which then becomes an uncertainty in the temperature measurement of $\sigma_T = |\frac{T_\text{max}}{\lambda_\text{max}}\sigma_\lambda|$, when we use Wien's displacement law.
 The final estimate for the temperature is then given by a weighted mean of our 3 measurements, and becomes 
@@ -32,6 +32,10 @@ where $\text{max}(I_1)$ is the intensity at the most prominent absorbtion maxima
     \label{fig:AbsorbtionSpectra}
 \end{figure*}
 \section{Precision of our Spectrometer}
+The first challenge is calculating the wavelengths of the light from the outgoing angles that we measured.
+From trigonometry we can see that $\theta_i = 60^\circ$, which means that we can calculate $n$ from equation \eqref{eq:Diffraction}.
+We do this by numerically finding minima of the equation $$
+
 \begin{figure*}
     \centering
     \includesvg[width=0.95\textwidth]{../Figurer/OurSpectrometer.svg}
