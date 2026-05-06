@@ -13,7 +13,7 @@ plt.rc("text", usetex = True)
 plt.rc("figure", figsize = (20, 14), dpi = 72)
 plt.rc("ytick.major", width = 1)
 plt.rc("xtick.major", width = 1)
-plt.rc("legend", fontsize = 15, framealpha = 0.5, edgecolor = "black", fancybox = True)
+plt.rc("legend", fontsize = 30, framealpha = 0.5, edgecolor = "black", fancybox = True)
 
 # CONFIGURATION
 # Define input angle (theta_i) relative to the normal of the entry face of the prism (in degrees).
@@ -43,6 +43,8 @@ fig, axes = plt.subplots(3,1, sharex = True)
 data = pd.read_excel("Exercise 4/Data/Day 3/OurSpectrometer.xlsx")
 angles = data["Angle [deg]"][1: ].astype(float)
 elements = [col for col in data.columns if col != "Angle [deg]"]
+titles = ["He", "H$_2$", "Ne"]
+t = 0
 for element, ax in zip(elements, axes):
     if element != "Angle [deg]":
 
@@ -67,14 +69,15 @@ for element, ax in zip(elements, axes):
             lamb = fsolve(sellmeier_eqn, 0.4, args=(n,)) #mu m
             lambs.append(lamb*1e3) #nm
         
-        ax.stem(lambs, intensity/max(intensity), linefmt='C3', markerfmt='o', basefmt=" ", label = "Homemade Spectrometer" if ax == axes[0] else None)
-        ax.plot(reference_data.Wavelength, reference_intensity/max(reference_intensity), color = "black", label = "OceanOptics Spectrometer" if ax == axes[0] else None)
-        ax.set_title(f"{element[:2]}")
+        ax.stem(lambs, intensity/max(intensity), linefmt='C3', markerfmt='o', basefmt=" ", label = "Homemade" if ax == axes[0] else None)
+        ax.plot(reference_data.Wavelength, reference_intensity/max(reference_intensity), color = "black", label = "OceanOptics" if ax == axes[0] else None)
+        ax.set_title(titles[t])
+        t += 1
 
 axes[1].set_ylabel("Normalised Intensity")
 axes[2].set_xlabel("Wavelength [nm]")
 fig.suptitle("Comparison between measurements of same gas lamp with different spectrometers")
-fig.legend(loc = "lower right") 
+fig.legend(bbox_to_anchor=(.9, .3)) 
 fig.tight_layout()
 
 plt.show()
