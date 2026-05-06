@@ -58,7 +58,7 @@ for element, ax in zip(elements, axes):
         our_theta_o = np.radians(angles)
         f  = lambda n, theta: np.abs(theta_o(n) - theta)
         ns = []
-        nner = np.linspace(1.7, 1.9, 1000)
+        nner = np.linspace(1, 2, 10000)
         
         for theta in our_theta_o:       
             n = nner[min(f(nner, theta)) == f(nner, theta)]
@@ -81,4 +81,4 @@ fig.legend(bbox_to_anchor=(.9, .3))
 fig.tight_layout()
 
 plt.show()
-fig.savefig("Exercise 4/Figurer/OurSpectrometer.svg")
+#fig.savefig("Exercise 4/Figurer/OurSpectrometer.svg")
