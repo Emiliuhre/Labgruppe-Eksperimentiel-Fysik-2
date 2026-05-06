@@ -16,20 +16,25 @@ To measure the spectra of the sun, the spectrometer was carried outside and the 
 To measure absorbtion spectra, a cuvette module\autocite{AbsorbtionModule} was inserted into the spectrometer. 
 The measurements were simply to insert the cuvettes and take a measurement of the absorbtion spectra using the software that followed with the spectrometer.
 Only a single measurement was made of each cuvette.
+\looseness=-1
 \section{Building a prism spectrometer}
 The spectrometer was constructed according to the geometry illustrated in Figure~\ref{fig:PrismSpectrometerSetup}.
 The setup uses a gas discharge lamp placed behind a narrow slit and a focussing lens, set at a distance equal to the focal length ($f=100\text{mm}$), in order to collimate the light. 
 \begin{figure}
     \centering
-    \includegraphics[width=0.47\textwidth]{../Figurer/NoBox.jpg}
-    \caption{The setup with at white light LED shined through so a rainbow is visible as to recreate the Pink Floyd album cover of "The Dark Side of The Moon".}
+    \includegraphics[width=0.45\textwidth]{../Figurer/NoBox.jpg}
+    \caption{The setup with a white light LED shined through to disperse a complete rainbow as to recreate the Pink Floyd album cover of "The Dark Side of The Moon".}
     \label{photo:SetupNoBox}
 \end{figure}
-This arrangement was placed on top of a turntable so the light passing through the collimating lens hits a prism at a an angle of incidence $\theta_{\textup{i}} = 60^{\circ}$ as can be seen on the left side of Figure~\ref{photo:SetupNoBox}. 
-The prism is on turning part of the turntable so the mounted sensor at an angle of $\theta_{\textup{o}} = 0^{\circ}$ is pointed orthogonal to the side of the prism opposite to the side that the beam from the collimating lens hits.
-An other lens was placed in front of the sensor to focus the lines to the sensor. 
+\looseness=-1
+The collimated light is aimed at a 20 mm N-SF11 equilateral prism\autocite{ThorlabsPrism} at an angle of incidence $\theta_{\textup{i}} = 60^{\circ}$ as can be seen on the left side of Figure~\ref{photo:SetupNoBox}. 
+The prism is on the central part of a turntable, but is kept at $\theta_{\textup{i}} = 60^{\circ}$. 
+On a sweeping arm with same rotation axis as the turntable a detector\autocite{pasco_ci6604_manual} (gain=10) is placed with a focussing lens. 
+Letting the detector orbit the prism in an appropriate range (visible with extra on both sides), 
+we took time averaged measurements with PicoScope\autocite{PicoScope3203D} and noted the angle $\theta_o$.
 A box with a hole was placed over the sensor and lens to mitigate background noise, 
 since the signals from the emission lines are quite weak.
+\looseness=-1
 \begin{figure*}
     \centering
     \includesvg[width=0.90\textwidth]{../Figurer/Prism_Spectrometer.svg}
@@ -44,22 +49,27 @@ since the signals from the emission lines are quite weak.
 The emission lines of ionized helium as a test can be seen in Figure~\ref{photo:HeliumLines}.
 \begin{figure}
     \centering
-    \includegraphics[width=0.47\textwidth]{../Figurer/Lines.jpg}
+    \includegraphics[width=0.45\textwidth]{../Figurer/Lines.jpg}
     \caption{The visible emission lines of helium shown through the lens in front of sensor.}
     \label{photo:HeliumLines}
 \end{figure} 
-The sonsor was set at a gain of 10.
-Diameter of swiveling mounting circle 6,1 cm.
-Prism placement: The outermost corner of the prism is 1,1 cm from circle edge.
-The centralmost corner of the prism is placed 3,1 cm from the same circle edge.
-First (collimating) lens placement is the focal length $f=100\text{mm}$ from the gas lamp.
-From the detector arm paning center to the detector is 14,5 cm.
-The second lens (focusing) is 6 cm before the detector despite the focal length being 100 mm.
+\looseness=-1
+In order to not have the light beam hit the apex point of the prism it is pushed a little down. 
+This offset of the prism means that the light beam has two interfaces.
+To achieve precise placement, the prism was positioned such that its outermost and centralmost corners were 1.1 cm and 3.1 cm from the edge of the 6.1 cm diameter mounting circle, respectively. 
+The detector assembly, consisting of a secondary focusing lens and a PASCO photo detector \autocite{pasco_ci6604_manual}, was mounted on a swinging arm with a pivot-to-sensor radius of 14.5 cm.
+Notably, while the focusing lens also possessed a focal length of $f = 100$ mm, limitations of the equiptment meant that the lens had to be placed 60 mm before the detector. 
+This is not optimal. 
 The same gas discharge lamps as, when measuring with the OceanOptics spectrometer is used to be able to evaluate the succes of our spectrometer. 
 The final setup can be seen in Figure~\ref{photo:BoxSetup}.
 \begin{figure}
     \centering
-    \includegraphics[width=0.47\textwidth]{../Figurer/Box.jpg}
+    \includegraphics[width=0.45\textwidth]{../Figurer/Box.jpg}
     \caption{The completed setup with at white light shined through.}
     \label{photo:BoxSetup}
 \end{figure}
+
+% The sonsor was set at a gain of 10.
+% Diameter of swiveling mounting circle 6,1 cm.
+% Prism placement: The outermost corner of the prism is 1,1 cm from circle edge.
+% The centralmost corner of the prism is placed 3,1 cm from the same circle edge.
