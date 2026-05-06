@@ -43,7 +43,10 @@ where $\text{max}(I_1)$ is the intensity at the most prominent absorbtion maxima
 \section{Precision of our Spectrometer}
 The first challenge is calculating the wavelengths of the light from the outgoing angles that we measured.
 From trigonometry we can see that $\theta_i = 60^\circ$, which means that we can calculate $n$ from equation \eqref{eq:Diffraction}.
-We do this by numerically finding minima of the equation 
+We do this by numerically finding minima of the equation \eqref{eq:Diffraction}$ - \theta_o$, where $\theta_o$ here is the outgoing angle measured.
+We then have the $n$ where the expected outgoing angle is closest to the measured one.
+We can then calculate $\lambda$ from this $n$ by numerically solving for $\lambda$ in \eqref{eq:Sellmeier}.
+If we then plot the wavelengths calculated in this way, together with their corresponding intensity, on top of the real spectra, we get figure \ref{fig:SpectrometerComparison}.
 \begin{figure*}
     \centering
     \includesvg[width=0.95\textwidth]{../Figurer/OurSpectrometer.svg}
