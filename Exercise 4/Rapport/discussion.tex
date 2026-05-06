@@ -18,17 +18,17 @@ We combatted this by just removing these data points, which gave a prettier, but
 Even then we are confident we have identified the salts correctly, as they each had peaks at wavelengths the others didn't.
 
 \section{Comparative Analysis of Spectrometers}
-When trying to evaluate the performance of the homebuild prism spectrometer we use OceanOptics flame\autocite{OcOptFlameManual2016} as comparison. 
+When trying to evaluate the performance of the homebuild prism spectrometer we use OceanOptics Flame\autocite{OcOptFlameManual2016} as comparison. 
 One should be aware of the core difference between the two spectrometers, being the dispersion method. 
-OceanOptics flame used deffractive dispersion with a grating\autocite{PaschottaDiffractionGratings} that provides a near linear angular dispersion. 
+OceanOptics flame used defractive dispersion with a grating\autocite{PaschottaDiffractionGratings} that provides a near linear angular dispersion. 
 Our prism setup relies on the non-linear Sellmeier equation~\eqref{eq:Sellmeier}.
+Nevertheless, it is obvious from figure \ref{fig:SpectrometerComparison} that our spectrometer disagrees with the one from OceanOptics.
+The only thing they have in common, is that we seem to measure peaks in the same 'region' of wavelengths, but the peaks are offset by a non-constant value.
 
-As seen in Figure~\ref{fig:SpectrometerComparison}, the resolution of our prism spectrometer is notably lower. 
+We also see that the resolution of our prism spectrometer is notably lower, as the angle scale used only had 1 degree increments.
 Problems in the homemade spectrometer could be spherical abberation\autocite{PaschottaSphericalAberrations}, 
-the use of an achromatic doublet lens could have led to better collimation. 
+which could be improved by using an achromatic doublet lens to get better collimation. 
 The use of a narrower slit could have resulted in increased spectral resolution\autocite{PaschottaSpectrometers} and gotten better seperation of peaks, 
 but it also lowers the intensity, 
 so a more intense lamp should have followed this improvement. 
-
-The lambda solver was very unstabil\dots
 
