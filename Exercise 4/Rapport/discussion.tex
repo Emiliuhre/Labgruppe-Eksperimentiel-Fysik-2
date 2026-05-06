@@ -3,6 +3,11 @@
 \section{Comparative Analysis of Spectrometers}
 When trying to evaluate the performance of the homebuild prism spectrometer we use OceanOptics flame\autocite{OcOptFlameManual2016} as comparison. 
 One should be aware of the core difference between the two spectrometers, being the dispersion method. 
-OceanOptics flame used deffractive dispersion with a grating\autocite{PaschottaDiffractionGratings}.
+OceanOptics flame used deffractive dispersion with a grating\autocite{PaschottaDiffractionGratings} that provides a near linear angular dispersion. 
+Our prism setup relies on the non-linear Sellmeier equation~\eqref{eq:Sellmeier}.
 
-The lambda solver was very ustabil\dots
+As seen in Figure~\ref{fig:SpectrometerComparison}, the resolution of our prism spectrometer is notably lower. 
+Problems in the homemade spectrometer could be spherical abberation\autocite{PaschottaSphericalAberrations}, the use of an achromatic doublet lens could have led to better collimation. 
+The use of a narrower slit could have resulted in increased spectral resolution\autocite{PaschottaSpectrometers} and gotten better seperation of peaks, but it also lowers the intensity, so a more intense lamp should have followed this improvement. 
+
+The lambda solver was very unstabil\dots
