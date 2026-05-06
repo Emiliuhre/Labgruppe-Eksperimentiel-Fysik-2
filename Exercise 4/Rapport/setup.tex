@@ -18,7 +18,7 @@ The measurements were simply to insert the cuvettes and take a measurement of th
 Only a single measurement was made of each cuvette.
 \section{Building a prism spectrometer}
 The spectrometer was constructed according to the geometry illustrated in Figure~\ref{fig:PrismSpectrometerSetup}.
-The setup uses a gas discharge lamp was set in front of a small slit which was set in front of a collimating lens, as can be seen in on the right side of Figure~\ref{photo:SetupNoBox}.
+The setup uses a gas discharge lamp placed behind a narrow slit and a focussing lens, set at a distance equal to the focal length ($f=100\text{mm}$), in order to collimate the light. 
 \begin{figure}
     \centering
     \includegraphics[width=0.47\textwidth]{../Figurer/NoBox.jpg}
@@ -30,6 +30,17 @@ The prism is on turning part of the turntable so the mounted sensor at an angle 
 An other lens was placed in front of the sensor to focus the lines to the sensor. 
 A box with a hole was placed over the sensor and lens to mitigate background noise, 
 since the signals from the emission lines are quite weak.
+\begin{figure*}
+    \centering
+    \includesvg[width=0.90\textwidth]{../Figurer/Prism_Spectrometer.svg}
+    \caption{Experimental setup of the simple spectrometer. 
+    The mixed light from the gas discharge lamp, shown with orange, goes through a small slit and then through a focussing lens placed 100 mm from the source in order to collimate the light. 
+    The incident angle for our setup is set to $60^\circ$. 
+    Three example beam colors are shown to refract differently. 
+    The refraction difference is exaggerated and not calculated accurately. 
+    The photo detector\autocite{pasco_ci6604_manual} is mounted on a swinging arm along with the focussing lens and is used to scan for intensity at different angles.}
+    \label{fig:PrismSpectrometerSetup}
+\end{figure*}
 The emission lines of ionized helium as a test can be seen in Figure~\ref{photo:HeliumLines}.
 \begin{figure}
     \centering
@@ -52,15 +63,3 @@ The final setup can be seen in Figure~\ref{photo:BoxSetup}.
     \caption{The completed setup with at white light shined through.}
     \label{photo:BoxSetup}
 \end{figure}
-
-\begin{figure*}
-    \centering
-    \includesvg[width=0.95\textwidth]{../Figurer/Prism_Spectrometer.svg}
-    \caption{Experimental setup of the simple spectrometer. 
-    The mixed light from the gas discharge lamp, shown with orange, goes through a small slit and then through a focussing lens placed 100 mm from the source in order to collimate the light. 
-    The incident angle for our setup is set to $60^\circ$. 
-    Three example beam colors are shown to refract differently. 
-    The refraction difference is exaggerated and not calculated accurately. 
-    The photo detector\autocite{pasco_ci6604_manual} is mounted on a swinging arm along with the focussing lens and is used to scan for intensity at different angles.}
-    \label{fig:PrismSpectrometerSetup}
-\end{figure*}
